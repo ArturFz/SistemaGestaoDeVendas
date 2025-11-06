@@ -14,7 +14,7 @@ namespace Trabalho1_ProgVis
 {
     public class Repository : DbContext
     {
-        private static readonly String _connectionParams = @"server=127.0.0.1;port=3307;uid=root;pwd=;database=Projeto-1-3Tri";
+        private static readonly String _connectionParams = @"server=127.0.0.1;port=3307;uid=root;pwd=;database=Trabalho_TCD";
 
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Credencial> Credenciais { get; set; }
@@ -25,9 +25,9 @@ namespace Trabalho1_ProgVis
             {
                 Credencial adminCredencial = new Credencial()
                 {
-                    NomeUsuario = "Admin",
+                    NomeUsuario = "Vendedor",
                     Senha = "Senha",
-                    Perfil = true
+                    Perfil = Perfil.VENDEDOR
                 };
                 Usuario usuarioAdmin = new Usuario()
                 {

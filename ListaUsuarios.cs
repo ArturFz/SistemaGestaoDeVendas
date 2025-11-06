@@ -42,7 +42,7 @@ namespace Trabalho1_ProgVis
 
             if (usuario == null) return;
 
-            String? perfil = usuario.Credencial.Perfil ? "Gerente" : "Comum";
+            //String? perfil = usuario.Credencial.Perfil ? "Gerente" : "Comum";
 
             if (usuario.Credencial.UltimoAcesso == DateTime.MinValue)
             {
@@ -58,7 +58,7 @@ namespace Trabalho1_ProgVis
             lblNomeUsuarioDefault.Text = usuario.Credencial.NomeUsuario;
             lblEmailDefault.Text = usuario.Email;
             lblTelefoneDefault.Text = usuario.Telefone;
-            lblPerfilDefault.Text = perfil;
+            //lblPerfilDefault.Text = perfil;
         }
     }
 }

@@ -35,7 +35,7 @@ namespace Trabalho1_ProgVis
                 _senha = ComputeSHA256(value, SALT);
             }
         }
-        public Boolean Perfil { get; set; }
+        public Perfil Perfil { get; set; }
 
         public Usuario Usuario { get; set; }
 

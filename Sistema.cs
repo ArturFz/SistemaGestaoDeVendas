@@ -23,7 +23,7 @@ namespace Trabalho1_ProgVis
             InitializeComponent();
 
             Text = "Sistema /" + usuario.Nome;
-            mnuCadastro.Enabled = usuario.Credencial.Perfil;
+            //mnuCadastro.Enabled = usuario.Credencial.Perfil;
 
             if (usuario.Credencial.UltimoAcesso == DateTime.MinValue) 
                 staBarraEstadoUltimoAcesso.Visible = false;

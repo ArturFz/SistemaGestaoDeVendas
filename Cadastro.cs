@@ -143,7 +143,7 @@ namespace Trabalho1_ProgVis
             {
                 NomeUsuario = txtNomeUsuario.Text,
                 Senha = txtSenha.Text,
-                Perfil = chkPerfil.Checked
+                //Perfil = chkPerfil.Checked
             };
 
             Usuario novoUsuario = new Usuario()
