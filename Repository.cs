@@ -18,6 +18,11 @@ namespace Trabalho1_ProgVis
 
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Credencial> Credenciais { get; set; }
+        public DbSet<Compra> Compras { get; set; }
+        public DbSet<Pagamento> Pagamentos { get; set; }
+        public DbSet<Produto> Produtos { get; set; }
+        public DbSet<Item> Itens { get; set; }
+        public DbSet<Vendedor> Vendedores { get; set; }
 
         public Repository()
         {

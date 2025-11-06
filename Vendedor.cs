@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Trabalho1_ProgVis
 {
-    public class Vendedor
+    public class Vendedor : Usuario
     {
         public UInt32 Matricula { get; set; }
     }
