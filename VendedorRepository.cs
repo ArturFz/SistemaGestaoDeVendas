@@ -34,7 +34,6 @@ namespace Trabalho_TCD
                 throw;
             }
         }
-
         public static List<Vendedor> FindAll()
         {
             try
@@ -49,7 +48,6 @@ namespace Trabalho_TCD
                 throw;
             }
         }
-
         public static Vendedor? FindById(UInt64 id)
         {
             try
@@ -64,7 +62,6 @@ namespace Trabalho_TCD
                 throw;
             }
         }
-
         public static void Remove(Vendedor vendedor)
         {
             try

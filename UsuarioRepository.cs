@@ -33,7 +33,6 @@ namespace Trabalho1_ProgVis
                 throw;
             }
         }
-
         public static List<Usuario> FindAll()
         {
             try
@@ -48,7 +47,6 @@ namespace Trabalho1_ProgVis
                 throw;
             }
         }
-
         public static Usuario? FindById(UInt64 id)
         {
             try
@@ -63,7 +61,6 @@ namespace Trabalho1_ProgVis
                 throw;
             }
         }
-
         public static Usuario? FindByIdWithCredencial(UInt64 id)
         {
             try
@@ -78,7 +75,6 @@ namespace Trabalho1_ProgVis
                 throw;
             }
         }
-
         public static List<Usuario> FindAllWithCredencial()
         {
             try
@@ -93,7 +89,6 @@ namespace Trabalho1_ProgVis
                 throw;
             }
         }
-
         public static void Remove(Usuario usuario)
         {
             try

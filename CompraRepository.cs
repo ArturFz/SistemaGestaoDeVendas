@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Trabalho1_ProgVis;
+using Microsoft.EntityFrameworkCore;
 
 namespace Trabalho_TCD
 {
@@ -60,6 +61,6 @@ namespace Trabalho_TCD
                 throw;
             }
         }
-        
     }
 }
+    

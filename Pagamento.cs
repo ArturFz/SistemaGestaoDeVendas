@@ -10,7 +10,7 @@ namespace Trabalho1_ProgVis
     {
         public UInt64 Id { get; set; }
         public DateTime Vencimento { get; set; }
-        public DateTime Pagamento { get; set; }
+        public DateTime Pagamentos { get; set; }
         public Decimal MultaAtraso { get; set; }
 
     }
