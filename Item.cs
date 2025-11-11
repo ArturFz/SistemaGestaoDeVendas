@@ -12,10 +12,6 @@ namespace Trabalho1_ProgVis
         public UInt32 Quantidade { get; set; }
         public Decimal PrecoUnitario { get; set; }
         public Decimal Desconto { get; set; }
-        public Decimal CalcularTotal()
-        {
-
-        }
         public Produto Produto { get; set; }
         public Compra Compra { get; set; }
     }

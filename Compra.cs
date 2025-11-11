@@ -24,14 +24,6 @@ namespace Trabalho1_ProgVis
                 _estado = value;
             }
         }
-        public Decimal CalcularTotal()
-        {
-
-        }
-        public Decimal CalcularComissao()
-        {
-
-        }
         public Produto Produto { get; set; }
         public Pagamento Pagamento { get; set; }
     }
