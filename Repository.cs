@@ -23,6 +23,7 @@ namespace Trabalho1_ProgVis
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Item> Itens { get; set; }
         public DbSet<Vendedor> Vendedores { get; set; }
+        public DbSet<Cliente> Clientes { get; set; }
 
         public Repository()
         {

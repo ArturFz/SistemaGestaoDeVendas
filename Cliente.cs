@@ -8,14 +8,12 @@ using Trabalho_TCD;
 
 namespace Trabalho1_ProgVis
 {
-    public class Produto
+    public class Cliente
     {
-        [Key]
         public UInt64 Id { get; set; }
         public String Nome { get; set; }
-        public UInt32 Estoque { get; set; }
-        public UInt32 EstoqueMinimo { get; set; }
-        public Boolean Ativo { get; set; }
-        public Categoria Categoria { get; set; }
+        public String Cpf { get; set; }
+        public String Telefone { get; set; }
+        public String Email { get; set; }
     }
 }

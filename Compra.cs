@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Trabalho1_ProgVis
 {
+    [Table("Compra")]
+
     public class Compra
     {
         [Key]
@@ -15,21 +18,13 @@ namespace Trabalho1_ProgVis
         public DateTime Inicio { get; set; }
         public DateTime Efetivacao { get; set; }
         public Decimal Comissao { get; set; }
-
-        public Estado _estado = Estado.PENDENTE;
-        public Estado Estado
-        {
-            get => _estado;
-            set
-            {
-                _estado = value;
-            }
-        }
-        public Produto Produto { get; set; }
+        public Estado Estado { get; set; } = Estado.PENDENTE;
+              
         
         // Relacionamentos
-        public Pagamento Pagamento { get; set; }
+        public Vendedor Vendedor { get; set; }
         public List<Pagamento> Pagamentos { get; set; }
+        public List<Item> Itens { get; set; }
 
     }
 }
