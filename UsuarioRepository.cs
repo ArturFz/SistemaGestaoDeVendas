@@ -61,6 +61,23 @@ namespace Trabalho1_ProgVis
                 throw;
             }
         }
+        public static void Remove(Usuario usuario)
+        {
+            try
+            {
+                using (Repository dbContext = new Repository())
+                {
+                    dbContext.Usuarios.Attach(usuario);
+                    dbContext.Usuarios.Remove(usuario);
+
+                    dbContext.SaveChanges();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         public static Usuario? FindByIdWithCredencial(UInt64 id)
         {
             try
@@ -82,23 +99,6 @@ namespace Trabalho1_ProgVis
                 using (Repository dbContext = new Repository())
                 {
                     return dbContext.Usuarios.Include("Credencial").ToList();
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-        public static void Remove(Usuario usuario)
-        {
-            try
-            {
-                using (Repository dbContext = new Repository())
-                {
-                    dbContext.Usuarios.Attach(usuario);
-                    dbContext.Usuarios.Remove(usuario);
-
-                    dbContext.SaveChanges();
                 }
             }
             catch (Exception)

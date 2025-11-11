@@ -61,6 +61,23 @@ namespace Trabalho_TCD
                 throw;
             }
         }
+        public static void Remove(Compra compra)
+        {
+            try
+            {
+                using (Repository dbContext = new Repository())
+                {
+                    dbContext.Compras.Attach(compra);
+                    dbContext.Compras.Remove(compra);
+                    
+                    dbContext.SaveChanges();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }
     
