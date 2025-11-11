@@ -36,7 +36,6 @@
             lblInformacoes = new Label();
             lblInformacao = new Label();
             lblDireitos = new Label();
-            lblAno = new Label();
             lblInstituicao = new Label();
             lblDesenvolvedores = new Label();
             pnlSobre.SuspendLayout();
@@ -50,9 +49,9 @@
             lblTitulo.ForeColor = SystemColors.MenuHighlight;
             lblTitulo.Location = new Point(15, 10);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(644, 44);
+            lblTitulo.Size = new Size(620, 44);
             lblTitulo.TabIndex = 0;
-            lblTitulo.Text = "Sistema de Gestão de Usuários – Versão 1.0\n";
+            lblTitulo.Text = "Sistema de Gestão de Vendas – Versão 1.0\r\n";
             lblTitulo.Click += lblIdentificacao_Click;
             // 
             // pnlSobre
@@ -63,13 +62,12 @@
             pnlSobre.Controls.Add(lblInformacoes);
             pnlSobre.Controls.Add(lblInformacao);
             pnlSobre.Controls.Add(lblDireitos);
-            pnlSobre.Controls.Add(lblAno);
             pnlSobre.Controls.Add(lblInstituicao);
             pnlSobre.Controls.Add(lblDesenvolvedores);
             pnlSobre.Controls.Add(lblTitulo);
             pnlSobre.Location = new Point(12, 12);
             pnlSobre.Name = "pnlSobre";
-            pnlSobre.Size = new Size(687, 358);
+            pnlSobre.Size = new Size(687, 327);
             pnlSobre.TabIndex = 1;
             pnlSobre.Paint += pnlSobre_Paint;
             // 
@@ -89,9 +87,9 @@
             lblOferecimentos.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblOferecimentos.Location = new Point(15, 117);
             lblOferecimentos.Name = "lblOferecimentos";
-            lblOferecimentos.Size = new Size(603, 25);
+            lblOferecimentos.Size = new Size(512, 25);
             lblOferecimentos.TabIndex = 8;
-            lblOferecimentos.Text = "O sistema oferece recursos para gerenciamento completo de usuários,";
+            lblOferecimentos.Text = "O sistema oferece recursos para gerenciamento de vendas, ";
             // 
             // lblInformacoes
             // 
@@ -118,21 +116,11 @@
             // 
             lblDireitos.AutoSize = true;
             lblDireitos.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblDireitos.Location = new Point(15, 319);
+            lblDireitos.Location = new Point(15, 294);
             lblDireitos.Name = "lblDireitos";
             lblDireitos.Size = new Size(335, 25);
             lblDireitos.TabIndex = 5;
             lblDireitos.Text = "© 2025 – Todos os direitos reservados.";
-            // 
-            // lblAno
-            // 
-            lblAno.AutoSize = true;
-            lblAno.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblAno.Location = new Point(15, 294);
-            lblAno.Name = "lblAno";
-            lblAno.Size = new Size(95, 25);
-            lblAno.TabIndex = 4;
-            lblAno.Text = "Ano: 2025\n";
             // 
             // lblInstituicao
             // 
@@ -158,7 +146,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(711, 382);
+            ClientSize = new Size(711, 351);
             Controls.Add(pnlSobre);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -177,7 +165,6 @@
         private Panel pnlSobre;
         private Label lblDesenvolvedores;
         private Label lblDireitos;
-        private Label lblAno;
         private Label lblInstituicao;
         private Label lblInformacao;
         private Label lblInformacoes;

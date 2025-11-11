@@ -46,12 +46,15 @@
             txtNome = new TextBox();
             txtEmail = new TextBox();
             btnCadastrar = new Button();
+            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(lblTitulo);
             panel1.Controls.Add(lblAvisoSucesso);
             panel1.Controls.Add(lblAvisoUsuario);
@@ -70,7 +73,7 @@
             panel1.Controls.Add(btnCadastrar);
             panel1.Location = new Point(4, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(498, 458);
+            panel1.Size = new Size(498, 631);
             panel1.TabIndex = 0;
             // 
             // lblTitulo
@@ -78,7 +81,7 @@
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Noto Sans", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitulo.ForeColor = SystemColors.MenuHighlight;
-            lblTitulo.Location = new Point(29, 6);
+            lblTitulo.Location = new Point(37, 192);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(438, 49);
             lblTitulo.TabIndex = 16;
@@ -90,7 +93,7 @@
             lblAvisoSucesso.BackColor = Color.Green;
             lblAvisoSucesso.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblAvisoSucesso.ForeColor = SystemColors.ControlLightLight;
-            lblAvisoSucesso.Location = new Point(8, 416);
+            lblAvisoSucesso.Location = new Point(8, 603);
             lblAvisoSucesso.Name = "lblAvisoSucesso";
             lblAvisoSucesso.Size = new Size(202, 20);
             lblAvisoSucesso.TabIndex = 15;
@@ -103,7 +106,7 @@
             lblAvisoUsuario.BackColor = Color.Yellow;
             lblAvisoUsuario.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblAvisoUsuario.ForeColor = Color.Red;
-            lblAvisoUsuario.Location = new Point(8, 393);
+            lblAvisoUsuario.Location = new Point(8, 580);
             lblAvisoUsuario.Name = "lblAvisoUsuario";
             lblAvisoUsuario.Size = new Size(215, 20);
             lblAvisoUsuario.TabIndex = 14;
@@ -116,7 +119,7 @@
             lblAvisoVazio.BackColor = Color.Yellow;
             lblAvisoVazio.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblAvisoVazio.ForeColor = Color.Red;
-            lblAvisoVazio.Location = new Point(8, 370);
+            lblAvisoVazio.Location = new Point(8, 557);
             lblAvisoVazio.Name = "lblAvisoVazio";
             lblAvisoVazio.Size = new Size(217, 20);
             lblAvisoVazio.TabIndex = 13;
@@ -126,7 +129,7 @@
             // mskTelefone
             // 
             mskTelefone.Font = new Font("Segoe UI", 14F);
-            mskTelefone.Location = new Point(8, 245);
+            mskTelefone.Location = new Point(8, 432);
             mskTelefone.Mask = "(00) 00000-0000";
             mskTelefone.Name = "mskTelefone";
             mskTelefone.Size = new Size(478, 32);
@@ -137,7 +140,7 @@
             // chkPerfil
             // 
             chkPerfil.AutoSize = true;
-            chkPerfil.Location = new Point(8, 344);
+            chkPerfil.Location = new Point(8, 531);
             chkPerfil.Name = "chkPerfil";
             chkPerfil.Size = new Size(67, 19);
             chkPerfil.TabIndex = 11;
@@ -147,7 +150,7 @@
             // lblSenha
             // 
             lblSenha.AutoSize = true;
-            lblSenha.Location = new Point(8, 287);
+            lblSenha.Location = new Point(8, 474);
             lblSenha.Name = "lblSenha";
             lblSenha.Size = new Size(39, 15);
             lblSenha.TabIndex = 10;
@@ -156,7 +159,7 @@
             // txtSenha
             // 
             txtSenha.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtSenha.Location = new Point(8, 305);
+            txtSenha.Location = new Point(8, 492);
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(478, 33);
             txtSenha.TabIndex = 9;
@@ -166,7 +169,7 @@
             // lblNomeUsuario
             // 
             lblNomeUsuario.AutoSize = true;
-            lblNomeUsuario.Location = new Point(4, 108);
+            lblNomeUsuario.Location = new Point(4, 295);
             lblNomeUsuario.Name = "lblNomeUsuario";
             lblNomeUsuario.Size = new Size(99, 15);
             lblNomeUsuario.TabIndex = 8;
@@ -175,7 +178,7 @@
             // txtNomeUsuario
             // 
             txtNomeUsuario.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNomeUsuario.Location = new Point(8, 126);
+            txtNomeUsuario.Location = new Point(8, 313);
             txtNomeUsuario.Name = "txtNomeUsuario";
             txtNomeUsuario.Size = new Size(478, 33);
             txtNomeUsuario.TabIndex = 7;
@@ -185,7 +188,7 @@
             // lblTelefone
             // 
             lblTelefone.AutoSize = true;
-            lblTelefone.Location = new Point(8, 227);
+            lblTelefone.Location = new Point(8, 414);
             lblTelefone.Name = "lblTelefone";
             lblTelefone.Size = new Size(51, 15);
             lblTelefone.TabIndex = 6;
@@ -194,7 +197,7 @@
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(8, 171);
+            lblEmail.Location = new Point(8, 358);
             lblEmail.Name = "lblEmail";
             lblEmail.Size = new Size(36, 15);
             lblEmail.TabIndex = 5;
@@ -203,7 +206,7 @@
             // lblNome
             // 
             lblNome.AutoSize = true;
-            lblNome.Location = new Point(4, 54);
+            lblNome.Location = new Point(4, 241);
             lblNome.Name = "lblNome";
             lblNome.Size = new Size(40, 15);
             lblNome.TabIndex = 4;
@@ -212,7 +215,7 @@
             // txtNome
             // 
             txtNome.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNome.Location = new Point(8, 72);
+            txtNome.Location = new Point(8, 259);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(478, 33);
             txtNome.TabIndex = 2;
@@ -222,7 +225,7 @@
             // txtEmail
             // 
             txtEmail.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtEmail.Location = new Point(8, 189);
+            txtEmail.Location = new Point(8, 376);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(478, 33);
             txtEmail.TabIndex = 1;
@@ -234,7 +237,7 @@
             btnCadastrar.BackColor = SystemColors.MenuHighlight;
             btnCadastrar.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCadastrar.ForeColor = SystemColors.ButtonHighlight;
-            btnCadastrar.Location = new Point(317, 393);
+            btnCadastrar.Location = new Point(317, 580);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(169, 43);
             btnCadastrar.TabIndex = 0;
@@ -242,11 +245,20 @@
             btnCadastrar.UseVisualStyleBackColor = false;
             btnCadastrar.Click += btnCadastrar_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Trabalho_TCD.Properties.Resources.SAA__1__removebg_preview;
+            pictureBox1.Location = new Point(143, 22);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(194, 153);
+            pictureBox1.TabIndex = 17;
+            pictureBox1.TabStop = false;
+            // 
             // Cadastro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(506, 462);
+            ClientSize = new Size(506, 635);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -256,6 +268,7 @@
             Text = "Cadastro";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -278,5 +291,6 @@
         private Label lblAvisoUsuario;
         private Label lblAvisoSucesso;
         private Label lblTitulo;
+        private PictureBox pictureBox1;
     }
 }
