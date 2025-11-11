@@ -11,5 +11,6 @@ namespace Trabalho1_ProgVis
     public class Vendedor : Usuario
     {
         public UInt32 Matricula { get; set; }
+        public List<Compra> Compras { get; set; }
     }
 }

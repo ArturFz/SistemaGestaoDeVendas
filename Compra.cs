@@ -11,7 +11,8 @@ namespace Trabalho1_ProgVis
     {
         [Key]
         public UInt64 Id { get; set; }
-        public UInt64 Inicio { get; set; }
+        public UInt64 Numero { get; set; }
+        public DateTime Inicio { get; set; }
         public DateTime Efetivacao { get; set; }
         public Decimal Comissao { get; set; }
 
@@ -25,6 +26,10 @@ namespace Trabalho1_ProgVis
             }
         }
         public Produto Produto { get; set; }
+        
+        // Relacionamentos
         public Pagamento Pagamento { get; set; }
+        public List<Pagamento> Pagamentos { get; set; }
+
     }
 }

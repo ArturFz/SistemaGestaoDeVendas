@@ -13,5 +13,6 @@ namespace Trabalho1_ProgVis
         public DateTime Pagamentos { get; set; }
         public Decimal MultaAtraso { get; set; }
 
+
     }
 }
