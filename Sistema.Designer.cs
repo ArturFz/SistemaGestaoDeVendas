@@ -63,7 +63,7 @@
             // mnuArquivoSair
             // 
             mnuArquivoSair.Name = "mnuArquivoSair";
-            mnuArquivoSair.Size = new Size(93, 22);
+            mnuArquivoSair.Size = new Size(180, 22);
             mnuArquivoSair.Text = "Sair";
             mnuArquivoSair.Click += mnuArquivoSair_Click;
             // 
@@ -77,7 +77,7 @@
             // mnuCadastroUsuario
             // 
             mnuCadastroUsuario.Name = "mnuCadastroUsuario";
-            mnuCadastroUsuario.Size = new Size(114, 22);
+            mnuCadastroUsuario.Size = new Size(180, 22);
             mnuCadastroUsuario.Text = "Usuário";
             mnuCadastroUsuario.Click += mnuCadastroUsuario_Click;
             // 
