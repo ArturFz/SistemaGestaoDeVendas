@@ -15,5 +15,19 @@ namespace Trabalho1_ProgVis
         public String Cpf { get; set; }
         public String Telefone { get; set; }
         public String Email { get; set; }
+        public Compra Compra { get; set; }
+
+        public Boolean PodeRealizarNovaCompra()
+        {
+            if (this.Compra == null || this.Compra.Pagamentos == null || !this.Compra.Pagamentos.Any())
+            {
+                return true;
+            }
+            else if (this.Compra.Pagamentos.Any(p => p.Vencimento < DateTime.Now))
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }
