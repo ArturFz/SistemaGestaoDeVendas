@@ -30,12 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cadastro));
             panel1 = new Panel();
+            lblPerfil = new Label();
+            cboPerfil = new ComboBox();
+            pictureBox1 = new PictureBox();
             lblTitulo = new Label();
             lblAvisoSucesso = new Label();
             lblAvisoUsuario = new Label();
             lblAvisoVazio = new Label();
             mskTelefone = new MaskedTextBox();
-            chkPerfil = new CheckBox();
             lblSenha = new Label();
             txtSenha = new TextBox();
             lblNomeUsuario = new Label();
@@ -46,7 +48,6 @@
             txtNome = new TextBox();
             txtEmail = new TextBox();
             btnCadastrar = new Button();
-            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -54,13 +55,14 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.Controls.Add(lblPerfil);
+            panel1.Controls.Add(cboPerfil);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(lblTitulo);
             panel1.Controls.Add(lblAvisoSucesso);
             panel1.Controls.Add(lblAvisoUsuario);
             panel1.Controls.Add(lblAvisoVazio);
             panel1.Controls.Add(mskTelefone);
-            panel1.Controls.Add(chkPerfil);
             panel1.Controls.Add(lblSenha);
             panel1.Controls.Add(txtSenha);
             panel1.Controls.Add(lblNomeUsuario);
@@ -73,19 +75,48 @@
             panel1.Controls.Add(btnCadastrar);
             panel1.Location = new Point(4, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(498, 631);
+            panel1.Size = new Size(498, 655);
             panel1.TabIndex = 0;
+            // 
+            // lblPerfil
+            // 
+            lblPerfil.AutoSize = true;
+            lblPerfil.Location = new Point(8, 508);
+            lblPerfil.Name = "lblPerfil";
+            lblPerfil.Size = new Size(37, 15);
+            lblPerfil.TabIndex = 19;
+            lblPerfil.Text = "Perfil:";
+            // 
+            // cboPerfil
+            // 
+            cboPerfil.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboPerfil.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cboPerfil.FormattingEnabled = true;
+            cboPerfil.Items.AddRange(new object[] { "Gerente", "Vendedor", "Operador de Caixa" });
+            cboPerfil.Location = new Point(8, 523);
+            cboPerfil.Name = "cboPerfil";
+            cboPerfil.Size = new Size(189, 33);
+            cboPerfil.TabIndex = 18;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Trabalho_TCD.Properties.Resources.SAA__1__removebg_preview;
+            pictureBox1.Location = new Point(143, 22);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(194, 153);
+            pictureBox1.TabIndex = 17;
+            pictureBox1.TabStop = false;
             // 
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
-            lblTitulo.Font = new Font("Noto Sans", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitulo.Font = new Font("Noto Sans", 21.7499962F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitulo.ForeColor = SystemColors.MenuHighlight;
-            lblTitulo.Location = new Point(37, 192);
+            lblTitulo.Location = new Point(19, 188);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(438, 49);
+            lblTitulo.Size = new Size(456, 44);
             lblTitulo.TabIndex = 16;
-            lblTitulo.Text = "Cadastre um novo usuário";
+            lblTitulo.Text = "Cadastre um novo funcionário";
             // 
             // lblAvisoSucesso
             // 
@@ -93,7 +124,7 @@
             lblAvisoSucesso.BackColor = Color.Green;
             lblAvisoSucesso.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblAvisoSucesso.ForeColor = SystemColors.ControlLightLight;
-            lblAvisoSucesso.Location = new Point(8, 603);
+            lblAvisoSucesso.Location = new Point(8, 622);
             lblAvisoSucesso.Name = "lblAvisoSucesso";
             lblAvisoSucesso.Size = new Size(202, 20);
             lblAvisoSucesso.TabIndex = 15;
@@ -106,7 +137,7 @@
             lblAvisoUsuario.BackColor = Color.Yellow;
             lblAvisoUsuario.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblAvisoUsuario.ForeColor = Color.Red;
-            lblAvisoUsuario.Location = new Point(8, 580);
+            lblAvisoUsuario.Location = new Point(8, 599);
             lblAvisoUsuario.Name = "lblAvisoUsuario";
             lblAvisoUsuario.Size = new Size(215, 20);
             lblAvisoUsuario.TabIndex = 14;
@@ -119,7 +150,7 @@
             lblAvisoVazio.BackColor = Color.Yellow;
             lblAvisoVazio.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblAvisoVazio.ForeColor = Color.Red;
-            lblAvisoVazio.Location = new Point(8, 557);
+            lblAvisoVazio.Location = new Point(8, 576);
             lblAvisoVazio.Name = "lblAvisoVazio";
             lblAvisoVazio.Size = new Size(217, 20);
             lblAvisoVazio.TabIndex = 13;
@@ -129,7 +160,7 @@
             // mskTelefone
             // 
             mskTelefone.Font = new Font("Segoe UI", 14F);
-            mskTelefone.Location = new Point(8, 432);
+            mskTelefone.Location = new Point(8, 421);
             mskTelefone.Mask = "(00) 00000-0000";
             mskTelefone.Name = "mskTelefone";
             mskTelefone.Size = new Size(478, 32);
@@ -137,29 +168,19 @@
             mskTelefone.TextChanged += mskTelefone_TextChanged;
             mskTelefone.KeyUp += mskTelefone_KeyUp;
             // 
-            // chkPerfil
-            // 
-            chkPerfil.AutoSize = true;
-            chkPerfil.Location = new Point(8, 531);
-            chkPerfil.Name = "chkPerfil";
-            chkPerfil.Size = new Size(67, 19);
-            chkPerfil.TabIndex = 11;
-            chkPerfil.Text = "Gerente";
-            chkPerfil.UseVisualStyleBackColor = true;
-            // 
             // lblSenha
             // 
             lblSenha.AutoSize = true;
-            lblSenha.Location = new Point(8, 474);
+            lblSenha.Location = new Point(8, 454);
             lblSenha.Name = "lblSenha";
-            lblSenha.Size = new Size(39, 15);
+            lblSenha.Size = new Size(42, 15);
             lblSenha.TabIndex = 10;
-            lblSenha.Text = "Senha";
+            lblSenha.Text = "Senha:";
             // 
             // txtSenha
             // 
             txtSenha.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtSenha.Location = new Point(8, 492);
+            txtSenha.Location = new Point(8, 472);
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(478, 33);
             txtSenha.TabIndex = 9;
@@ -169,11 +190,11 @@
             // lblNomeUsuario
             // 
             lblNomeUsuario.AutoSize = true;
-            lblNomeUsuario.Location = new Point(4, 295);
+            lblNomeUsuario.Location = new Point(8, 295);
             lblNomeUsuario.Name = "lblNomeUsuario";
-            lblNomeUsuario.Size = new Size(99, 15);
+            lblNomeUsuario.Size = new Size(102, 15);
             lblNomeUsuario.TabIndex = 8;
-            lblNomeUsuario.Text = "Nome de Usuário";
+            lblNomeUsuario.Text = "Nome de Usuário:";
             // 
             // txtNomeUsuario
             // 
@@ -188,29 +209,29 @@
             // lblTelefone
             // 
             lblTelefone.AutoSize = true;
-            lblTelefone.Location = new Point(8, 414);
+            lblTelefone.Location = new Point(8, 403);
             lblTelefone.Name = "lblTelefone";
-            lblTelefone.Size = new Size(51, 15);
+            lblTelefone.Size = new Size(54, 15);
             lblTelefone.TabIndex = 6;
-            lblTelefone.Text = "Telefone";
+            lblTelefone.Text = "Telefone:";
             // 
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(8, 358);
+            lblEmail.Location = new Point(8, 349);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(36, 15);
+            lblEmail.Size = new Size(39, 15);
             lblEmail.TabIndex = 5;
-            lblEmail.Text = "Email";
+            lblEmail.Text = "Email:";
             // 
             // lblNome
             // 
             lblNome.AutoSize = true;
-            lblNome.Location = new Point(4, 241);
+            lblNome.Location = new Point(8, 241);
             lblNome.Name = "lblNome";
-            lblNome.Size = new Size(40, 15);
+            lblNome.Size = new Size(43, 15);
             lblNome.TabIndex = 4;
-            lblNome.Text = "Nome\r\n";
+            lblNome.Text = "Nome:";
             // 
             // txtNome
             // 
@@ -225,7 +246,7 @@
             // txtEmail
             // 
             txtEmail.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtEmail.Location = new Point(8, 376);
+            txtEmail.Location = new Point(8, 367);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(478, 33);
             txtEmail.TabIndex = 1;
@@ -237,7 +258,7 @@
             btnCadastrar.BackColor = SystemColors.MenuHighlight;
             btnCadastrar.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCadastrar.ForeColor = SystemColors.ButtonHighlight;
-            btnCadastrar.Location = new Point(317, 580);
+            btnCadastrar.Location = new Point(317, 599);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(169, 43);
             btnCadastrar.TabIndex = 0;
@@ -245,20 +266,11 @@
             btnCadastrar.UseVisualStyleBackColor = false;
             btnCadastrar.Click += btnCadastrar_Click;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Trabalho_TCD.Properties.Resources.SAA__1__removebg_preview;
-            pictureBox1.Location = new Point(143, 22);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(194, 153);
-            pictureBox1.TabIndex = 17;
-            pictureBox1.TabStop = false;
-            // 
             // Cadastro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(506, 635);
+            ClientSize = new Size(506, 659);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -285,12 +297,13 @@
         private TextBox txtNomeUsuario;
         private Label lblSenha;
         private TextBox txtSenha;
-        private CheckBox chkPerfil;
         private MaskedTextBox mskTelefone;
         private Label lblAvisoVazio;
         private Label lblAvisoUsuario;
         private Label lblAvisoSucesso;
         private Label lblTitulo;
         private PictureBox pictureBox1;
+        private ComboBox cboPerfil;
+        private Label lblPerfil;
     }
 }

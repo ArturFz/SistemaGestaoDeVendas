@@ -82,13 +82,12 @@ namespace Trabalho1_ProgVis
 
         private void mnuRelatorioUsuarios_Click(object sender, EventArgs e)
         {
-            ListaUsuarios listaUsuarios = ListaUsuarios.GetInstance();
+            ListaFuncionarios listaUsuarios = ListaFuncionarios.GetInstance();
             listaUsuarios.MdiParent = this;
             listaUsuarios.BringToFront();
             listaUsuarios.WindowState = FormWindowState.Normal;
 
             listaUsuarios.Show();
         }
-
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Trabalho1_ProgVis
 {
-    partial class ListaUsuarios
+    partial class ListaFuncionarios
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListaUsuarios));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListaFuncionarios));
             pnlListaUsuarios = new Panel();
             lblTitulo = new Label();
             lblUltimoAcessoDefault = new Label();
@@ -39,7 +39,7 @@
             lblEmailDefault = new Label();
             lblNomeDefault = new Label();
             lblNomeUsuario = new Label();
-            lstUsuarios = new ListBox();
+            lstFuncionarios = new ListBox();
             lblNome = new Label();
             lblNomeUsuarioDefault = new Label();
             lblEmail = new Label();
@@ -59,7 +59,7 @@
             pnlListaUsuarios.Controls.Add(lblEmailDefault);
             pnlListaUsuarios.Controls.Add(lblNomeDefault);
             pnlListaUsuarios.Controls.Add(lblNomeUsuario);
-            pnlListaUsuarios.Controls.Add(lstUsuarios);
+            pnlListaUsuarios.Controls.Add(lstFuncionarios);
             pnlListaUsuarios.Controls.Add(lblNome);
             pnlListaUsuarios.Controls.Add(lblNomeUsuarioDefault);
             pnlListaUsuarios.Controls.Add(lblEmail);
@@ -74,18 +74,18 @@
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Noto Sans", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitulo.ForeColor = SystemColors.MenuHighlight;
-            lblTitulo.Location = new Point(119, 0);
+            lblTitulo.Location = new Point(83, 0);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(322, 53);
+            lblTitulo.Size = new Size(393, 53);
             lblTitulo.TabIndex = 33;
-            lblTitulo.Text = "Lista de Usuários";
+            lblTitulo.Text = "Lista de Funcionários";
             // 
             // lblUltimoAcessoDefault
             // 
             lblUltimoAcessoDefault.AutoSize = true;
             lblUltimoAcessoDefault.BackColor = SystemColors.ControlLightLight;
             lblUltimoAcessoDefault.Font = new Font("Segoe UI", 14F);
-            lblUltimoAcessoDefault.Location = new Point(262, 451);
+            lblUltimoAcessoDefault.Location = new Point(258, 451);
             lblUltimoAcessoDefault.Name = "lblUltimoAcessoDefault";
             lblUltimoAcessoDefault.Size = new Size(283, 25);
             lblUltimoAcessoDefault.TabIndex = 32;
@@ -94,9 +94,9 @@
             // lblUltimoAcesso
             // 
             lblUltimoAcesso.AutoSize = true;
-            lblUltimoAcesso.BackColor = SystemColors.ActiveCaption;
+            lblUltimoAcesso.BackColor = SystemColors.MenuHighlight;
             lblUltimoAcesso.Font = new Font("Segoe UI", 14F);
-            lblUltimoAcesso.Location = new Point(262, 426);
+            lblUltimoAcesso.Location = new Point(258, 426);
             lblUltimoAcesso.Name = "lblUltimoAcesso";
             lblUltimoAcesso.Size = new Size(135, 25);
             lblUltimoAcesso.TabIndex = 31;
@@ -116,7 +116,7 @@
             // lblPerfil
             // 
             lblPerfil.AutoSize = true;
-            lblPerfil.BackColor = SystemColors.ActiveCaption;
+            lblPerfil.BackColor = SystemColors.MenuHighlight;
             lblPerfil.Font = new Font("Segoe UI", 14F);
             lblPerfil.Location = new Point(258, 351);
             lblPerfil.Name = "lblPerfil";
@@ -160,7 +160,7 @@
             // lblNomeUsuario
             // 
             lblNomeUsuario.AutoSize = true;
-            lblNomeUsuario.BackColor = SystemColors.ActiveCaption;
+            lblNomeUsuario.BackColor = SystemColors.MenuHighlight;
             lblNomeUsuario.Font = new Font("Segoe UI", 14F);
             lblNomeUsuario.Location = new Point(258, 137);
             lblNomeUsuario.Name = "lblNomeUsuario";
@@ -168,24 +168,24 @@
             lblNomeUsuario.TabIndex = 25;
             lblNomeUsuario.Text = "Nome de Usuário: ";
             // 
-            // lstUsuarios
+            // lstFuncionarios
             // 
-            lstUsuarios.BackColor = SystemColors.ControlDark;
-            lstUsuarios.Font = new Font("Segoe UI", 14F);
-            lstUsuarios.ForeColor = SystemColors.Window;
-            lstUsuarios.FormattingEnabled = true;
-            lstUsuarios.ItemHeight = 25;
-            lstUsuarios.Location = new Point(11, 72);
-            lstUsuarios.Name = "lstUsuarios";
-            lstUsuarios.Size = new Size(245, 404);
-            lstUsuarios.TabIndex = 0;
-            lstUsuarios.Tag = "Lista de Usuários";
-            lstUsuarios.Click += lstUsuarios_Click;
+            lstFuncionarios.BackColor = SystemColors.ControlDark;
+            lstFuncionarios.Font = new Font("Segoe UI", 14F);
+            lstFuncionarios.ForeColor = SystemColors.Window;
+            lstFuncionarios.FormattingEnabled = true;
+            lstFuncionarios.ItemHeight = 25;
+            lstFuncionarios.Location = new Point(11, 72);
+            lstFuncionarios.Name = "lstFuncionarios";
+            lstFuncionarios.Size = new Size(245, 404);
+            lstFuncionarios.TabIndex = 0;
+            lstFuncionarios.Tag = "Lista de Usuários";
+            lstFuncionarios.Click += lstUsuarios_Click;
             // 
             // lblNome
             // 
             lblNome.AutoSize = true;
-            lblNome.BackColor = SystemColors.ActiveCaption;
+            lblNome.BackColor = SystemColors.MenuHighlight;
             lblNome.Font = new Font("Segoe UI", 14F);
             lblNome.Location = new Point(258, 72);
             lblNome.Name = "lblNome";
@@ -207,7 +207,7 @@
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.BackColor = SystemColors.ActiveCaption;
+            lblEmail.BackColor = SystemColors.MenuHighlight;
             lblEmail.Font = new Font("Segoe UI", 14F);
             lblEmail.Location = new Point(258, 204);
             lblEmail.Name = "lblEmail";
@@ -218,7 +218,7 @@
             // lblTelefone
             // 
             lblTelefone.AutoSize = true;
-            lblTelefone.BackColor = SystemColors.ActiveCaption;
+            lblTelefone.BackColor = SystemColors.MenuHighlight;
             lblTelefone.Font = new Font("Segoe UI", 14F);
             lblTelefone.Location = new Point(258, 280);
             lblTelefone.Name = "lblTelefone";
@@ -226,7 +226,7 @@
             lblTelefone.TabIndex = 17;
             lblTelefone.Text = "Telefone:";
             // 
-            // ListaUsuarios
+            // ListaFuncionarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -234,7 +234,7 @@
             Controls.Add(pnlListaUsuarios);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "ListaUsuarios";
+            Name = "ListaFuncionarios";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ListaUsuarios";
             pnlListaUsuarios.ResumeLayout(false);
@@ -245,7 +245,7 @@
         #endregion
 
         private Panel pnlListaUsuarios;
-        private ListBox lstUsuarios;
+        private ListBox lstFuncionarios;
         private TextBox txtNome;
         private Label lblNomeUsuarioDefault;
         private Label lblEmail;
