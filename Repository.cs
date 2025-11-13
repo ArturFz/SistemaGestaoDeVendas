@@ -31,15 +31,15 @@ namespace Trabalho1_ProgVis
             {
                 Credencial adminCredencial = new Credencial()
                 {
-                    NomeUsuario = "Vendedor",
+                    NomeUsuario = "Patrao",
                     Senha = "Senha",
-                    Perfil = Perfil.VENDEDOR
+                    Perfil = Perfil.GERENTE
                 };
                 Usuario usuarioAdmin = new Usuario()
                 {
                     Nome = "Admin",
-                    Telefone = "12345678911",
-                    Email = "admin@gmail.com",
+                    Telefone = "11982345678",
+                    Email = "patrao@gmail.com",
                     Credencial = adminCredencial
                 };
 

@@ -34,7 +34,7 @@
             mnuCadastro = new ToolStripMenuItem();
             mnuCadastroUsuario = new ToolStripMenuItem();
             mnuRelatorio = new ToolStripMenuItem();
-            mnuRelatorioUsuarios = new ToolStripMenuItem();
+            mnuRelatorioFuncionarios = new ToolStripMenuItem();
             mnuAjuda = new ToolStripMenuItem();
             mnuAjudaSobre = new ToolStripMenuItem();
             staBarraEstado = new StatusStrip();
@@ -63,7 +63,7 @@
             // mnuArquivoSair
             // 
             mnuArquivoSair.Name = "mnuArquivoSair";
-            mnuArquivoSair.Size = new Size(180, 22);
+            mnuArquivoSair.Size = new Size(93, 22);
             mnuArquivoSair.Text = "Sair";
             mnuArquivoSair.Click += mnuArquivoSair_Click;
             // 
@@ -77,23 +77,23 @@
             // mnuCadastroUsuario
             // 
             mnuCadastroUsuario.Name = "mnuCadastroUsuario";
-            mnuCadastroUsuario.Size = new Size(180, 22);
+            mnuCadastroUsuario.Size = new Size(114, 22);
             mnuCadastroUsuario.Text = "Usuário";
             mnuCadastroUsuario.Click += mnuCadastroUsuario_Click;
             // 
             // mnuRelatorio
             // 
-            mnuRelatorio.DropDownItems.AddRange(new ToolStripItem[] { mnuRelatorioUsuarios });
+            mnuRelatorio.DropDownItems.AddRange(new ToolStripItem[] { mnuRelatorioFuncionarios });
             mnuRelatorio.Name = "mnuRelatorio";
             mnuRelatorio.Size = new Size(66, 20);
             mnuRelatorio.Text = "Relatório";
             // 
-            // mnuRelatorioUsuarios
+            // mnuRelatorioFuncionarios
             // 
-            mnuRelatorioUsuarios.Name = "mnuRelatorioUsuarios";
-            mnuRelatorioUsuarios.Size = new Size(119, 22);
-            mnuRelatorioUsuarios.Text = "Usuários";
-            mnuRelatorioUsuarios.Click += mnuRelatorioUsuarios_Click;
+            mnuRelatorioFuncionarios.Name = "mnuRelatorioFuncionarios";
+            mnuRelatorioFuncionarios.Size = new Size(180, 22);
+            mnuRelatorioFuncionarios.Text = "Funcionários";
+            mnuRelatorioFuncionarios.Click += mnuRelatorioUsuarios_Click;
             // 
             // mnuAjuda
             // 
@@ -157,6 +157,6 @@
         private ToolStripStatusLabel staBarraEstadoUltimoAcesso;
         private ToolStripMenuItem mnuAjuda;
         private ToolStripMenuItem mnuAjudaSobre;
-        private ToolStripMenuItem mnuRelatorioUsuarios;
+        private ToolStripMenuItem mnuRelatorioFuncionarios;
     }
 }

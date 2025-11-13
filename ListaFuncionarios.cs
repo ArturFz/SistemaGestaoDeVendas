@@ -10,26 +10,26 @@ using System.Windows.Forms;
 
 namespace Trabalho1_ProgVis
 {
-    public partial class ListaUsuarios : Form
+    public partial class ListaFuncionarios : Form
     {
-        private static ListaUsuarios? _instance;
+        private static ListaFuncionarios? _instance;
 
-        public ListaUsuarios()
+        public ListaFuncionarios()
         {
             InitializeComponent();
 
             List<Usuario> usuarios = new List<Usuario>();
             usuarios = UsuarioRepository.FindAllWithCredencial();
 
-            lstUsuarios.Items.AddRange(usuarios.ToArray());
+            lstFuncionarios.Items.AddRange(usuarios.ToArray());
         }
 
         #region SingleTon
-        public static ListaUsuarios GetInstance()
+        public static ListaFuncionarios GetInstance()
         {
             if (_instance == null || _instance.IsDisposed)
             {
-                _instance = new ListaUsuarios();
+                _instance = new ListaFuncionarios();
             }
 
             return _instance;
@@ -38,7 +38,7 @@ namespace Trabalho1_ProgVis
 
         private void lstUsuarios_Click(object sender, EventArgs e)
         {
-            Usuario? usuario = (Usuario?)lstUsuarios.SelectedItem;
+            Usuario? usuario = (Usuario?)lstFuncionarios.SelectedItem;
 
             if (usuario == null) return;
 

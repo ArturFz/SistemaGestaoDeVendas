@@ -6,6 +6,7 @@ namespace Trabalho1_ProgVis
         private Cadastro()
         {
             InitializeComponent();
+            cboPerfil.SelectedIndex = 2;
         }
 
         #region SingleTon
