@@ -26,5 +26,44 @@ namespace Trabalho1_ProgVis
         public List<Pagamento> Pagamentos { get; set; }
         public List<Item> Itens { get; set; }
 
+        public Compra()
+        {
+            Pagamentos = new List<Pagamento>();
+            Itens = new List<Item>();
+            Inicio = DateTime.Now;
+            Estado = Estado.PENDENTE;
+        }
+
+        public Decimal CalcularTotal()
+        {
+            if (Itens == null || Itens.Count == 0)
+            {
+                return 0;
+            }
+
+            Decimal total = 0;
+            foreach (var item in Itens)
+            {
+                if (item == null) continue;
+                try
+                {
+                    total += item.CalcularTotal();
+                }
+                catch
+                {
+                    Decimal precoUnitario = item.PrecoUnitario;
+                    Decimal quantidade = item.Quantidade;
+                    Decimal desconto = item.Desconto;
+                    total += item.CalcularTotal();
+                }
+            }
+        return total;
+        }
+
+        public Decimal CalcularComissao()
+        {
+            var comissao = CalcularTotal() * 0.01m;
+            return comissao;
+        }
     }
 }
