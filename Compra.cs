@@ -25,7 +25,7 @@ namespace Trabalho1_ProgVis
         public Vendedor Vendedor { get; set; }
         public List<Pagamento> Pagamentos { get; set; }
         public List<Item> Itens { get; set; }
-
+        public Cliente Cliente { get; set; }
         public Compra()
         {
             Pagamentos = new List<Pagamento>();
