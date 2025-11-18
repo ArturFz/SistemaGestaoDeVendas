@@ -33,8 +33,12 @@
             mnuArquivoSair = new ToolStripMenuItem();
             mnuCadastro = new ToolStripMenuItem();
             mnuCadastroUsuario = new ToolStripMenuItem();
+            mnuCadastroCliente = new ToolStripMenuItem();
             mnuRelatorio = new ToolStripMenuItem();
             mnuRelatorioFuncionarios = new ToolStripMenuItem();
+            catálogoToolStripMenuItem = new ToolStripMenuItem();
+            produtosToolStripMenuItem = new ToolStripMenuItem();
+            categoriasToolStripMenuItem = new ToolStripMenuItem();
             mnuAjuda = new ToolStripMenuItem();
             mnuAjudaSobre = new ToolStripMenuItem();
             staBarraEstado = new StatusStrip();
@@ -46,7 +50,7 @@
             // menuStrip1
             // 
             menuStrip1.BackColor = SystemColors.MenuHighlight;
-            menuStrip1.Items.AddRange(new ToolStripItem[] { mnuArquivo, mnuCadastro, mnuRelatorio, mnuAjuda });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { mnuArquivo, mnuCadastro, catálogoToolStripMenuItem, mnuRelatorio, mnuAjuda });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(845, 24);
@@ -69,7 +73,7 @@
             // 
             // mnuCadastro
             // 
-            mnuCadastro.DropDownItems.AddRange(new ToolStripItem[] { mnuCadastroUsuario });
+            mnuCadastro.DropDownItems.AddRange(new ToolStripItem[] { mnuCadastroUsuario, mnuCadastroCliente });
             mnuCadastro.Name = "mnuCadastro";
             mnuCadastro.Size = new Size(66, 20);
             mnuCadastro.Text = "Cadastro";
@@ -80,6 +84,13 @@
             mnuCadastroUsuario.Size = new Size(114, 22);
             mnuCadastroUsuario.Text = "Usuário";
             mnuCadastroUsuario.Click += mnuCadastroUsuario_Click;
+            // 
+            // mnuCadastroCliente
+            // 
+            mnuCadastroCliente.Name = "mnuCadastroCliente";
+            mnuCadastroCliente.Size = new Size(180, 22);
+            mnuCadastroCliente.Text = "Cliente";
+            mnuCadastroCliente.Click += mnuCadastroCliente_Click;
             // 
             // mnuRelatorio
             // 
@@ -95,6 +106,25 @@
             mnuRelatorioFuncionarios.Text = "Funcionários";
             mnuRelatorioFuncionarios.Click += mnuRelatorioUsuarios_Click;
             // 
+            // catálogoToolStripMenuItem
+            // 
+            catálogoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { produtosToolStripMenuItem, categoriasToolStripMenuItem });
+            catálogoToolStripMenuItem.Name = "catálogoToolStripMenuItem";
+            catálogoToolStripMenuItem.Size = new Size(67, 20);
+            catálogoToolStripMenuItem.Text = "Catálogo";
+            // 
+            // produtosToolStripMenuItem
+            // 
+            produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
+            produtosToolStripMenuItem.Size = new Size(180, 22);
+            produtosToolStripMenuItem.Text = "Produtos";
+            // 
+            // categoriasToolStripMenuItem
+            // 
+            categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
+            categoriasToolStripMenuItem.Size = new Size(180, 22);
+            categoriasToolStripMenuItem.Text = "Categorias";
+            // 
             // mnuAjuda
             // 
             mnuAjuda.DropDownItems.AddRange(new ToolStripItem[] { mnuAjudaSobre });
@@ -105,7 +135,7 @@
             // mnuAjudaSobre
             // 
             mnuAjudaSobre.Name = "mnuAjudaSobre";
-            mnuAjudaSobre.Size = new Size(104, 22);
+            mnuAjudaSobre.Size = new Size(180, 22);
             mnuAjudaSobre.Text = "Sobre";
             mnuAjudaSobre.Click += mnuAjudaSobre_Click;
             // 
@@ -158,5 +188,9 @@
         private ToolStripMenuItem mnuAjuda;
         private ToolStripMenuItem mnuAjudaSobre;
         private ToolStripMenuItem mnuRelatorioFuncionarios;
+        private ToolStripMenuItem mnuCadastroCliente;
+        private ToolStripMenuItem catálogoToolStripMenuItem;
+        private ToolStripMenuItem produtosToolStripMenuItem;
+        private ToolStripMenuItem categoriasToolStripMenuItem;
     }
 }

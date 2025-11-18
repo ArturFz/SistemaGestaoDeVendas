@@ -1,6 +1,6 @@
 ﻿namespace Trabalho1_ProgVis
 {
-    partial class Cadastro
+    partial class CadastroFuncionario
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cadastro));
-            panel1 = new Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroFuncionario));
+            pnlCadastroFuncionario = new Panel();
             lblPerfil = new Label();
             cboPerfil = new ComboBox();
-            pictureBox1 = new PictureBox();
+            picLogo = new PictureBox();
             lblTitulo = new Label();
             lblAvisoSucesso = new Label();
             lblAvisoUsuario = new Label();
@@ -48,35 +48,35 @@
             txtNome = new TextBox();
             txtEmail = new TextBox();
             btnCadastrar = new Button();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            pnlCadastroFuncionario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picLogo).BeginInit();
             SuspendLayout();
             // 
-            // panel1
+            // pnlCadastroFuncionario
             // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.Controls.Add(lblPerfil);
-            panel1.Controls.Add(cboPerfil);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(lblTitulo);
-            panel1.Controls.Add(lblAvisoSucesso);
-            panel1.Controls.Add(lblAvisoUsuario);
-            panel1.Controls.Add(lblAvisoVazio);
-            panel1.Controls.Add(mskTelefone);
-            panel1.Controls.Add(lblSenha);
-            panel1.Controls.Add(txtSenha);
-            panel1.Controls.Add(lblNomeUsuario);
-            panel1.Controls.Add(txtNomeUsuario);
-            panel1.Controls.Add(lblTelefone);
-            panel1.Controls.Add(lblEmail);
-            panel1.Controls.Add(lblNome);
-            panel1.Controls.Add(txtNome);
-            panel1.Controls.Add(txtEmail);
-            panel1.Controls.Add(btnCadastrar);
-            panel1.Location = new Point(4, 3);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(498, 655);
-            panel1.TabIndex = 0;
+            pnlCadastroFuncionario.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pnlCadastroFuncionario.Controls.Add(lblPerfil);
+            pnlCadastroFuncionario.Controls.Add(cboPerfil);
+            pnlCadastroFuncionario.Controls.Add(picLogo);
+            pnlCadastroFuncionario.Controls.Add(lblTitulo);
+            pnlCadastroFuncionario.Controls.Add(lblAvisoSucesso);
+            pnlCadastroFuncionario.Controls.Add(lblAvisoUsuario);
+            pnlCadastroFuncionario.Controls.Add(lblAvisoVazio);
+            pnlCadastroFuncionario.Controls.Add(mskTelefone);
+            pnlCadastroFuncionario.Controls.Add(lblSenha);
+            pnlCadastroFuncionario.Controls.Add(txtSenha);
+            pnlCadastroFuncionario.Controls.Add(lblNomeUsuario);
+            pnlCadastroFuncionario.Controls.Add(txtNomeUsuario);
+            pnlCadastroFuncionario.Controls.Add(lblTelefone);
+            pnlCadastroFuncionario.Controls.Add(lblEmail);
+            pnlCadastroFuncionario.Controls.Add(lblNome);
+            pnlCadastroFuncionario.Controls.Add(txtNome);
+            pnlCadastroFuncionario.Controls.Add(txtEmail);
+            pnlCadastroFuncionario.Controls.Add(btnCadastrar);
+            pnlCadastroFuncionario.Location = new Point(4, 3);
+            pnlCadastroFuncionario.Name = "pnlCadastroFuncionario";
+            pnlCadastroFuncionario.Size = new Size(498, 655);
+            pnlCadastroFuncionario.TabIndex = 0;
             // 
             // lblPerfil
             // 
@@ -98,14 +98,14 @@
             cboPerfil.Size = new Size(189, 33);
             cboPerfil.TabIndex = 18;
             // 
-            // pictureBox1
+            // picLogo
             // 
-            pictureBox1.Image = Trabalho_TCD.Properties.Resources.SAA__1__removebg_preview;
-            pictureBox1.Location = new Point(143, 22);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(194, 153);
-            pictureBox1.TabIndex = 17;
-            pictureBox1.TabStop = false;
+            picLogo.Image = Trabalho_TCD.Properties.Resources.SAA__1__removebg_preview;
+            picLogo.Location = new Point(143, 22);
+            picLogo.Name = "picLogo";
+            picLogo.Size = new Size(194, 153);
+            picLogo.TabIndex = 17;
+            picLogo.TabStop = false;
             // 
             // lblTitulo
             // 
@@ -266,27 +266,27 @@
             btnCadastrar.UseVisualStyleBackColor = false;
             btnCadastrar.Click += btnCadastrar_Click;
             // 
-            // Cadastro
+            // CadastroFuncionario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(506, 659);
-            Controls.Add(panel1);
+            Controls.Add(pnlCadastroFuncionario);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
-            Name = "Cadastro";
+            Name = "CadastroFuncionario";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            pnlCadastroFuncionario.ResumeLayout(false);
+            pnlCadastroFuncionario.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picLogo).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panel1;
+        private Panel pnlCadastroFuncionario;
         private Button btnCadastrar;
         private TextBox txtNome;
         private TextBox txtEmail;
@@ -302,7 +302,7 @@
         private Label lblAvisoUsuario;
         private Label lblAvisoSucesso;
         private Label lblTitulo;
-        private PictureBox pictureBox1;
+        private PictureBox picLogo;
         private ComboBox cboPerfil;
         private Label lblPerfil;
     }

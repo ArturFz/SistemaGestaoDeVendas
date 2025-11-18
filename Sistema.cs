@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Trabalho_TCD;
 
 namespace Trabalho1_ProgVis
 {
@@ -25,12 +26,12 @@ namespace Trabalho1_ProgVis
             Text = "Sistema /" + usuario.Nome;
             //mnuCadastro.Enabled = usuario.Credencial.Perfil;
 
-            if (usuario.Credencial.UltimoAcesso == DateTime.MinValue) 
+            if (usuario.Credencial.UltimoAcesso == DateTime.MinValue)
                 staBarraEstadoUltimoAcesso.Visible = false;
 
             _credencial = UsuarioRepository.FindByIdWithCredencial(usuario.Id)?.Credencial;
 
-            staBarraEstadoUltimoAcesso.Text = $"Último Acesso: {_credencial.UltimoAcesso}";           
+            staBarraEstadoUltimoAcesso.Text = $"Último Acesso: {_credencial.UltimoAcesso}";
 
         }
 
@@ -45,7 +46,7 @@ namespace Trabalho1_ProgVis
             return _instance;
         }
         #endregion
-        
+
         private void Sistema_FormClosed(object sender, FormClosedEventArgs e)
         {
             Login.GetInstance().Show();
@@ -62,7 +63,7 @@ namespace Trabalho1_ProgVis
 
         private void mnuCadastroUsuario_Click(object sender, EventArgs e)
         {
-            Cadastro cadastro = Cadastro.GetInstance();
+            CadastroFuncionario cadastro = CadastroFuncionario.GetInstance();
             cadastro.MdiParent = this;
             cadastro.BringToFront();
             cadastro.WindowState = FormWindowState.Normal;
@@ -88,6 +89,16 @@ namespace Trabalho1_ProgVis
             listaUsuarios.WindowState = FormWindowState.Normal;
 
             listaUsuarios.Show();
+        }
+
+        private void mnuCadastroCliente_Click(object sender, EventArgs e)
+        {
+            CadastroCliente cadastro = CadastroCliente.GetInstance();
+            cadastro.MdiParent = this;
+            cadastro.BringToFront();
+            cadastro.WindowState = FormWindowState.Normal;
+
+            cadastro.Show();
         }
     }
 }

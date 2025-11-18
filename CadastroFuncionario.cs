@@ -1,20 +1,20 @@
 namespace Trabalho1_ProgVis
 {
-    public partial class Cadastro : Form
+    public partial class CadastroFuncionario : Form
     {
-        private static Cadastro? _instance;
-        private Cadastro()
+        private static CadastroFuncionario? _instance;
+        private CadastroFuncionario()
         {
             InitializeComponent();
             cboPerfil.SelectedIndex = 2;
         }
 
         #region SingleTon
-        public static Cadastro GetInstance()
+        public static CadastroFuncionario GetInstance()
         {
             if (_instance == null || _instance.IsDisposed)
             {
-                _instance = new Cadastro();
+                _instance = new CadastroFuncionario();
             }
 
             return _instance;
