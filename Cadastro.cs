@@ -127,7 +127,7 @@ namespace Trabalho1_ProgVis
 
 
             }
-            
+
             foreach (Credencial c in CredencialRepository.FindAll())
             {
                 if (c.NomeUsuario == txtNomeUsuario.Text)
@@ -139,12 +139,12 @@ namespace Trabalho1_ProgVis
                     return;
                 }
             }
-
+            Perfil perfilSelecionado = GetSelectedPerfilFromCombo();
             Credencial novaCredencial = new Credencial()
             {
                 NomeUsuario = txtNomeUsuario.Text,
                 Senha = txtSenha.Text,
-                //Perfil = chkPerfil.Checked
+                Perfil = perfilSelecionado
             };
 
             Usuario novoUsuario = new Usuario()
@@ -167,6 +167,15 @@ namespace Trabalho1_ProgVis
 
 
             lblAvisoSucesso.Visible = true;
+        }
+        private Perfil GetSelectedPerfilFromCombo()
+        {
+            return cboPerfil.SelectedIndex switch
+            {
+                0 => Perfil.GERENTE,
+                1 => Perfil.VENDEDOR,
+                2 => Perfil.OPERADOR_CAIXA
+            };
         }
     }
 }

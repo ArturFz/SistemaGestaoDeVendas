@@ -95,7 +95,7 @@
             cboPerfil.Items.AddRange(new object[] { "Gerente", "Vendedor", "Operador de Caixa" });
             cboPerfil.Location = new Point(8, 523);
             cboPerfil.Name = "cboPerfil";
-            cboPerfil.Size = new Size(189, 33);
+            cboPerfil.Size = new Size(185, 33);
             cboPerfil.TabIndex = 18;
             // 
             // pictureBox1
