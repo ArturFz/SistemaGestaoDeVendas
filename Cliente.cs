@@ -15,18 +15,36 @@ namespace Trabalho1_ProgVis
         public String Cpf { get; set; }
         public String Telefone { get; set; }
         public String Email { get; set; }
-        public Compra Compra { get; set; }
+        public List<Compra> Compras { get; set; }
 
-        public Boolean PodeRealizarNovaCompra()
+        public Boolean PodeRealizarNovaCompra(Boolean autorizadoGerente = false)
         {
-            if (this.Compra == null || this.Compra.Pagamentos == null || !this.Compra.Pagamentos.Any())
+            if (this.Compras == null || !this.Compras.Any())
             {
                 return true;
             }
-            else if (this.Compra.Pagamentos.Any(p => p.Vencimento < DateTime.Now))
+
+            foreach (var compra in this.Compras)
             {
-                return false;
+                if (compra == null) continue;
+                if (compra.Estado == Estado.CANCELADA) continue;
+                if (compra.Pagamentos == null || !compra .Pagamentos.Any()) continue;
+
+                var existeParcelaVencidaNaoQuitada = compra.Pagamentos.Any(p =>
+                    p.Vencimento < DateTime.Now &&
+                    (p.DataPagamento == default(DateTime) || p.DataPagamento == DateTime.MinValue)
+                );
+
+                if (existeParcelaVencidaNaoQuitada)
+                {
+                    if (autorizadoGerente)
+                    {
+                        return true;
+                    }
+                    return false;
+                }
             }
+
             return true;
         }
     }
