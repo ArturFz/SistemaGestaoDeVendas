@@ -12,7 +12,6 @@ namespace Trabalho1_ProgVis
     {
         public UInt64 Id { get; set; }
         public String Nome { get; set; }
-        public String Cpf { get; set; }
         public String Telefone { get; set; }
         public String Email { get; set; }
         public List<Compra> Compras { get; set; }
