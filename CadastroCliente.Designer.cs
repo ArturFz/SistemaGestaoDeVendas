@@ -59,7 +59,7 @@
             pnlCadastroCliente.Controls.Add(mskTelefone);
             pnlCadastroCliente.Location = new Point(0, 0);
             pnlCadastroCliente.Name = "pnlCadastroCliente";
-            pnlCadastroCliente.Size = new Size(516, 492);
+            pnlCadastroCliente.Size = new Size(516, 482);
             pnlCadastroCliente.TabIndex = 0;
             // 
             // lblTitulo
@@ -79,7 +79,7 @@
             lblAvisoSucesso.BackColor = Color.Green;
             lblAvisoSucesso.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblAvisoSucesso.ForeColor = SystemColors.ControlLightLight;
-            lblAvisoSucesso.Location = new Point(20, 461);
+            lblAvisoSucesso.Location = new Point(20, 449);
             lblAvisoSucesso.Name = "lblAvisoSucesso";
             lblAvisoSucesso.Size = new Size(202, 20);
             lblAvisoSucesso.TabIndex = 33;
@@ -100,7 +100,7 @@
             btnCadastrar.BackColor = SystemColors.MenuHighlight;
             btnCadastrar.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCadastrar.ForeColor = SystemColors.ButtonHighlight;
-            btnCadastrar.Location = new Point(329, 443);
+            btnCadastrar.Location = new Point(329, 429);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(169, 43);
             btnCadastrar.TabIndex = 20;
@@ -113,7 +113,7 @@
             lblAvisoUsuario.BackColor = Color.Yellow;
             lblAvisoUsuario.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblAvisoUsuario.ForeColor = Color.Red;
-            lblAvisoUsuario.Location = new Point(20, 441);
+            lblAvisoUsuario.Location = new Point(20, 429);
             lblAvisoUsuario.Name = "lblAvisoUsuario";
             lblAvisoUsuario.Size = new Size(215, 20);
             lblAvisoUsuario.TabIndex = 32;
@@ -134,7 +134,7 @@
             lblAvisoVazio.BackColor = Color.Yellow;
             lblAvisoVazio.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblAvisoVazio.ForeColor = Color.Red;
-            lblAvisoVazio.Location = new Point(20, 421);
+            lblAvisoVazio.Location = new Point(20, 409);
             lblAvisoVazio.Name = "lblAvisoVazio";
             lblAvisoVazio.Size = new Size(217, 20);
             lblAvisoVazio.TabIndex = 31;
@@ -189,12 +189,14 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(518, 493);
+            ClientSize = new Size(518, 483);
             Controls.Add(picLogo);
             Controls.Add(lblNome);
             Controls.Add(txtNome);
             Controls.Add(pnlCadastroCliente);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "CadastroCliente";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CadastroCliente";
             pnlCadastroCliente.ResumeLayout(false);
             pnlCadastroCliente.PerformLayout();

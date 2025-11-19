@@ -108,7 +108,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(797, 582);
             Controls.Add(pnlCategorias);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "Categorias";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Categorias";
             pnlCategorias.ResumeLayout(false);
             pnlCategorias.PerformLayout();

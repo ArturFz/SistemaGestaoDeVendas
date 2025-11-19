@@ -12,6 +12,17 @@ namespace Trabalho_TCD
 {
     public partial class Categorias : Form
     {
+        private static Categorias? _instance;
+        #region SingleTon
+        public static Categorias GetInstance()
+        {
+            if (_instance == null || _instance.IsDisposed)
+            {
+                _instance = new Categorias();
+            }
+            return _instance;
+        }
+        #endregion
         public Categorias()
         {
             InitializeComponent();

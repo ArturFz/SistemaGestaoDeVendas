@@ -211,8 +211,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(753, 616);
             Controls.Add(pnlProdutos);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "Produtos";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Produtos";
+            Load += Produtos_Load;
             pnlProdutos.ResumeLayout(false);
             pnlProdutos.PerformLayout();
             ResumeLayout(false);

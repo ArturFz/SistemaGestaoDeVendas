@@ -12,12 +12,28 @@ namespace Trabalho_TCD
 {
     public partial class Produtos : Form
     {
+        private static Produtos? _instance;
         public Produtos()
         {
             InitializeComponent();
         }
+        #region SingleTon
 
+        public static Produtos GetInstance()
+        {
+            if (_instance == null || _instance.IsDisposed)
+            {
+                _instance = new Produtos();
+            }
+            return _instance;
+        }
+        #endregion
         private void lblTitulo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Produtos_Load(object sender, EventArgs e)
         {
 
         }

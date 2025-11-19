@@ -75,7 +75,7 @@
             pnlCadastroFuncionario.Controls.Add(btnCadastrar);
             pnlCadastroFuncionario.Location = new Point(4, 3);
             pnlCadastroFuncionario.Name = "pnlCadastroFuncionario";
-            pnlCadastroFuncionario.Size = new Size(498, 655);
+            pnlCadastroFuncionario.Size = new Size(498, 637);
             pnlCadastroFuncionario.TabIndex = 0;
             // 
             // lblPerfil
@@ -124,7 +124,7 @@
             lblAvisoSucesso.BackColor = Color.Green;
             lblAvisoSucesso.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblAvisoSucesso.ForeColor = SystemColors.ControlLightLight;
-            lblAvisoSucesso.Location = new Point(8, 622);
+            lblAvisoSucesso.Location = new Point(8, 611);
             lblAvisoSucesso.Name = "lblAvisoSucesso";
             lblAvisoSucesso.Size = new Size(202, 20);
             lblAvisoSucesso.TabIndex = 15;
@@ -137,7 +137,7 @@
             lblAvisoUsuario.BackColor = Color.Yellow;
             lblAvisoUsuario.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblAvisoUsuario.ForeColor = Color.Red;
-            lblAvisoUsuario.Location = new Point(8, 599);
+            lblAvisoUsuario.Location = new Point(8, 591);
             lblAvisoUsuario.Name = "lblAvisoUsuario";
             lblAvisoUsuario.Size = new Size(215, 20);
             lblAvisoUsuario.TabIndex = 14;
@@ -150,7 +150,7 @@
             lblAvisoVazio.BackColor = Color.Yellow;
             lblAvisoVazio.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblAvisoVazio.ForeColor = Color.Red;
-            lblAvisoVazio.Location = new Point(8, 576);
+            lblAvisoVazio.Location = new Point(8, 571);
             lblAvisoVazio.Name = "lblAvisoVazio";
             lblAvisoVazio.Size = new Size(217, 20);
             lblAvisoVazio.TabIndex = 13;
@@ -258,7 +258,7 @@
             btnCadastrar.BackColor = SystemColors.MenuHighlight;
             btnCadastrar.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCadastrar.ForeColor = SystemColors.ButtonHighlight;
-            btnCadastrar.Location = new Point(317, 599);
+            btnCadastrar.Location = new Point(317, 588);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(169, 43);
             btnCadastrar.TabIndex = 0;
@@ -270,7 +270,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(506, 659);
+            ClientSize = new Size(506, 641);
             Controls.Add(pnlCadastroFuncionario);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Icon = (Icon)resources.GetObject("$this.Icon");

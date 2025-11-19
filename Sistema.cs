@@ -100,5 +100,25 @@ namespace Trabalho1_ProgVis
 
             cadastro.Show();
         }
+
+        private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Produtos cadastro = Produtos.GetInstance();
+            cadastro.MdiParent = this;
+            cadastro.BringToFront();
+            cadastro.WindowState = FormWindowState.Normal;
+
+            cadastro.Show();
+        }
+
+        private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Categorias cadastro = Categorias.GetInstance();
+            cadastro.MdiParent = this;
+            cadastro.BringToFront();
+            cadastro.WindowState = FormWindowState.Normal;
+
+            cadastro.Show();
+        }
     }
 }
