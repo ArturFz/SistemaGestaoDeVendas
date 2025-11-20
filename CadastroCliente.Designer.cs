@@ -48,6 +48,7 @@
             // pnlCadastroCliente
             // 
             pnlCadastroCliente.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pnlCadastroCliente.Controls.Add(picLogo);
             pnlCadastroCliente.Controls.Add(lblTitulo);
             pnlCadastroCliente.Controls.Add(lblAvisoSucesso);
             pnlCadastroCliente.Controls.Add(lblEmail);
@@ -161,10 +162,11 @@
             // 
             // picLogo
             // 
-            picLogo.Image = Properties.Resources.SAA__1__removebg_preview;
-            picLogo.Location = new Point(155, 20);
+            picLogo.Image = Properties.Resources.IconeNAvendas;
+            picLogo.InitialImage = Properties.Resources.IconeNAvendas;
+            picLogo.Location = new Point(177, 32);
             picLogo.Name = "picLogo";
-            picLogo.Size = new Size(194, 153);
+            picLogo.Size = new Size(157, 133);
             picLogo.TabIndex = 35;
             picLogo.TabStop = false;
             // 
@@ -190,7 +192,6 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(518, 483);
-            Controls.Add(picLogo);
             Controls.Add(lblNome);
             Controls.Add(txtNome);
             Controls.Add(pnlCadastroCliente);

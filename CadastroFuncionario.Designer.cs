@@ -100,10 +100,10 @@
             // 
             // picLogo
             // 
-            picLogo.Image = Trabalho_TCD.Properties.Resources.SAA__1__removebg_preview;
-            picLogo.Location = new Point(143, 22);
+            picLogo.Image = Trabalho_TCD.Properties.Resources.IconeNAvendas;
+            picLogo.Location = new Point(170, 25);
             picLogo.Name = "picLogo";
-            picLogo.Size = new Size(194, 153);
+            picLogo.Size = new Size(159, 137);
             picLogo.TabIndex = 17;
             picLogo.TabStop = false;
             // 

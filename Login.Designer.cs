@@ -56,10 +56,11 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(95, 22);
+            pictureBox1.Image = Trabalho_TCD.Properties.Resources.IconeNAvendas;
+            pictureBox1.InitialImage = Trabalho_TCD.Properties.Resources.IconeNAvendas;
+            pictureBox1.Location = new Point(116, 21);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(194, 153);
+            pictureBox1.Size = new Size(156, 134);
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
             // 
