@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             pnlCadastroCliente = new Panel();
+            picLogo = new PictureBox();
             lblTitulo = new Label();
             lblAvisoSucesso = new Label();
             lblEmail = new Label();
@@ -38,7 +39,6 @@
             lblAvisoVazio = new Label();
             lblTelefone = new Label();
             mskTelefone = new MaskedTextBox();
-            picLogo = new PictureBox();
             lblNome = new Label();
             txtNome = new TextBox();
             pnlCadastroCliente.SuspendLayout();
@@ -62,6 +62,16 @@
             pnlCadastroCliente.Name = "pnlCadastroCliente";
             pnlCadastroCliente.Size = new Size(516, 482);
             pnlCadastroCliente.TabIndex = 0;
+            // 
+            // picLogo
+            // 
+            picLogo.Image = Properties.Resources.IconeNAvendas2;
+            picLogo.InitialImage = Properties.Resources.IconeNAvendas;
+            picLogo.Location = new Point(194, 26);
+            picLogo.Name = "picLogo";
+            picLogo.Size = new Size(139, 133);
+            picLogo.TabIndex = 35;
+            picLogo.TabStop = false;
             // 
             // lblTitulo
             // 
@@ -159,16 +169,6 @@
             mskTelefone.Name = "mskTelefone";
             mskTelefone.Size = new Size(478, 32);
             mskTelefone.TabIndex = 30;
-            // 
-            // picLogo
-            // 
-            picLogo.Image = Properties.Resources.IconeNAvendas;
-            picLogo.InitialImage = Properties.Resources.IconeNAvendas;
-            picLogo.Location = new Point(177, 32);
-            picLogo.Name = "picLogo";
-            picLogo.Size = new Size(157, 133);
-            picLogo.TabIndex = 35;
-            picLogo.TabStop = false;
             // 
             // lblNome
             // 

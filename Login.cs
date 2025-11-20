@@ -80,5 +80,15 @@ namespace Trabalho1_ProgVis
         private void txtSenha_TextChanged(object sender, EventArgs e)
         {
         }
+
+        private void lblTitulo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

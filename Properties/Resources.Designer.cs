@@ -73,6 +73,26 @@ namespace Trabalho_TCD.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap IconeNAvendas1 {
+            get {
+                object obj = ResourceManager.GetObject("IconeNAvendas1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IconeNAvendas2 {
+            get {
+                object obj = ResourceManager.GetObject("IconeNAvendas2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SAA__1__removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("SAA__1_-removebg-preview", resourceCulture);

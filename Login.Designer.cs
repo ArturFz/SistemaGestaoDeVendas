@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             panel1 = new Panel();
+            lblTitulo = new Label();
             pictureBox1 = new PictureBox();
             lblAviso = new Label();
             lblSenha = new Label();
@@ -43,6 +44,7 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.Controls.Add(lblTitulo);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(lblAviso);
             panel1.Controls.Add(lblSenha);
@@ -54,13 +56,25 @@
             panel1.Size = new Size(386, 414);
             panel1.TabIndex = 0;
             // 
+            // lblTitulo
+            // 
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Noto Sans", 21.7499962F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitulo.ForeColor = SystemColors.MenuHighlight;
+            lblTitulo.Location = new Point(144, 149);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(99, 44);
+            lblTitulo.TabIndex = 35;
+            lblTitulo.Text = "Login";
+            lblTitulo.Click += lblTitulo_Click;
+            // 
             // pictureBox1
             // 
-            pictureBox1.Image = Trabalho_TCD.Properties.Resources.IconeNAvendas;
+            pictureBox1.Image = Trabalho_TCD.Properties.Resources.IconeNAvendas2;
             pictureBox1.InitialImage = Trabalho_TCD.Properties.Resources.IconeNAvendas;
-            pictureBox1.Location = new Point(116, 21);
+            pictureBox1.Location = new Point(129, 10);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(156, 134);
+            pictureBox1.Size = new Size(137, 134);
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
             // 
@@ -147,5 +161,6 @@
         private Label lblNomeUsuario;
         private Label lblAviso;
         private PictureBox pictureBox1;
+        private Label lblTitulo;
     }
 }

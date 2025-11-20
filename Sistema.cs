@@ -120,5 +120,10 @@ namespace Trabalho1_ProgVis
 
             cadastro.Show();
         }
+
+        private void Sistema_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
