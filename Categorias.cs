@@ -13,7 +13,7 @@ namespace Trabalho_TCD
     public partial class Categorias : Form
     {
         private static Categorias? _instance;
-        
+
 
         public Categorias()
         {
@@ -43,5 +43,6 @@ namespace Trabalho_TCD
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
     }
 }
