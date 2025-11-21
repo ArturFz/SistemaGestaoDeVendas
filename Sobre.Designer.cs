@@ -46,7 +46,7 @@
             lblTitulo.AutoSize = true;
             lblTitulo.BackColor = Color.Transparent;
             lblTitulo.Font = new Font("Noto Sans", 21.7499962F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitulo.ForeColor = SystemColors.MenuHighlight;
+            lblTitulo.ForeColor = SystemColors.ControlDarkDark;
             lblTitulo.Location = new Point(15, 10);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(620, 44);

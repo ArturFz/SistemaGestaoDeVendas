@@ -73,7 +73,7 @@
             // 
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Noto Sans", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitulo.ForeColor = SystemColors.MenuHighlight;
+            lblTitulo.ForeColor = SystemColors.ControlDarkDark;
             lblTitulo.Location = new Point(83, 0);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(393, 53);
@@ -85,7 +85,7 @@
             lblUltimoAcessoDefault.AutoSize = true;
             lblUltimoAcessoDefault.BackColor = SystemColors.ControlLightLight;
             lblUltimoAcessoDefault.Font = new Font("Segoe UI", 14F);
-            lblUltimoAcessoDefault.Location = new Point(258, 451);
+            lblUltimoAcessoDefault.Location = new Point(258, 450);
             lblUltimoAcessoDefault.Name = "lblUltimoAcessoDefault";
             lblUltimoAcessoDefault.Size = new Size(283, 25);
             lblUltimoAcessoDefault.TabIndex = 32;
@@ -94,9 +94,9 @@
             // lblUltimoAcesso
             // 
             lblUltimoAcesso.AutoSize = true;
-            lblUltimoAcesso.BackColor = SystemColors.MenuHighlight;
+            lblUltimoAcesso.BackColor = SystemColors.ControlDarkDark;
             lblUltimoAcesso.Font = new Font("Segoe UI", 14F);
-            lblUltimoAcesso.Location = new Point(258, 426);
+            lblUltimoAcesso.Location = new Point(258, 425);
             lblUltimoAcesso.Name = "lblUltimoAcesso";
             lblUltimoAcesso.Size = new Size(135, 25);
             lblUltimoAcesso.TabIndex = 31;
@@ -116,7 +116,7 @@
             // lblPerfil
             // 
             lblPerfil.AutoSize = true;
-            lblPerfil.BackColor = SystemColors.MenuHighlight;
+            lblPerfil.BackColor = SystemColors.ControlDarkDark;
             lblPerfil.Font = new Font("Segoe UI", 14F);
             lblPerfil.Location = new Point(258, 351);
             lblPerfil.Name = "lblPerfil";
@@ -160,7 +160,7 @@
             // lblNomeUsuario
             // 
             lblNomeUsuario.AutoSize = true;
-            lblNomeUsuario.BackColor = SystemColors.MenuHighlight;
+            lblNomeUsuario.BackColor = SystemColors.ControlDarkDark;
             lblNomeUsuario.Font = new Font("Segoe UI", 14F);
             lblNomeUsuario.Location = new Point(258, 137);
             lblNomeUsuario.Name = "lblNomeUsuario";
@@ -185,7 +185,7 @@
             // lblNome
             // 
             lblNome.AutoSize = true;
-            lblNome.BackColor = SystemColors.MenuHighlight;
+            lblNome.BackColor = SystemColors.ControlDarkDark;
             lblNome.Font = new Font("Segoe UI", 14F);
             lblNome.Location = new Point(258, 72);
             lblNome.Name = "lblNome";
@@ -207,7 +207,7 @@
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.BackColor = SystemColors.MenuHighlight;
+            lblEmail.BackColor = SystemColors.ControlDarkDark;
             lblEmail.Font = new Font("Segoe UI", 14F);
             lblEmail.Location = new Point(258, 204);
             lblEmail.Name = "lblEmail";
@@ -218,7 +218,7 @@
             // lblTelefone
             // 
             lblTelefone.AutoSize = true;
-            lblTelefone.BackColor = SystemColors.MenuHighlight;
+            lblTelefone.BackColor = SystemColors.ControlDarkDark;
             lblTelefone.Font = new Font("Segoe UI", 14F);
             lblTelefone.Location = new Point(258, 280);
             lblTelefone.Name = "lblTelefone";

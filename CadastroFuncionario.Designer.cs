@@ -100,10 +100,12 @@
             // 
             // picLogo
             // 
-            picLogo.Image = Trabalho_TCD.Properties.Resources.IconeNAvendas2;
-            picLogo.Location = new Point(181, 26);
+            picLogo.Image = Trabalho_TCD.Properties.Resources.icons8_add_user_male_100;
+            picLogo.InitialImage = null;
+            picLogo.Location = new Point(158, 0);
             picLogo.Name = "picLogo";
-            picLogo.Size = new Size(140, 137);
+            picLogo.Size = new Size(187, 182);
+            picLogo.SizeMode = PictureBoxSizeMode.Zoom;
             picLogo.TabIndex = 17;
             picLogo.TabStop = false;
             // 
@@ -111,8 +113,8 @@
             // 
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Noto Sans", 21.7499962F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitulo.ForeColor = SystemColors.MenuHighlight;
-            lblTitulo.Location = new Point(19, 188);
+            lblTitulo.ForeColor = SystemColors.ControlDarkDark;
+            lblTitulo.Location = new Point(20, 185);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(456, 44);
             lblTitulo.TabIndex = 16;
@@ -126,9 +128,9 @@
             lblAvisoSucesso.ForeColor = SystemColors.ControlLightLight;
             lblAvisoSucesso.Location = new Point(8, 611);
             lblAvisoSucesso.Name = "lblAvisoSucesso";
-            lblAvisoSucesso.Size = new Size(202, 20);
+            lblAvisoSucesso.Size = new Size(217, 20);
             lblAvisoSucesso.TabIndex = 15;
-            lblAvisoSucesso.Text = "Usuário criado com sucesso";
+            lblAvisoSucesso.Text = "Usuário criado com sucesso!!!";
             lblAvisoSucesso.Visible = false;
             // 
             // lblAvisoUsuario
@@ -139,9 +141,9 @@
             lblAvisoUsuario.ForeColor = Color.Red;
             lblAvisoUsuario.Location = new Point(8, 591);
             lblAvisoUsuario.Name = "lblAvisoUsuario";
-            lblAvisoUsuario.Size = new Size(215, 20);
+            lblAvisoUsuario.Size = new Size(230, 20);
             lblAvisoUsuario.TabIndex = 14;
-            lblAvisoUsuario.Text = "Nome de Usuário já existente";
+            lblAvisoUsuario.Text = "Nome de Usuário já existente!!!";
             lblAvisoUsuario.Visible = false;
             // 
             // lblAvisoVazio
@@ -152,9 +154,9 @@
             lblAvisoVazio.ForeColor = Color.Red;
             lblAvisoVazio.Location = new Point(8, 571);
             lblAvisoVazio.Name = "lblAvisoVazio";
-            lblAvisoVazio.Size = new Size(217, 20);
+            lblAvisoVazio.Size = new Size(232, 20);
             lblAvisoVazio.TabIndex = 13;
-            lblAvisoVazio.Text = "Os campos estão incompletos";
+            lblAvisoVazio.Text = "Os campos estão incompletos!!!";
             lblAvisoVazio.Visible = false;
             // 
             // mskTelefone
@@ -255,12 +257,12 @@
             // 
             // btnCadastrar
             // 
-            btnCadastrar.BackColor = SystemColors.MenuHighlight;
+            btnCadastrar.BackColor = SystemColors.ControlDarkDark;
             btnCadastrar.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCadastrar.ForeColor = SystemColors.ButtonHighlight;
-            btnCadastrar.Location = new Point(317, 588);
+            btnCadastrar.Location = new Point(295, 581);
             btnCadastrar.Name = "btnCadastrar";
-            btnCadastrar.Size = new Size(169, 43);
+            btnCadastrar.Size = new Size(191, 50);
             btnCadastrar.TabIndex = 0;
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.UseVisualStyleBackColor = false;
@@ -278,6 +280,7 @@
             Name = "CadastroFuncionario";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro";
+            Load += CadastroFuncionario_Load;
             pnlCadastroFuncionario.ResumeLayout(false);
             pnlCadastroFuncionario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picLogo).EndInit();

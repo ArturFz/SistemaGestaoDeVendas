@@ -125,5 +125,10 @@ namespace Trabalho1_ProgVis
         {
 
         }
+
+        private void mnuRelatorio_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

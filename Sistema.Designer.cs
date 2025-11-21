@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sistema));
             menuStrip1 = new MenuStrip();
             mnuArquivo = new ToolStripMenuItem();
             mnuArquivoSair = new ToolStripMenuItem();
@@ -49,104 +50,142 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.BackColor = SystemColors.MenuHighlight;
+            menuStrip1.BackColor = SystemColors.ControlDarkDark;
             menuStrip1.Items.AddRange(new ToolStripItem[] { mnuArquivo, mnuCadastro, catálogoToolStripMenuItem, mnuRelatorio, mnuAjuda });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(845, 24);
+            menuStrip1.Size = new Size(960, 58);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
             // mnuArquivo
             // 
             mnuArquivo.DropDownItems.AddRange(new ToolStripItem[] { mnuArquivoSair });
+            mnuArquivo.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            mnuArquivo.Image = Trabalho_TCD.Properties.Resources.File;
+            mnuArquivo.ImageScaling = ToolStripItemImageScaling.None;
             mnuArquivo.Name = "mnuArquivo";
-            mnuArquivo.Size = new Size(61, 20);
+            mnuArquivo.Size = new Size(147, 54);
             mnuArquivo.Text = "Arquivo";
             // 
             // mnuArquivoSair
             // 
+            mnuArquivoSair.BackColor = SystemColors.ControlDarkDark;
+            mnuArquivoSair.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            mnuArquivoSair.Image = Trabalho_TCD.Properties.Resources.icons8_close_50;
+            mnuArquivoSair.ImageScaling = ToolStripItemImageScaling.None;
             mnuArquivoSair.Name = "mnuArquivoSair";
-            mnuArquivoSair.Size = new Size(93, 22);
+            mnuArquivoSair.Size = new Size(154, 56);
             mnuArquivoSair.Text = "Sair";
             mnuArquivoSair.Click += mnuArquivoSair_Click;
             // 
             // mnuCadastro
             // 
             mnuCadastro.DropDownItems.AddRange(new ToolStripItem[] { mnuCadastroUsuario, mnuCadastroCliente });
+            mnuCadastro.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            mnuCadastro.Image = Trabalho_TCD.Properties.Resources.Plus;
+            mnuCadastro.ImageScaling = ToolStripItemImageScaling.None;
             mnuCadastro.Name = "mnuCadastro";
-            mnuCadastro.Size = new Size(66, 20);
+            mnuCadastro.Size = new Size(157, 54);
             mnuCadastro.Text = "Cadastro";
             // 
             // mnuCadastroUsuario
             // 
+            mnuCadastroUsuario.BackColor = SystemColors.ControlDarkDark;
+            mnuCadastroUsuario.Image = Trabalho_TCD.Properties.Resources.icons8_add_user_male_50;
+            mnuCadastroUsuario.ImageScaling = ToolStripItemImageScaling.None;
             mnuCadastroUsuario.Name = "mnuCadastroUsuario";
-            mnuCadastroUsuario.Size = new Size(114, 22);
+            mnuCadastroUsuario.Size = new Size(190, 56);
             mnuCadastroUsuario.Text = "Usuário";
             mnuCadastroUsuario.Click += mnuCadastroUsuario_Click;
             // 
             // mnuCadastroCliente
             // 
+            mnuCadastroCliente.BackColor = SystemColors.ControlDarkDark;
+            mnuCadastroCliente.Image = Trabalho_TCD.Properties.Resources.icons8_card_payment_50;
+            mnuCadastroCliente.ImageScaling = ToolStripItemImageScaling.None;
             mnuCadastroCliente.Name = "mnuCadastroCliente";
-            mnuCadastroCliente.Size = new Size(114, 22);
+            mnuCadastroCliente.Size = new Size(190, 56);
             mnuCadastroCliente.Text = "Cliente";
             mnuCadastroCliente.Click += mnuCadastroCliente_Click;
             // 
             // catálogoToolStripMenuItem
             // 
             catálogoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { produtosToolStripMenuItem, categoriasToolStripMenuItem });
+            catálogoToolStripMenuItem.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            catálogoToolStripMenuItem.Image = Trabalho_TCD.Properties.Resources.Bookmark;
+            catálogoToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
             catálogoToolStripMenuItem.Name = "catálogoToolStripMenuItem";
-            catálogoToolStripMenuItem.Size = new Size(67, 20);
+            catálogoToolStripMenuItem.Size = new Size(158, 54);
             catálogoToolStripMenuItem.Text = "Catálogo";
             // 
             // produtosToolStripMenuItem
             // 
+            produtosToolStripMenuItem.BackColor = SystemColors.ControlDarkDark;
+            produtosToolStripMenuItem.Image = Trabalho_TCD.Properties.Resources.icons8_products_50;
+            produtosToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
             produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            produtosToolStripMenuItem.Size = new Size(130, 22);
+            produtosToolStripMenuItem.Size = new Size(218, 56);
             produtosToolStripMenuItem.Text = "Produtos";
             produtosToolStripMenuItem.Click += produtosToolStripMenuItem_Click;
             // 
             // categoriasToolStripMenuItem
             // 
+            categoriasToolStripMenuItem.BackColor = SystemColors.ControlDarkDark;
+            categoriasToolStripMenuItem.Image = Trabalho_TCD.Properties.Resources.icons8_categories_50;
+            categoriasToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
             categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
-            categoriasToolStripMenuItem.Size = new Size(130, 22);
+            categoriasToolStripMenuItem.Size = new Size(218, 56);
             categoriasToolStripMenuItem.Text = "Categorias";
             categoriasToolStripMenuItem.Click += categoriasToolStripMenuItem_Click;
             // 
             // mnuRelatorio
             // 
             mnuRelatorio.DropDownItems.AddRange(new ToolStripItem[] { mnuRelatorioFuncionarios });
+            mnuRelatorio.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            mnuRelatorio.Image = Trabalho_TCD.Properties.Resources.Document;
+            mnuRelatorio.ImageScaling = ToolStripItemImageScaling.None;
             mnuRelatorio.Name = "mnuRelatorio";
-            mnuRelatorio.Size = new Size(66, 20);
+            mnuRelatorio.Size = new Size(149, 54);
             mnuRelatorio.Text = "Relatório";
+            mnuRelatorio.Click += mnuRelatorio_Click;
             // 
             // mnuRelatorioFuncionarios
             // 
+            mnuRelatorioFuncionarios.BackColor = SystemColors.ControlDarkDark;
+            mnuRelatorioFuncionarios.Image = Trabalho_TCD.Properties.Resources.icons8_users_50;
+            mnuRelatorioFuncionarios.ImageScaling = ToolStripItemImageScaling.None;
             mnuRelatorioFuncionarios.Name = "mnuRelatorioFuncionarios";
-            mnuRelatorioFuncionarios.Size = new Size(142, 22);
+            mnuRelatorioFuncionarios.Size = new Size(226, 56);
             mnuRelatorioFuncionarios.Text = "Funcionários";
             mnuRelatorioFuncionarios.Click += mnuRelatorioUsuarios_Click;
             // 
             // mnuAjuda
             // 
             mnuAjuda.DropDownItems.AddRange(new ToolStripItem[] { mnuAjudaSobre });
+            mnuAjuda.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            mnuAjuda.Image = Trabalho_TCD.Properties.Resources.icons8_help_50__2_;
+            mnuAjuda.ImageScaling = ToolStripItemImageScaling.None;
             mnuAjuda.Name = "mnuAjuda";
-            mnuAjuda.Size = new Size(50, 20);
+            mnuAjuda.Size = new Size(129, 54);
             mnuAjuda.Text = "Ajuda";
             // 
             // mnuAjudaSobre
             // 
+            mnuAjudaSobre.BackColor = SystemColors.ControlDarkDark;
+            mnuAjudaSobre.Image = Trabalho_TCD.Properties.Resources.Info;
+            mnuAjudaSobre.ImageScaling = ToolStripItemImageScaling.None;
             mnuAjudaSobre.Name = "mnuAjudaSobre";
-            mnuAjudaSobre.Size = new Size(104, 22);
+            mnuAjudaSobre.Size = new Size(173, 56);
             mnuAjudaSobre.Text = "Sobre";
             mnuAjudaSobre.Click += mnuAjudaSobre_Click;
             // 
             // staBarraEstado
             // 
             staBarraEstado.Items.AddRange(new ToolStripItem[] { staBarraEstadoUltimoAcesso });
-            staBarraEstado.Location = new Point(0, 508);
+            staBarraEstado.Location = new Point(0, 523);
             staBarraEstado.Name = "staBarraEstado";
-            staBarraEstado.Size = new Size(845, 22);
+            staBarraEstado.Size = new Size(960, 22);
             staBarraEstado.TabIndex = 1;
             staBarraEstado.Text = "statusStrip1";
             // 
@@ -160,14 +199,18 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(845, 530);
+            BackgroundImageLayout = ImageLayout.None;
+            ClientSize = new Size(960, 545);
             Controls.Add(staBarraEstado);
             Controls.Add(menuStrip1);
+            DoubleBuffered = true;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
             Name = "Sistema";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sistema";
+            WindowState = FormWindowState.Maximized;
             FormClosed += Sistema_FormClosed;
             Load += Sistema_Load;
             menuStrip1.ResumeLayout(false);

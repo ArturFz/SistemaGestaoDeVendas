@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             pnlProdutos = new Panel();
-            lblCategorias = new Label();
+            label1 = new Label();
+            lblCategoria = new Label();
             lstCategorias = new ListBox();
             chkAtivo = new CheckBox();
             lblEstoqueMinimo = new Label();
@@ -49,7 +50,8 @@
             // pnlProdutos
             // 
             pnlProdutos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pnlProdutos.Controls.Add(lblCategorias);
+            pnlProdutos.Controls.Add(label1);
+            pnlProdutos.Controls.Add(lblCategoria);
             pnlProdutos.Controls.Add(lstCategorias);
             pnlProdutos.Controls.Add(chkAtivo);
             pnlProdutos.Controls.Add(lblEstoqueMinimo);
@@ -65,27 +67,38 @@
             pnlProdutos.Controls.Add(txtNome);
             pnlProdutos.Location = new Point(4, 3);
             pnlProdutos.Name = "pnlProdutos";
-            pnlProdutos.Size = new Size(745, 612);
+            pnlProdutos.Size = new Size(529, 713);
             pnlProdutos.TabIndex = 1;
             // 
-            // lblCategorias
+            // label1
             // 
-            lblCategorias.AutoSize = true;
-            lblCategorias.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCategorias.Location = new Point(350, 320);
-            lblCategorias.Name = "lblCategorias";
-            lblCategorias.Size = new Size(87, 21);
-            lblCategorias.TabIndex = 47;
-            lblCategorias.Text = "Categorias:";
+            label1.AutoSize = true;
+            label1.Font = new Font("Noto Sans", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.ControlDarkDark;
+            label1.Location = new Point(8, 10);
+            label1.Name = "label1";
+            label1.Size = new Size(261, 41);
+            label1.TabIndex = 48;
+            label1.Text = "Lista de produtos:";
+            // 
+            // lblCategoria
+            // 
+            lblCategoria.AutoSize = true;
+            lblCategoria.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCategoria.Location = new Point(275, 362);
+            lblCategoria.Name = "lblCategoria";
+            lblCategoria.Size = new Size(80, 21);
+            lblCategoria.TabIndex = 47;
+            lblCategoria.Text = "Categoria:";
             // 
             // lstCategorias
             // 
-            lstCategorias.BackColor = SystemColors.ScrollBar;
+            lstCategorias.BackColor = Color.DarkGray;
             lstCategorias.FormattingEnabled = true;
             lstCategorias.ItemHeight = 15;
-            lstCategorias.Location = new Point(354, 344);
+            lstCategorias.Location = new Point(275, 386);
             lstCategorias.Name = "lstCategorias";
-            lstCategorias.Size = new Size(198, 259);
+            lstCategorias.Size = new Size(237, 259);
             lstCategorias.TabIndex = 46;
             lstCategorias.Tag = "";
             // 
@@ -93,7 +106,7 @@
             // 
             chkAtivo.AutoSize = true;
             chkAtivo.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            chkAtivo.Location = new Point(354, 293);
+            chkAtivo.Location = new Point(275, 334);
             chkAtivo.Name = "chkAtivo";
             chkAtivo.Size = new Size(65, 25);
             chkAtivo.TabIndex = 45;
@@ -104,7 +117,7 @@
             // 
             lblEstoqueMinimo.AutoSize = true;
             lblEstoqueMinimo.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblEstoqueMinimo.Location = new Point(350, 226);
+            lblEstoqueMinimo.Location = new Point(272, 271);
             lblEstoqueMinimo.Name = "lblEstoqueMinimo";
             lblEstoqueMinimo.Size = new Size(126, 21);
             lblEstoqueMinimo.TabIndex = 44;
@@ -113,16 +126,16 @@
             // txtEstoqueMinimo
             // 
             txtEstoqueMinimo.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtEstoqueMinimo.Location = new Point(354, 250);
+            txtEstoqueMinimo.Location = new Point(275, 295);
             txtEstoqueMinimo.Name = "txtEstoqueMinimo";
-            txtEstoqueMinimo.Size = new Size(198, 33);
+            txtEstoqueMinimo.Size = new Size(237, 33);
             txtEstoqueMinimo.TabIndex = 43;
             // 
             // lblEstoque
             // 
             lblEstoque.AutoSize = true;
             lblEstoque.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblEstoque.Location = new Point(350, 166);
+            lblEstoque.Location = new Point(272, 211);
             lblEstoque.Name = "lblEstoque";
             lblEstoque.Size = new Size(68, 21);
             lblEstoque.TabIndex = 42;
@@ -131,16 +144,16 @@
             // txtEstoque
             // 
             txtEstoque.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtEstoque.Location = new Point(354, 190);
+            txtEstoque.Location = new Point(275, 235);
             txtEstoque.Name = "txtEstoque";
-            txtEstoque.Size = new Size(198, 33);
+            txtEstoque.Size = new Size(237, 33);
             txtEstoque.TabIndex = 41;
             // 
             // lblPreco
             // 
             lblPreco.AutoSize = true;
             lblPreco.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPreco.Location = new Point(350, 106);
+            lblPreco.Location = new Point(272, 151);
             lblPreco.Name = "lblPreco";
             lblPreco.Size = new Size(52, 21);
             lblPreco.TabIndex = 40;
@@ -149,19 +162,19 @@
             // txtPreco
             // 
             txtPreco.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtPreco.Location = new Point(354, 130);
+            txtPreco.Location = new Point(275, 175);
             txtPreco.Name = "txtPreco";
-            txtPreco.Size = new Size(198, 33);
+            txtPreco.Size = new Size(237, 33);
             txtPreco.TabIndex = 39;
             // 
             // btnCadastrar
             // 
-            btnCadastrar.BackColor = SystemColors.MenuHighlight;
+            btnCadastrar.BackColor = SystemColors.ControlDarkDark;
             btnCadastrar.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCadastrar.ForeColor = SystemColors.ButtonHighlight;
-            btnCadastrar.Location = new Point(568, 560);
+            btnCadastrar.Location = new Point(275, 651);
             btnCadastrar.Name = "btnCadastrar";
-            btnCadastrar.Size = new Size(169, 43);
+            btnCadastrar.Size = new Size(237, 53);
             btnCadastrar.TabIndex = 38;
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.UseVisualStyleBackColor = false;
@@ -170,16 +183,16 @@
             // 
             lstProdutos.FormattingEnabled = true;
             lstProdutos.ItemHeight = 15;
-            lstProdutos.Location = new Point(8, 14);
+            lstProdutos.Location = new Point(8, 55);
             lstProdutos.Name = "lstProdutos";
-            lstProdutos.Size = new Size(319, 589);
+            lstProdutos.Size = new Size(261, 649);
             lstProdutos.TabIndex = 37;
             // 
             // lblNome
             // 
             lblNome.AutoSize = true;
             lblNome.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblNome.Location = new Point(350, 46);
+            lblNome.Location = new Point(272, 91);
             lblNome.Name = "lblNome";
             lblNome.Size = new Size(56, 21);
             lblNome.TabIndex = 36;
@@ -189,29 +202,30 @@
             // 
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Noto Sans", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitulo.ForeColor = SystemColors.MenuHighlight;
-            lblTitulo.Location = new Point(350, 6);
+            lblTitulo.ForeColor = SystemColors.ControlDarkDark;
+            lblTitulo.Location = new Point(272, 10);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(377, 41);
+            lblTitulo.Size = new Size(200, 82);
             lblTitulo.TabIndex = 35;
-            lblTitulo.Text = "Cadastre um novo produto";
+            lblTitulo.Text = "Cadastre um \r\nnovo produto";
             lblTitulo.Click += lblTitulo_Click;
             // 
             // txtNome
             // 
             txtNome.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNome.Location = new Point(354, 70);
+            txtNome.Location = new Point(275, 115);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(198, 33);
+            txtNome.Size = new Size(237, 33);
             txtNome.TabIndex = 1;
             // 
             // Produtos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(753, 616);
+            ClientSize = new Size(537, 717);
             Controls.Add(pnlProdutos);
             FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
             Name = "Produtos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Produtos";
@@ -237,6 +251,7 @@
         private TextBox txtPreco;
         private CheckBox chkAtivo;
         private ListBox lstCategorias;
-        private Label lblCategorias;
+        private Label lblCategoria;
+        private Label label1;
     }
 }

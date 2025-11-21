@@ -177,5 +177,10 @@ namespace Trabalho1_ProgVis
                 2 => Perfil.OPERADOR_CAIXA
             };
         }
+
+        private void CadastroFuncionario_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

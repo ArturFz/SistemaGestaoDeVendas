@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             panel1 = new Panel();
-            lblTitulo = new Label();
             pictureBox1 = new PictureBox();
             lblAviso = new Label();
             lblSenha = new Label();
@@ -44,7 +43,7 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.Controls.Add(lblTitulo);
+            panel1.BackColor = SystemColors.ControlLight;
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(lblAviso);
             panel1.Controls.Add(lblSenha);
@@ -53,49 +52,41 @@
             panel1.Controls.Add(txtNomeUsuario);
             panel1.Location = new Point(3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(386, 414);
+            panel1.Size = new Size(356, 376);
             panel1.TabIndex = 0;
-            // 
-            // lblTitulo
-            // 
-            lblTitulo.AutoSize = true;
-            lblTitulo.Font = new Font("Noto Sans", 21.7499962F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitulo.ForeColor = SystemColors.MenuHighlight;
-            lblTitulo.Location = new Point(144, 149);
-            lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(99, 44);
-            lblTitulo.TabIndex = 35;
-            lblTitulo.Text = "Login";
-            lblTitulo.Click += lblTitulo_Click;
+            panel1.Paint += panel1_Paint;
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Trabalho_TCD.Properties.Resources.IconeNAvendas2;
-            pictureBox1.InitialImage = Trabalho_TCD.Properties.Resources.IconeNAvendas;
-            pictureBox1.Location = new Point(129, 10);
+            pictureBox1.Image = Trabalho_TCD.Properties.Resources._8788070391647100444_128;
+            pictureBox1.InitialImage = null;
+            pictureBox1.Location = new Point(103, 22);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(137, 134);
+            pictureBox1.Size = new Size(149, 146);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // lblAviso
             // 
             lblAviso.AutoSize = true;
             lblAviso.BackColor = Color.Transparent;
-            lblAviso.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblAviso.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblAviso.ForeColor = Color.Red;
-            lblAviso.Location = new Point(29, 384);
+            lblAviso.Location = new Point(66, 334);
             lblAviso.Name = "lblAviso";
-            lblAviso.Size = new Size(170, 21);
+            lblAviso.Size = new Size(224, 30);
             lblAviso.TabIndex = 5;
             lblAviso.Text = "Credenciais Inválidas!!!";
             lblAviso.Visible = false;
+            lblAviso.Click += lblAviso_Click;
             // 
             // lblSenha
             // 
             lblSenha.AutoSize = true;
             lblSenha.Font = new Font("Noto Sans", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblSenha.Location = new Point(29, 294);
+            lblSenha.Location = new Point(32, 261);
             lblSenha.Name = "lblSenha";
             lblSenha.Size = new Size(61, 24);
             lblSenha.TabIndex = 4;
@@ -105,31 +96,32 @@
             // 
             lblNomeUsuario.AutoSize = true;
             lblNomeUsuario.Font = new Font("Noto Sans", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblNomeUsuario.Location = new Point(29, 204);
+            lblNomeUsuario.Location = new Point(32, 187);
             lblNomeUsuario.Name = "lblNomeUsuario";
             lblNomeUsuario.Size = new Size(147, 24);
             lblNomeUsuario.TabIndex = 3;
             lblNomeUsuario.Text = "Nome de Usuário:";
+            lblNomeUsuario.Click += lblNomeUsuario_Click;
             // 
             // txtSenha
             // 
-            txtSenha.BackColor = SystemColors.ScrollBar;
+            txtSenha.BackColor = Color.DarkGray;
             txtSenha.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtSenha.Location = new Point(29, 321);
+            txtSenha.Location = new Point(32, 288);
             txtSenha.Name = "txtSenha";
             txtSenha.PasswordChar = '●';
-            txtSenha.Size = new Size(330, 43);
+            txtSenha.Size = new Size(298, 43);
             txtSenha.TabIndex = 2;
             txtSenha.TextChanged += txtSenha_TextChanged;
             txtSenha.KeyUp += txtSenha_KeyUp;
             // 
             // txtNomeUsuario
             // 
-            txtNomeUsuario.BackColor = SystemColors.ScrollBar;
+            txtNomeUsuario.BackColor = Color.DarkGray;
             txtNomeUsuario.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNomeUsuario.Location = new Point(29, 231);
+            txtNomeUsuario.Location = new Point(32, 214);
             txtNomeUsuario.Name = "txtNomeUsuario";
-            txtNomeUsuario.Size = new Size(330, 43);
+            txtNomeUsuario.Size = new Size(298, 43);
             txtNomeUsuario.TabIndex = 1;
             txtNomeUsuario.TextChanged += txtNomeUsuario_TextChanged;
             txtNomeUsuario.KeyUp += txtNomeUsuario_KeyUp;
@@ -138,7 +130,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(391, 420);
+            ClientSize = new Size(361, 382);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -161,6 +153,5 @@
         private Label lblNomeUsuario;
         private Label lblAviso;
         private PictureBox pictureBox1;
-        private Label lblTitulo;
     }
 }

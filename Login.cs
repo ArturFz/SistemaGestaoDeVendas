@@ -79,6 +79,7 @@ namespace Trabalho1_ProgVis
         }
         private void txtSenha_TextChanged(object sender, EventArgs e)
         {
+            lblAviso.Visible = false;
         }
 
         private void lblTitulo_Click(object sender, EventArgs e)
@@ -87,6 +88,26 @@ namespace Trabalho1_ProgVis
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblAviso_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblNomeUsuario_Click(object sender, EventArgs e)
         {
 
         }

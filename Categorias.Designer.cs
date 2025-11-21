@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             pnlCategorias = new Panel();
+            label1 = new Label();
             btnCadastrar = new Button();
             listBox1 = new ListBox();
             lblNome = new Label();
@@ -40,6 +41,7 @@
             // pnlCategorias
             // 
             pnlCategorias.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pnlCategorias.Controls.Add(label1);
             pnlCategorias.Controls.Add(btnCadastrar);
             pnlCategorias.Controls.Add(listBox1);
             pnlCategorias.Controls.Add(lblNome);
@@ -47,47 +49,60 @@
             pnlCategorias.Controls.Add(txtNome);
             pnlCategorias.Location = new Point(3, 4);
             pnlCategorias.Name = "pnlCategorias";
-            pnlCategorias.Size = new Size(792, 575);
+            pnlCategorias.Size = new Size(495, 428);
             pnlCategorias.TabIndex = 0;
             pnlCategorias.Paint += panel1_Paint;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Noto Sans", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.ControlDarkDark;
+            label1.Location = new Point(9, 77);
+            label1.Name = "label1";
+            label1.Size = new Size(248, 32);
+            label1.TabIndex = 39;
+            label1.Text = "Categorias Existentes:";
+            // 
             // btnCadastrar
             // 
-            btnCadastrar.BackColor = SystemColors.MenuHighlight;
+            btnCadastrar.BackColor = SystemColors.ControlDarkDark;
             btnCadastrar.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCadastrar.ForeColor = SystemColors.ButtonHighlight;
-            btnCadastrar.Location = new Point(604, 505);
+            btnCadastrar.Location = new Point(286, 370);
             btnCadastrar.Name = "btnCadastrar";
-            btnCadastrar.Size = new Size(178, 55);
+            btnCadastrar.Size = new Size(197, 46);
             btnCadastrar.TabIndex = 38;
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.UseVisualStyleBackColor = false;
+            btnCadastrar.Click += btnCadastrar_Click;
             // 
             // listBox1
             // 
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(9, 8);
+            listBox1.Location = new Point(9, 112);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(319, 559);
+            listBox1.Size = new Size(248, 304);
             listBox1.TabIndex = 37;
             // 
             // lblNome
             // 
             lblNome.AutoSize = true;
             lblNome.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblNome.Location = new Point(351, 57);
+            lblNome.Location = new Point(286, 112);
             lblNome.Name = "lblNome";
             lblNome.Size = new Size(56, 21);
             lblNome.TabIndex = 36;
             lblNome.Text = "Nome:";
+            lblNome.Click += lblNome_Click;
             // 
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Noto Sans", 21.7499962F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitulo.ForeColor = SystemColors.MenuHighlight;
-            lblTitulo.Location = new Point(340, 5);
+            lblTitulo.ForeColor = SystemColors.ControlDarkDark;
+            lblTitulo.Location = new Point(30, 5);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(442, 44);
             lblTitulo.TabIndex = 35;
@@ -97,18 +112,20 @@
             // txtNome
             // 
             txtNome.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNome.Location = new Point(351, 81);
+            txtNome.Location = new Point(286, 136);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(198, 33);
+            txtNome.Size = new Size(197, 33);
             txtNome.TabIndex = 1;
+            txtNome.TextChanged += txtNome_TextChanged;
             // 
             // Categorias
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(797, 582);
+            ClientSize = new Size(500, 435);
             Controls.Add(pnlCategorias);
             FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
             Name = "Categorias";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Categorias";
@@ -125,5 +142,6 @@
         private Label lblNome;
         private ListBox listBox1;
         private Button btnCadastrar;
+        private Label label1;
     }
 }
