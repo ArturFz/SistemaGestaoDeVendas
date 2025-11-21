@@ -51,7 +51,6 @@
             pnlCategorias.Name = "pnlCategorias";
             pnlCategorias.Size = new Size(495, 428);
             pnlCategorias.TabIndex = 0;
-            pnlCategorias.Paint += panel1_Paint;
             // 
             // label1
             // 
@@ -107,7 +106,6 @@
             lblTitulo.Size = new Size(442, 44);
             lblTitulo.TabIndex = 35;
             lblTitulo.Text = "Cadastre uma nova categoria";
-            lblTitulo.Click += lblTitulo_Click;
             // 
             // txtNome
             // 

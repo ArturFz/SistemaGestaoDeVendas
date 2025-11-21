@@ -13,6 +13,13 @@ namespace Trabalho_TCD
     public partial class Categorias : Form
     {
         private static Categorias? _instance;
+        
+
+        public Categorias()
+        {
+            InitializeComponent();
+        }
+
         #region SingleTon
         public static Categorias GetInstance()
         {
@@ -23,11 +30,6 @@ namespace Trabalho_TCD
             return _instance;
         }
         #endregion
-        public Categorias()
-        {
-            InitializeComponent();
-        }
-
         private void lblTitulo_Click(object sender, EventArgs e)
         {
 
