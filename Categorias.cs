@@ -30,6 +30,11 @@ namespace Trabalho_TCD
             return _instance;
         }
         #endregion
+        public Categorias()
+        {
+            InitializeComponent();
+        }
+
         private void lblTitulo_Click(object sender, EventArgs e)
         {
 
@@ -38,21 +43,5 @@ namespace Trabalho_TCD
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
-        }
-
-        private void txtNome_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblNome_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCadastrar_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
