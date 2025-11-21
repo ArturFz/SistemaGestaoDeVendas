@@ -74,7 +74,6 @@
             btnCadastrar.TabIndex = 38;
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.UseVisualStyleBackColor = false;
-            btnCadastrar.Click += btnCadastrar_Click;
             // 
             // listBox1
             // 
@@ -94,7 +93,6 @@
             lblNome.Size = new Size(56, 21);
             lblNome.TabIndex = 36;
             lblNome.Text = "Nome:";
-            lblNome.Click += lblNome_Click;
             // 
             // lblTitulo
             // 
@@ -114,7 +112,6 @@
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(197, 33);
             txtNome.TabIndex = 1;
-            txtNome.TextChanged += txtNome_TextChanged;
             // 
             // Categorias
             // 

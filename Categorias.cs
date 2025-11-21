@@ -30,11 +30,6 @@ namespace Trabalho_TCD
             return _instance;
         }
         #endregion
-        public Categorias()
-        {
-            InitializeComponent();
-        }
-
         private void lblTitulo_Click(object sender, EventArgs e)
         {
 
