@@ -58,7 +58,13 @@ namespace Trabalho1_ProgVis
             lblNomeUsuarioDefault.Text = usuario.Credencial.NomeUsuario;
             lblEmailDefault.Text = usuario.Email;
             lblTelefoneDefault.Text = usuario.Telefone;
-            //lblPerfilDefault.Text = perfil;
+            lblPerfilDefault.Text = usuario.Perfil switch
+            {
+                Perfil.GERENTE => "Gerente",
+                Perfil.VENDEDOR => "Vendedor",
+                Perfil.OPERADOR_CAIXA => "Operador de Caixa",
+                _ => usuario.Perfil.ToString(),
+            };
         }
     }
 }
