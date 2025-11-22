@@ -293,7 +293,7 @@
             MaximizeBox = false;
             Name = "CadastroFuncionario";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Cadastro";
+            Text = "Cadastro de funcionário";
             Load += CadastroFuncionario_Load;
             pnlCadastroFuncionario.ResumeLayout(false);
             pnlCadastroFuncionario.PerformLayout();

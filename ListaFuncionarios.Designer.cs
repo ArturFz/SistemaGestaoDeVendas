@@ -234,9 +234,10 @@
             Controls.Add(pnlListaUsuarios);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "ListaFuncionarios";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "ListaUsuarios";
+            Text = "Lista de Funcionários";
             pnlListaUsuarios.ResumeLayout(false);
             pnlListaUsuarios.PerformLayout();
             ResumeLayout(false);

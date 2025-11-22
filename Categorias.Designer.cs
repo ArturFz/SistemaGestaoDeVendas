@@ -126,7 +126,7 @@
             MaximizeBox = false;
             Name = "Categorias";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Categorias";
+            Text = "Gerenciamento de categorias";
             pnlCategorias.ResumeLayout(false);
             pnlCategorias.PerformLayout();
             ResumeLayout(false);

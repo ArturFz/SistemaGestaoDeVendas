@@ -237,7 +237,7 @@
             MaximizeBox = false;
             Name = "Produtos";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Produtos";
+            Text = "Gerenciamento de produtos";
             Load += Produtos_Load;
             pnlProdutos.ResumeLayout(false);
             pnlProdutos.PerformLayout();

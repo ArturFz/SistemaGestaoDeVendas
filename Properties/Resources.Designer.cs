@@ -63,6 +63,16 @@ namespace Trabalho_TCD.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _20251122_1133_image {
+            get {
+                object obj = ResourceManager.GetObject("20251122_1133_image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _8788070391647100444_128 {
             get {
                 object obj = ResourceManager.GetObject("8788070391647100444-128", resourceCulture);
@@ -336,6 +346,26 @@ namespace Trabalho_TCD.Properties {
         internal static System.Drawing.Bitmap icons8_users_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-users-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IMG_fundo {
+            get {
+                object obj = ResourceManager.GetObject("IMG-fundo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IMG_fundo1 {
+            get {
+                object obj = ResourceManager.GetObject("IMG-fundo1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

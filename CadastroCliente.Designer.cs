@@ -213,7 +213,7 @@
             MaximizeBox = false;
             Name = "CadastroCliente";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "CadastroCliente";
+            Text = "Cadastro de cliente";
             pnlCadastroCliente.ResumeLayout(false);
             pnlCadastroCliente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picLogo).EndInit();
