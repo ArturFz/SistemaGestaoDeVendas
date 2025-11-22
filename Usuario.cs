@@ -29,6 +29,8 @@ namespace Trabalho1_ProgVis
         [ForeignKey("credencial_id")]
         public Credencial Credencial { get; set; }
 
+        public Perfil Perfil { get; set; }
+
 
         public override string ToString()
         {

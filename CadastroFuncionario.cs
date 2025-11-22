@@ -107,6 +107,16 @@ namespace Trabalho1_ProgVis
             lblAvisoUsuario.Visible = false;
         }
 
+        private Perfil GetSelectedPerfilFromCombo()
+        {
+            return cboPerfil.SelectedIndex switch
+            {
+                0 => Perfil.GERENTE,
+                1 => Perfil.VENDEDOR,
+                2 => Perfil.OPERADOR_CAIXA
+            };
+        }
+
         private void Save()
         {
             lblAvisoSucesso.Visible = false;
@@ -152,7 +162,8 @@ namespace Trabalho1_ProgVis
                 Nome = txtNome.Text,
                 Email = txtEmail.Text,
                 Telefone = mskTelefone.Text,
-                Credencial = novaCredencial
+                Credencial = novaCredencial,
+                Perfil = perfilSelecionado
             };
 
             UsuarioRepository.SaveOrUpdate(novoUsuario);
@@ -168,15 +179,7 @@ namespace Trabalho1_ProgVis
 
             lblAvisoSucesso.Visible = true;
         }
-        private Perfil GetSelectedPerfilFromCombo()
-        {
-            return cboPerfil.SelectedIndex switch
-            {
-                0 => Perfil.GERENTE,
-                1 => Perfil.VENDEDOR,
-                2 => Perfil.OPERADOR_CAIXA
-            };
-        }
+        
 
         private void CadastroFuncionario_Load(object sender, EventArgs e)
         {
