@@ -24,6 +24,7 @@ namespace Trabalho1_ProgVis
         public DbSet<Item> Itens { get; set; }
         public DbSet<Vendedor> Vendedores { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Categoria> Categorias { get; set; }
 
         public Repository()
         {

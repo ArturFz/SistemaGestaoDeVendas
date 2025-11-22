@@ -44,12 +44,8 @@
             mnuAjudaSobre = new ToolStripMenuItem();
             staBarraEstado = new StatusStrip();
             staBarraEstadoUltimoAcesso = new ToolStripStatusLabel();
-            picLogo = new PictureBox();
-            pictureBox1 = new PictureBox();
             menuStrip1.SuspendLayout();
             staBarraEstado.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)picLogo).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
@@ -199,36 +195,13 @@
             staBarraEstadoUltimoAcesso.Size = new Size(118, 17);
             staBarraEstadoUltimoAcesso.Text = "toolStripStatusLabel1";
             // 
-            // picLogo
-            // 
-            picLogo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            picLogo.Image = Trabalho_TCD.Properties.Resources.IMG_fundo;
-            picLogo.Location = new Point(0, 61);
-            picLogo.Name = "picLogo";
-            picLogo.Size = new Size(960, 459);
-            picLogo.SizeMode = PictureBoxSizeMode.StretchImage;
-            picLogo.TabIndex = 3;
-            picLogo.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackgroundImage = Trabalho_TCD.Properties.Resources.IMG_fundo;
-            pictureBox1.BackgroundImageLayout = ImageLayout.None;
-            pictureBox1.Image = Trabalho_TCD.Properties.Resources.IMG_fundo;
-            pictureBox1.Location = new Point(259, 179);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(492, 239);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 3;
-            pictureBox1.TabStop = false;
-            // 
             // Sistema
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Trabalho_TCD.Properties.Resources.IMG_fundo;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(960, 545);
-            Controls.Add(pictureBox1);
             Controls.Add(staBarraEstado);
             Controls.Add(menuStrip1);
             DoubleBuffered = true;
@@ -245,8 +218,6 @@
             menuStrip1.PerformLayout();
             staBarraEstado.ResumeLayout(false);
             staBarraEstado.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)picLogo).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -268,7 +239,5 @@
         private ToolStripMenuItem catálogoToolStripMenuItem;
         private ToolStripMenuItem produtosToolStripMenuItem;
         private ToolStripMenuItem categoriasToolStripMenuItem;
-        private PictureBox picLogo;
-        private PictureBox pictureBox1;
     }
 }
