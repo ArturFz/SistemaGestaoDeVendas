@@ -31,13 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sobre));
             lblTitulo = new Label();
             pnlSobre = new Panel();
-            lblOferece = new Label();
-            lblOferecimentos = new Label();
-            lblInformacoes = new Label();
-            lblInformacao = new Label();
             lblDireitos = new Label();
             lblInstituicao = new Label();
             lblDesenvolvedores = new Label();
+            lblInformacoes = new Label();
             pnlSobre.SuspendLayout();
             SuspendLayout();
             // 
@@ -57,66 +54,22 @@
             // pnlSobre
             // 
             pnlSobre.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pnlSobre.Controls.Add(lblOferece);
-            pnlSobre.Controls.Add(lblOferecimentos);
             pnlSobre.Controls.Add(lblInformacoes);
-            pnlSobre.Controls.Add(lblInformacao);
             pnlSobre.Controls.Add(lblDireitos);
             pnlSobre.Controls.Add(lblInstituicao);
             pnlSobre.Controls.Add(lblDesenvolvedores);
             pnlSobre.Controls.Add(lblTitulo);
             pnlSobre.Location = new Point(12, 12);
             pnlSobre.Name = "pnlSobre";
-            pnlSobre.Size = new Size(687, 327);
+            pnlSobre.Size = new Size(822, 403);
             pnlSobre.TabIndex = 1;
             pnlSobre.Paint += pnlSobre_Paint;
-            // 
-            // lblOferece
-            // 
-            lblOferece.AutoSize = true;
-            lblOferece.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblOferece.Location = new Point(15, 142);
-            lblOferece.Name = "lblOferece";
-            lblOferece.Size = new Size(394, 25);
-            lblOferece.TabIndex = 9;
-            lblOferece.Text = "com autenticação segura e interface intuitiva.\n";
-            // 
-            // lblOferecimentos
-            // 
-            lblOferecimentos.AutoSize = true;
-            lblOferecimentos.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblOferecimentos.Location = new Point(15, 117);
-            lblOferecimentos.Name = "lblOferecimentos";
-            lblOferecimentos.Size = new Size(512, 25);
-            lblOferecimentos.TabIndex = 8;
-            lblOferecimentos.Text = "O sistema oferece recursos para gerenciamento de vendas, ";
-            // 
-            // lblInformacoes
-            // 
-            lblInformacoes.AutoSize = true;
-            lblInformacoes.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblInformacoes.Location = new Point(15, 92);
-            lblInformacoes.Name = "lblInformacoes";
-            lblInformacoes.Size = new Size(391, 50);
-            lblInformacoes.TabIndex = 7;
-            lblInformacoes.Text = "Entity Framework para persistência de dados.\n\n";
-            // 
-            // lblInformacao
-            // 
-            lblInformacao.AutoSize = true;
-            lblInformacao.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblInformacao.Location = new Point(15, 67);
-            lblInformacao.Name = "lblInformacao";
-            lblInformacao.Size = new Size(669, 25);
-            lblInformacao.TabIndex = 6;
-            lblInformacao.Text = "Aplicação desenvolvida em C# (.NET Framework) utilizando Windows Forms e ";
-            lblInformacao.Click += lblInformações_Click;
             // 
             // lblDireitos
             // 
             lblDireitos.AutoSize = true;
             lblDireitos.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblDireitos.Location = new Point(15, 294);
+            lblDireitos.Location = new Point(15, 361);
             lblDireitos.Name = "lblDireitos";
             lblDireitos.Size = new Size(335, 25);
             lblDireitos.TabIndex = 5;
@@ -126,7 +79,7 @@
             // 
             lblInstituicao.AutoSize = true;
             lblInstituicao.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblInstituicao.Location = new Point(15, 269);
+            lblInstituicao.Location = new Point(15, 336);
             lblInstituicao.Name = "lblInstituicao";
             lblInstituicao.Size = new Size(166, 25);
             lblInstituicao.TabIndex = 3;
@@ -136,17 +89,27 @@
             // 
             lblDesenvolvedores.AutoSize = true;
             lblDesenvolvedores.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblDesenvolvedores.Location = new Point(15, 194);
+            lblDesenvolvedores.Location = new Point(15, 261);
             lblDesenvolvedores.Name = "lblDesenvolvedores";
             lblDesenvolvedores.Size = new Size(297, 75);
             lblDesenvolvedores.TabIndex = 2;
             lblDesenvolvedores.Text = "Desenvolvido por:\nArtur Felipe dos Santos Gonçalves\nArthur Neres Barroso de Queiroz\n";
             // 
+            // lblInformacoes
+            // 
+            lblInformacoes.AutoSize = true;
+            lblInformacoes.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblInformacoes.Location = new Point(15, 66);
+            lblInformacoes.Name = "lblInformacoes";
+            lblInformacoes.Size = new Size(806, 175);
+            lblInformacoes.TabIndex = 6;
+            lblInformacoes.Text = resources.GetString("lblInformacoes.Text");
+            // 
             // Sobre
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(711, 351);
+            ClientSize = new Size(846, 427);
             Controls.Add(pnlSobre);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -166,9 +129,6 @@
         private Label lblDesenvolvedores;
         private Label lblDireitos;
         private Label lblInstituicao;
-        private Label lblInformacao;
         private Label lblInformacoes;
-        private Label lblOferece;
-        private Label lblOferecimentos;
     }
 }

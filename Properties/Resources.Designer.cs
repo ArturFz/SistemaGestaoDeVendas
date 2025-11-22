@@ -143,6 +143,16 @@ namespace Trabalho_TCD.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap IconeNAvendas4 {
+            get {
+                object obj = ResourceManager.GetObject("IconeNAvendas4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_add_user_male_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-add-user-male-100", resourceCulture);

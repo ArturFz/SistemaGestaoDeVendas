@@ -16,6 +16,7 @@ namespace Trabalho_TCD
         public Produtos()
         {
             InitializeComponent();
+            numEstoqueMinimo.Minimum = 10;
         }
         #region SingleTon
 
@@ -34,6 +35,16 @@ namespace Trabalho_TCD
         }
 
         private void Produtos_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkAtivo_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCategoria_Click(object sender, EventArgs e)
         {
 
         }

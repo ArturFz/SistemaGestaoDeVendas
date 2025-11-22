@@ -117,6 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblInformacoes.Text" xml:space="preserve">
+    <value>Aplicação desenvolvida em C# (.NET Framework) utilizando Windows Forms para a interface e 
+Entity Framework para persistência de dados. O sistema utiliza MySQL como sistema de 
+gerenciamento de banco de dados (SGBD).
+
+O sistema oferece recursos completos para o gerenciamento de clientes, vendedores, 
+produtos, compras e estoque, com autenticação segura, interface intuitiva e funcionalidades 
+específicas para gerentes, vendedores e operadores de caixa.</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

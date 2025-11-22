@@ -182,5 +182,15 @@ namespace Trabalho1_ProgVis
         {
 
         }
+
+        private void lblAvisoSucesso_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblAvisoUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

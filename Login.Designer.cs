@@ -60,7 +60,7 @@
             // 
             pictureBox1.Image = Trabalho_TCD.Properties.Resources._8788070391647100444_128;
             pictureBox1.InitialImage = null;
-            pictureBox1.Location = new Point(103, 22);
+            pictureBox1.Location = new Point(101, 22);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(149, 146);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -86,7 +86,7 @@
             // 
             lblSenha.AutoSize = true;
             lblSenha.Font = new Font("Noto Sans", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblSenha.Location = new Point(32, 261);
+            lblSenha.Location = new Point(31, 261);
             lblSenha.Name = "lblSenha";
             lblSenha.Size = new Size(61, 24);
             lblSenha.TabIndex = 4;
@@ -96,7 +96,7 @@
             // 
             lblNomeUsuario.AutoSize = true;
             lblNomeUsuario.Font = new Font("Noto Sans", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblNomeUsuario.Location = new Point(32, 187);
+            lblNomeUsuario.Location = new Point(31, 188);
             lblNomeUsuario.Name = "lblNomeUsuario";
             lblNomeUsuario.Size = new Size(147, 24);
             lblNomeUsuario.TabIndex = 3;
@@ -107,7 +107,7 @@
             // 
             txtSenha.BackColor = Color.DarkGray;
             txtSenha.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtSenha.Location = new Point(32, 288);
+            txtSenha.Location = new Point(31, 288);
             txtSenha.Name = "txtSenha";
             txtSenha.PasswordChar = '●';
             txtSenha.Size = new Size(298, 43);
@@ -119,7 +119,7 @@
             // 
             txtNomeUsuario.BackColor = Color.DarkGray;
             txtNomeUsuario.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNomeUsuario.Location = new Point(32, 214);
+            txtNomeUsuario.Location = new Point(31, 215);
             txtNomeUsuario.Name = "txtNomeUsuario";
             txtNomeUsuario.Size = new Size(298, 43);
             txtNomeUsuario.TabIndex = 1;
