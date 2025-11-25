@@ -32,7 +32,10 @@ namespace Trabalho_TCD
 
         private void btnIniciarPagamento_Click(object sender, EventArgs e)
         {
-        
+            PagamentoFinal janela = PagamentoFinal.GetInstance();
+            janela.ShowDialog(this);
+            janela.BringToFront();
+            janela.Focus();
         }
     }
 }

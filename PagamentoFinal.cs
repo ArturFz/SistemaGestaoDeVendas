@@ -12,6 +12,18 @@ namespace Trabalho_TCD
 {
     public partial class PagamentoFinal : Form
     {
+        private static PagamentoFinal? _instance;
+
+        #region SingleTon
+        public static PagamentoFinal GetInstance()
+        {
+            if (_instance == null || _instance.IsDisposed)
+            {
+                _instance = new PagamentoFinal();
+            }
+            return _instance;
+        }
+        #endregion
         public PagamentoFinal()
         {
             InitializeComponent();
