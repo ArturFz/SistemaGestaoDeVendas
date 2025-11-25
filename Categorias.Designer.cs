@@ -49,28 +49,28 @@
             pnlCategorias.Controls.Add(txtNome);
             pnlCategorias.Location = new Point(3, 4);
             pnlCategorias.Name = "pnlCategorias";
-            pnlCategorias.Size = new Size(689, 483);
+            pnlCategorias.Size = new Size(743, 405);
             pnlCategorias.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Noto Sans", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Noto Sans", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ControlDarkDark;
-            label1.Location = new Point(377, 5);
+            label1.Location = new Point(398, 10);
             label1.Name = "label1";
-            label1.Size = new Size(277, 36);
+            label1.Size = new Size(245, 29);
             label1.TabIndex = 39;
-            label1.Text = "Categorias Existentes:";
+            label1.Text = "CATEGORIAS EXISTENTES";
             // 
             // btnCadastrar
             // 
             btnCadastrar.BackColor = SystemColors.ControlDarkDark;
             btnCadastrar.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCadastrar.ForeColor = SystemColors.ButtonHighlight;
-            btnCadastrar.Location = new Point(9, 121);
+            btnCadastrar.Location = new Point(32, 171);
             btnCadastrar.Name = "btnCadastrar";
-            btnCadastrar.Size = new Size(275, 56);
+            btnCadastrar.Size = new Size(309, 56);
             btnCadastrar.TabIndex = 38;
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.UseVisualStyleBackColor = false;
@@ -82,16 +82,16 @@
             lstCategorias.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lstCategorias.FormattingEnabled = true;
             lstCategorias.ItemHeight = 25;
-            lstCategorias.Location = new Point(344, 44);
+            lstCategorias.Location = new Point(398, 42);
             lstCategorias.Name = "lstCategorias";
-            lstCategorias.Size = new Size(335, 429);
+            lstCategorias.Size = new Size(335, 354);
             lstCategorias.TabIndex = 37;
             // 
             // lblNome
             // 
             lblNome.AutoSize = true;
             lblNome.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblNome.Location = new Point(9, 44);
+            lblNome.Location = new Point(32, 64);
             lblNome.Name = "lblNome";
             lblNome.Size = new Size(67, 25);
             lblNome.TabIndex = 36;
@@ -100,28 +100,28 @@
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
-            lblTitulo.Font = new Font("Noto Sans", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitulo.Font = new Font("Noto Sans", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitulo.ForeColor = SystemColors.ControlDarkDark;
-            lblTitulo.Location = new Point(9, 5);
+            lblTitulo.Location = new Point(32, 10);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(297, 36);
+            lblTitulo.Size = new Size(292, 29);
             lblTitulo.TabIndex = 35;
-            lblTitulo.Text = "Cadastre uma categoria";
+            lblTitulo.Text = "ADICIONAR NOVA CATEGORIA";
             // 
             // txtNome
             // 
             txtNome.BackColor = Color.DarkGray;
-            txtNome.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNome.Location = new Point(9, 72);
+            txtNome.Font = new Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtNome.Location = new Point(32, 92);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(275, 43);
+            txtNome.Size = new Size(309, 46);
             txtNome.TabIndex = 1;
             // 
             // Categorias
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(694, 490);
+            ClientSize = new Size(748, 412);
             Controls.Add(pnlCategorias);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;

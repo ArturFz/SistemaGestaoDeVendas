@@ -84,12 +84,13 @@
             btnIniciarPagamento.BackColor = SystemColors.ControlDarkDark;
             btnIniciarPagamento.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnIniciarPagamento.ForeColor = SystemColors.ButtonHighlight;
-            btnIniciarPagamento.Location = new Point(77, 222);
+            btnIniciarPagamento.Location = new Point(77, 226);
             btnIniciarPagamento.Name = "btnIniciarPagamento";
-            btnIniciarPagamento.Size = new Size(327, 64);
+            btnIniciarPagamento.Size = new Size(327, 58);
             btnIniciarPagamento.TabIndex = 0;
             btnIniciarPagamento.Text = "INICIAR PROCESSO DE PAGAMENTO";
             btnIniciarPagamento.UseVisualStyleBackColor = false;
+            btnIniciarPagamento.Click += btnIniciarPagamento_Click;
             // 
             // Pagamentos
             // 
@@ -100,7 +101,7 @@
             MinimizeBox = false;
             Name = "Pagamentos";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Pagamentos";
+            Text = "Iniciar Pagamento";
             pnlPrincipal.ResumeLayout(false);
             pnlPrincipal.PerformLayout();
             ResumeLayout(false);
