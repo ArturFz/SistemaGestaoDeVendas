@@ -28,6 +28,7 @@ namespace Trabalho_TCD
         public Pagamentos()
         {
             InitializeComponent();
+
         }
 
         private void btnIniciarPagamento_Click(object sender, EventArgs e)
