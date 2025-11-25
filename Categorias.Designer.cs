@@ -31,7 +31,7 @@
             pnlCategorias = new Panel();
             label1 = new Label();
             btnCadastrar = new Button();
-            listBox1 = new ListBox();
+            lstCategorias = new ListBox();
             lblNome = new Label();
             lblTitulo = new Label();
             txtNome = new TextBox();
@@ -43,7 +43,7 @@
             pnlCategorias.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pnlCategorias.Controls.Add(label1);
             pnlCategorias.Controls.Add(btnCadastrar);
-            pnlCategorias.Controls.Add(listBox1);
+            pnlCategorias.Controls.Add(lstCategorias);
             pnlCategorias.Controls.Add(lblNome);
             pnlCategorias.Controls.Add(lblTitulo);
             pnlCategorias.Controls.Add(txtNome);
@@ -74,17 +74,18 @@
             btnCadastrar.TabIndex = 38;
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.UseVisualStyleBackColor = false;
+            btnCadastrar.Click += btnCadastrar_Click;
             // 
-            // listBox1
+            // lstCategorias
             // 
-            listBox1.BackColor = Color.DarkGray;
-            listBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 25;
-            listBox1.Location = new Point(344, 44);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(335, 429);
-            listBox1.TabIndex = 37;
+            lstCategorias.BackColor = Color.DarkGray;
+            lstCategorias.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lstCategorias.FormattingEnabled = true;
+            lstCategorias.ItemHeight = 25;
+            lstCategorias.Location = new Point(344, 44);
+            lstCategorias.Name = "lstCategorias";
+            lstCategorias.Size = new Size(335, 429);
+            lstCategorias.TabIndex = 37;
             // 
             // lblNome
             // 
@@ -139,7 +140,7 @@
         private TextBox txtNome;
         private Label lblTitulo;
         private Label lblNome;
-        private ListBox listBox1;
+        private ListBox lstCategorias;
         private Button btnCadastrar;
         private Label label1;
     }
