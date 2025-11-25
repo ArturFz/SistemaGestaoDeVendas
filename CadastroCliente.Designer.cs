@@ -211,6 +211,7 @@
             Controls.Add(pnlCadastroCliente);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
+            MinimizeBox = false;
             Name = "CadastroCliente";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro de cliente";

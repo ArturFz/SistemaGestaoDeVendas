@@ -88,7 +88,7 @@ namespace Trabalho1_ProgVis
             {
                 using (Repository dbContext = new Repository())
                 {
-                    return dbContext.Credenciais.Include("Usuario").ToList();
+                            return dbContext.Credenciais.Include("Usuario").ToList();
                 }
             }
             catch (Exception)
