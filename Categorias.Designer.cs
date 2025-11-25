@@ -125,6 +125,7 @@
             Controls.Add(pnlCategorias);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
+            MinimizeBox = false;
             Name = "Categorias";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Gerenciamento de categorias";

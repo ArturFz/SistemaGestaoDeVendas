@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sobre));
             lblTitulo = new Label();
             pnlSobre = new Panel();
+            lblInformacoes = new Label();
             lblDireitos = new Label();
             lblInstituicao = new Label();
             lblDesenvolvedores = new Label();
-            lblInformacoes = new Label();
             pnlSobre.SuspendLayout();
             SuspendLayout();
             // 
@@ -64,6 +64,16 @@
             pnlSobre.Size = new Size(822, 403);
             pnlSobre.TabIndex = 1;
             pnlSobre.Paint += pnlSobre_Paint;
+            // 
+            // lblInformacoes
+            // 
+            lblInformacoes.AutoSize = true;
+            lblInformacoes.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblInformacoes.Location = new Point(15, 66);
+            lblInformacoes.Name = "lblInformacoes";
+            lblInformacoes.Size = new Size(806, 175);
+            lblInformacoes.TabIndex = 6;
+            lblInformacoes.Text = resources.GetString("lblInformacoes.Text");
             // 
             // lblDireitos
             // 
@@ -95,16 +105,6 @@
             lblDesenvolvedores.TabIndex = 2;
             lblDesenvolvedores.Text = "Desenvolvido por:\nArtur Felipe dos Santos Gonçalves\nArthur Neres Barroso de Queiroz\n";
             // 
-            // lblInformacoes
-            // 
-            lblInformacoes.AutoSize = true;
-            lblInformacoes.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblInformacoes.Location = new Point(15, 66);
-            lblInformacoes.Name = "lblInformacoes";
-            lblInformacoes.Size = new Size(806, 175);
-            lblInformacoes.TabIndex = 6;
-            lblInformacoes.Text = resources.GetString("lblInformacoes.Text");
-            // 
             // Sobre
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -114,6 +114,7 @@
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
+            MinimizeBox = false;
             Name = "Sobre";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sobre";
