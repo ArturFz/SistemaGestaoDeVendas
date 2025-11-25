@@ -75,7 +75,7 @@
             pnlCadastroFuncionario.Controls.Add(btnCadastrar);
             pnlCadastroFuncionario.Location = new Point(4, 3);
             pnlCadastroFuncionario.Name = "pnlCadastroFuncionario";
-            pnlCadastroFuncionario.Size = new Size(498, 730);
+            pnlCadastroFuncionario.Size = new Size(517, 730);
             pnlCadastroFuncionario.TabIndex = 0;
             // 
             // lblPerfil
@@ -104,7 +104,7 @@
             // 
             picLogo.Image = Trabalho_TCD.Properties.Resources.icons8_add_user_male_100;
             picLogo.InitialImage = null;
-            picLogo.Location = new Point(158, 0);
+            picLogo.Location = new Point(168, 0);
             picLogo.Name = "picLogo";
             picLogo.Size = new Size(187, 179);
             picLogo.SizeMode = PictureBoxSizeMode.Zoom;
@@ -114,13 +114,13 @@
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
-            lblTitulo.Font = new Font("Noto Sans", 21.7499962F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitulo.Font = new Font("Noto Sans", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitulo.ForeColor = SystemColors.ControlDarkDark;
-            lblTitulo.Location = new Point(20, 182);
+            lblTitulo.Location = new Point(8, 182);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(456, 44);
+            lblTitulo.Size = new Size(501, 41);
             lblTitulo.TabIndex = 16;
-            lblTitulo.Text = "Cadastre um novo funcionário";
+            lblTitulo.Text = "CADASTRE UM NOVO FUNCIONÁRIO";
             // 
             // lblAvisoSucesso
             // 
@@ -170,7 +170,7 @@
             mskTelefone.Location = new Point(18, 469);
             mskTelefone.Mask = "(00) 00000-0000";
             mskTelefone.Name = "mskTelefone";
-            mskTelefone.Size = new Size(456, 43);
+            mskTelefone.Size = new Size(482, 43);
             mskTelefone.TabIndex = 12;
             mskTelefone.TextChanged += mskTelefone_TextChanged;
             mskTelefone.KeyUp += mskTelefone_KeyUp;
@@ -191,7 +191,7 @@
             txtSenha.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtSenha.Location = new Point(18, 539);
             txtSenha.Name = "txtSenha";
-            txtSenha.Size = new Size(458, 43);
+            txtSenha.Size = new Size(482, 43);
             txtSenha.TabIndex = 9;
             txtSenha.TextChanged += txtSenha_TextChanged;
             txtSenha.KeyUp += txtSenha_KeyUp;
@@ -212,7 +212,7 @@
             txtNomeUsuario.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtNomeUsuario.Location = new Point(20, 329);
             txtNomeUsuario.Name = "txtNomeUsuario";
-            txtNomeUsuario.Size = new Size(456, 43);
+            txtNomeUsuario.Size = new Size(480, 43);
             txtNomeUsuario.TabIndex = 7;
             txtNomeUsuario.TextChanged += txtNomeUsuario_TextChanged;
             txtNomeUsuario.KeyUp += txtNomeUsuario_KeyUp;
@@ -253,7 +253,7 @@
             txtNome.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtNome.Location = new Point(20, 259);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(456, 43);
+            txtNome.Size = new Size(480, 43);
             txtNome.TabIndex = 2;
             txtNome.TextChanged += txtNome_TextChanged;
             txtNome.KeyUp += txtNome_KeyUp;
@@ -264,7 +264,7 @@
             txtEmail.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtEmail.Location = new Point(20, 399);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(456, 43);
+            txtEmail.Size = new Size(480, 43);
             txtEmail.TabIndex = 1;
             txtEmail.TextChanged += txtEmail_TextChanged;
             txtEmail.KeyUp += txtEmail_KeyUp;
@@ -274,7 +274,7 @@
             btnCadastrar.BackColor = SystemColors.ControlDarkDark;
             btnCadastrar.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCadastrar.ForeColor = SystemColors.ButtonHighlight;
-            btnCadastrar.Location = new Point(274, 659);
+            btnCadastrar.Location = new Point(298, 658);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(202, 59);
             btnCadastrar.TabIndex = 0;
@@ -286,7 +286,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(506, 734);
+            ClientSize = new Size(525, 734);
             Controls.Add(pnlCadastroFuncionario);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Icon = (Icon)resources.GetObject("$this.Icon");

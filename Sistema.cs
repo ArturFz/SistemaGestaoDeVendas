@@ -129,5 +129,15 @@ namespace Trabalho1_ProgVis
         {
 
         }
+
+        private void mnuCompraPagamento_Click(object sender, EventArgs e)
+        {
+            Pagamentos cadastro = Pagamentos.GetInstance();
+            cadastro.MdiParent = this;
+            cadastro.BringToFront();
+            cadastro.WindowState = FormWindowState.Normal;
+
+            cadastro.Show();
+        }
     }
 }
