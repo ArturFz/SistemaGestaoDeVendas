@@ -92,5 +92,19 @@ namespace Trabalho_TCD
                 throw;
             }
         }
+        public static List<Produto> FindAllWithCategoria()
+        {
+            try
+            {
+                using (Repository dbContext = new Repository())
+                {
+                    return dbContext.Produtos.Include("Categoria").ToList();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

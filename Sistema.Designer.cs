@@ -44,6 +44,7 @@
             mnuAjudaSobre = new ToolStripMenuItem();
             staBarraEstado = new StatusStrip();
             staBarraEstadoUltimoAcesso = new ToolStripStatusLabel();
+            mnuRelatorioProdutos = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             staBarraEstado.SuspendLayout();
             SuspendLayout();
@@ -141,7 +142,7 @@
             // 
             // mnuRelatorio
             // 
-            mnuRelatorio.DropDownItems.AddRange(new ToolStripItem[] { mnuRelatorioFuncionarios });
+            mnuRelatorio.DropDownItems.AddRange(new ToolStripItem[] { mnuRelatorioFuncionarios, mnuRelatorioProdutos });
             mnuRelatorio.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             mnuRelatorio.Image = Trabalho_TCD.Properties.Resources.Document;
             mnuRelatorio.ImageScaling = ToolStripItemImageScaling.None;
@@ -195,6 +196,16 @@
             staBarraEstadoUltimoAcesso.Size = new Size(118, 17);
             staBarraEstadoUltimoAcesso.Text = "toolStripStatusLabel1";
             // 
+            // mnuRelatorioProdutos
+            // 
+            mnuRelatorioProdutos.BackColor = SystemColors.ControlDarkDark;
+            mnuRelatorioProdutos.Image = Trabalho_TCD.Properties.Resources.icons8_products_501;
+            mnuRelatorioProdutos.ImageScaling = ToolStripItemImageScaling.None;
+            mnuRelatorioProdutos.Name = "mnuRelatorioProdutos";
+            mnuRelatorioProdutos.Size = new Size(226, 56);
+            mnuRelatorioProdutos.Text = "Produtos";
+            mnuRelatorioProdutos.Click += produtosToolStripMenuItem1_Click;
+            // 
             // Sistema
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -239,5 +250,6 @@
         private ToolStripMenuItem catálogoToolStripMenuItem;
         private ToolStripMenuItem produtosToolStripMenuItem;
         private ToolStripMenuItem categoriasToolStripMenuItem;
+        private ToolStripMenuItem mnuRelatorioProdutos;
     }
 }

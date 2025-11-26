@@ -129,5 +129,14 @@ namespace Trabalho1_ProgVis
         {
 
         }
+
+        private void produtosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ListaProdutos listaprodutos = ListaProdutos.GetInstance();
+            listaprodutos.MdiParent = this;
+            listaprodutos.BringToFront();
+            listaprodutos.WindowState = FormWindowState.Normal;
+            listaprodutos.Show();
+        }
     }
 }
