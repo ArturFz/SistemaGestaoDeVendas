@@ -44,7 +44,6 @@
             mnuAjudaSobre = new ToolStripMenuItem();
             staBarraEstado = new StatusStrip();
             staBarraEstadoUltimoAcesso = new ToolStripStatusLabel();
-            mnuRelatorioProdutos = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             staBarraEstado.SuspendLayout();
             SuspendLayout();
@@ -52,7 +51,7 @@
             // menuStrip1
             // 
             menuStrip1.BackColor = SystemColors.ControlDarkDark;
-            menuStrip1.Items.AddRange(new ToolStripItem[] { mnuArquivo, mnuCadastro, catálogoToolStripMenuItem, mnuRelatorio, mnuAjuda });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { mnuArquivo, mnuCadastro, catálogoToolStripMenuItem, mnuRelatorio, mnuCompra, mnuAjuda });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(960, 58);
@@ -96,7 +95,7 @@
             mnuCadastroUsuario.Image = Trabalho_TCD.Properties.Resources.icons8_add_user_male_50;
             mnuCadastroUsuario.ImageScaling = ToolStripItemImageScaling.None;
             mnuCadastroUsuario.Name = "mnuCadastroUsuario";
-            mnuCadastroUsuario.Size = new Size(190, 56);
+            mnuCadastroUsuario.Size = new Size(214, 56);
             mnuCadastroUsuario.Text = "Usuário";
             mnuCadastroUsuario.Click += mnuCadastroUsuario_Click;
             // 
@@ -106,7 +105,7 @@
             mnuCadastroCliente.Image = Trabalho_TCD.Properties.Resources.icons8_card_payment_50;
             mnuCadastroCliente.ImageScaling = ToolStripItemImageScaling.None;
             mnuCadastroCliente.Name = "mnuCadastroCliente";
-            mnuCadastroCliente.Size = new Size(190, 56);
+            mnuCadastroCliente.Size = new Size(214, 56);
             mnuCadastroCliente.Text = "Cliente";
             mnuCadastroCliente.Click += mnuCadastroCliente_Click;
             // 
@@ -177,7 +176,7 @@
             mnuAjudaSobre.Image = Trabalho_TCD.Properties.Resources.Info;
             mnuAjudaSobre.ImageScaling = ToolStripItemImageScaling.None;
             mnuAjudaSobre.Name = "mnuAjudaSobre";
-            mnuAjudaSobre.Size = new Size(173, 56);
+            mnuAjudaSobre.Size = new Size(214, 56);
             mnuAjudaSobre.Text = "Sobre";
             mnuAjudaSobre.Click += mnuAjudaSobre_Click;
             // 
@@ -195,16 +194,6 @@
             staBarraEstadoUltimoAcesso.Name = "staBarraEstadoUltimoAcesso";
             staBarraEstadoUltimoAcesso.Size = new Size(118, 17);
             staBarraEstadoUltimoAcesso.Text = "toolStripStatusLabel1";
-            // 
-            // mnuRelatorioProdutos
-            // 
-            mnuRelatorioProdutos.BackColor = SystemColors.ControlDarkDark;
-            mnuRelatorioProdutos.Image = Trabalho_TCD.Properties.Resources.icons8_products_501;
-            mnuRelatorioProdutos.ImageScaling = ToolStripItemImageScaling.None;
-            mnuRelatorioProdutos.Name = "mnuRelatorioProdutos";
-            mnuRelatorioProdutos.Size = new Size(226, 56);
-            mnuRelatorioProdutos.Text = "Produtos";
-            mnuRelatorioProdutos.Click += produtosToolStripMenuItem1_Click;
             // 
             // Sistema
             // 
@@ -250,6 +239,5 @@
         private ToolStripMenuItem catálogoToolStripMenuItem;
         private ToolStripMenuItem produtosToolStripMenuItem;
         private ToolStripMenuItem categoriasToolStripMenuItem;
-        private ToolStripMenuItem mnuRelatorioProdutos;
     }
 }

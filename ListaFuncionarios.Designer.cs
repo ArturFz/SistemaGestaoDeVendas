@@ -74,11 +74,11 @@
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Noto Sans", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitulo.ForeColor = SystemColors.ControlDarkDark;
-            lblTitulo.Location = new Point(83, 0);
+            lblTitulo.Location = new Point(50, 0);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(393, 53);
+            lblTitulo.Size = new Size(455, 53);
             lblTitulo.TabIndex = 33;
-            lblTitulo.Text = "Lista de Funcionários";
+            lblTitulo.Text = "LISTA DE FUNCIONÁRIOS";
             // 
             // lblUltimoAcessoDefault
             // 
