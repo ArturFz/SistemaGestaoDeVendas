@@ -23,6 +23,9 @@ namespace Trabalho_TCD
             lstCategorias.DataSource = Categorias.GetInstance().GetCategoriasSalvas();
             lstCategorias.DisplayMember = "Nome";
 
+            lstProdutos.DataSource = GetProdutosSalvos();
+            lstProdutos.DisplayMember = "Nome";
+
             txtPreco.Text = "R$ 0,00";
 
 
@@ -41,9 +44,9 @@ namespace Trabalho_TCD
             }
             ProdutosSalvos.Clear();
 
-            foreach (Produto p in lista)
+            foreach (Produto novoproduto in lista)
             {
-                ProdutosSalvos.Add(p);
+                ProdutosSalvos.Add(novoproduto);
             }
         }
 
@@ -92,11 +95,7 @@ namespace Trabalho_TCD
         #endregion
 
 
-        private void btnCadastrar_Click(object sender, EventArgs e)
-        {
-            Salvar();
-            txtNome.Focus();
-        }
+        
 
         private Boolean travar = false;
 
@@ -133,31 +132,55 @@ namespace Trabalho_TCD
 
         private void Salvar()
         {
-            if (txtNome.Text.Trim() == "")
+            // Validação básica do nome
+            if (string.IsNullOrWhiteSpace(txtNome.Text))
             {
-                // Colocar mensagem de erro
+                //MessageBox.Show("Nome é obrigatório.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtNome.Focus();
                 return;
             }
 
-            foreach (Produto produto in ProdutoRepository.FindAll())
-            {
-                if (produto.Nome.ToLower() == txtNome.Text.Trim().ToLower())
-                {
-                    // Colocar mensagem de erro
-                    txtNome.Clear();
-                    txtNome.Focus();
-                    return;
-                }
+            string nomeTrim = txtNome.Text.Trim();
 
-                Produto novoProduto = new Produto()
-                {
-                    Nome = txtNome.Text.Trim(),
-                    Categoria = (Categoria)lstCategorias.SelectedItem,
-                    Estoque = (UInt32)numEstoque.Value,
-                    EstoqueMinimo = (UInt32)numEstoqueMinimo.Value,
-                    Preco = ParsePreco(txtPreco.Text.Trim()),
-                };
+            // Verifica duplicata uma vez
+            var todos = ProdutoRepository.FindAll();
+            bool existe = todos.Any(p => string.Equals(p.Nome?.Trim(), nomeTrim, StringComparison.OrdinalIgnoreCase));
+            if (existe)
+            {
+                //MessageBox.Show("Já existe um produto com esse nome.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtNome.Clear();
+                txtNome.Focus();
+                return;
             }
+
+            // Cria e salva o produto apenas uma vez
+            Produto novoProduto = new Produto()
+            {
+                Nome = nomeTrim,
+                Categoria = (Categoria)lstCategorias.SelectedItem,
+                Estoque = (UInt32)numEstoque.Value,
+                EstoqueMinimo = (UInt32)numEstoqueMinimo.Value,
+                Preco = ParsePreco(txtPreco.Text.Trim()),
+                Ativo = chkAtivo.Checked
+            };
+
+            ProdutoRepository.SaveOrUpdate(novoProduto);
+
+            // Atualiza UI / lista
+            UpdateProdutosSalvos();
+            if (ProdutosSalvos != null)
+            {
+                lstProdutos.DataSource = ProdutosSalvos;
+                lstProdutos.DisplayMember = "Nome";
+            }
+
+            // Limpa/ajusta campos para próximo cadastro
+            txtNome.Clear();
+            txtPreco.Text = "R$ 0,00";
+            numEstoque.Value = numEstoque.Minimum;
+            numEstoqueMinimo.Value = numEstoqueMinimo.Minimum;
+            chkAtivo.Checked = true;
+            if (lstCategorias.Items.Count > 0) lstCategorias.SelectedIndex = 0;
         }
 
         private decimal ParsePreco(String input)
@@ -177,5 +200,10 @@ namespace Trabalho_TCD
             return 0m;
         }
 
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            Salvar();
+            txtNome.Focus();
+        }
     }
 }
