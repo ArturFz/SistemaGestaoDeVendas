@@ -40,6 +40,12 @@ namespace Trabalho_TCD
             {
                 CategoriasSalvas.Add(c);
             }
+            // Atualiza a fonte de dados do ListBox
+            lstCategorias.DataSource = CategoriasSalvas;
+            lstCategorias.DisplayMember = "Nome";
+
+            // Garante que nenhum item fique selecionado
+            lstCategorias.SelectedIndex = -1;
         }
         public BindingList<Categoria>? GetCategoriasSalvas()
         {
@@ -83,7 +89,7 @@ namespace Trabalho_TCD
         {
             if (txtNome.Text.Trim() == "")
             {
-                // Colocar mensagem de erro
+                lblAvisoNome.Visible = true;
                 return;
             }
 
@@ -91,16 +97,38 @@ namespace Trabalho_TCD
             {
                 if (ca.Nome.ToLower() == txtNome.Text.Trim().ToLower())
                 {
-                    // Colocar mensagem de erro
+                    lblAvisoCategoriaExistente.Visible = true;
                     txtNome.Focus();
                     return;
                 }
             }
 
-            Categoria c = new Categoria(){ Nome = txtNome.Text.Trim()};
+
+
+            Categoria c = new Categoria() { Nome = txtNome.Text.Trim() };
 
             CategoriaRepository.SaveOrUpdate(c);
             UpdateCategoriasSalvas();
+
+            txtNome.Clear();
+            lblSucesso.Visible = true;
+        }
+
+        private void lblTitulo_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Categorias_Load(object sender, EventArgs e)
+        {
+            UpdateCategoriasSalvas();
+        }
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+            lblAvisoNome.Visible = false;
+            lblAvisoCategoriaExistente.Visible = false;
+            lblSucesso.Visible = false;
         }
     }
 }

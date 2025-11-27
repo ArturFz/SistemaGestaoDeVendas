@@ -28,15 +28,45 @@ namespace Trabalho_TCD
         public Pagamentos()
         {
             InitializeComponent();
+            Load += Pagamentos_Load;
+            lblAviso.Visible = false;
+            cboClientes.DropDown += cboClientes_DropDown;
+        }
 
+        private void Pagamentos_Load(object? sender, EventArgs e)
+        {
+            CarregarClientes();
         }
 
         private void btnIniciarPagamento_Click(object sender, EventArgs e)
         {
+            if (cboClientes.SelectedIndex < 0)
+            {
+                lblAviso.Visible = true;
+                return;
+            }
+            lblAviso.Visible = false;
+
+            Cliente clienteSelecionado = (Cliente)cboClientes.SelectedItem;
+
             PagamentoFinal janela = PagamentoFinal.GetInstance();
             janela.ShowDialog(this);
             janela.BringToFront();
             janela.Focus();
+        }
+        private void CarregarClientes()
+        {
+            List<Cliente> lista = ClienteRepository.FindAll();
+
+            cboClientes.DataSource = lista;
+            cboClientes.DisplayMember = "Nome";
+            cboClientes.ValueMember = "Id";
+            cboClientes.SelectedIndex = -1;
+        }
+
+        private void cboClientes_DropDown(object sender, EventArgs e)
+        {
+            lblAviso.Visible = false;
         }
     }
 }

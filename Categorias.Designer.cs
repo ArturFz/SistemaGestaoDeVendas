@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             pnlCategorias = new Panel();
+            lblAvisoCategoriaExistente = new Label();
+            lblSucesso = new Label();
+            lblAvisoNome = new Label();
             label1 = new Label();
             btnCadastrar = new Button();
             lstCategorias = new ListBox();
@@ -41,6 +44,9 @@
             // pnlCategorias
             // 
             pnlCategorias.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pnlCategorias.Controls.Add(lblAvisoCategoriaExistente);
+            pnlCategorias.Controls.Add(lblSucesso);
+            pnlCategorias.Controls.Add(lblAvisoNome);
             pnlCategorias.Controls.Add(label1);
             pnlCategorias.Controls.Add(btnCadastrar);
             pnlCategorias.Controls.Add(lstCategorias);
@@ -51,6 +57,42 @@
             pnlCategorias.Name = "pnlCategorias";
             pnlCategorias.Size = new Size(743, 405);
             pnlCategorias.TabIndex = 0;
+            // 
+            // lblAvisoCategoriaExistente
+            // 
+            lblAvisoCategoriaExistente.AutoSize = true;
+            lblAvisoCategoriaExistente.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAvisoCategoriaExistente.ForeColor = Color.Red;
+            lblAvisoCategoriaExistente.Location = new Point(21, 309);
+            lblAvisoCategoriaExistente.Name = "lblAvisoCategoriaExistente";
+            lblAvisoCategoriaExistente.Size = new Size(200, 21);
+            lblAvisoCategoriaExistente.TabIndex = 42;
+            lblAvisoCategoriaExistente.Text = "Essa categoria já existe!!!";
+            lblAvisoCategoriaExistente.Visible = false;
+            // 
+            // lblSucesso
+            // 
+            lblSucesso.AutoSize = true;
+            lblSucesso.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSucesso.ForeColor = Color.Green;
+            lblSucesso.Location = new Point(21, 309);
+            lblSucesso.Name = "lblSucesso";
+            lblSucesso.Size = new Size(285, 21);
+            lblSucesso.TabIndex = 41;
+            lblSucesso.Text = "Categoria cadastrada com sucesso!!!";
+            lblSucesso.Visible = false;
+            // 
+            // lblAvisoNome
+            // 
+            lblAvisoNome.AutoSize = true;
+            lblAvisoNome.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAvisoNome.ForeColor = Color.Red;
+            lblAvisoNome.Location = new Point(21, 309);
+            lblAvisoNome.Name = "lblAvisoNome";
+            lblAvisoNome.Size = new Size(362, 21);
+            lblAvisoNome.TabIndex = 40;
+            lblAvisoNome.Text = "Você deve digitar um nome para a categoria!!!";
+            lblAvisoNome.Visible = false;
             // 
             // label1
             // 
@@ -68,9 +110,9 @@
             btnCadastrar.BackColor = SystemColors.ControlDarkDark;
             btnCadastrar.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCadastrar.ForeColor = SystemColors.ButtonHighlight;
-            btnCadastrar.Location = new Point(32, 171);
+            btnCadastrar.Location = new Point(21, 186);
             btnCadastrar.Name = "btnCadastrar";
-            btnCadastrar.Size = new Size(309, 56);
+            btnCadastrar.Size = new Size(362, 56);
             btnCadastrar.TabIndex = 38;
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.UseVisualStyleBackColor = false;
@@ -91,7 +133,7 @@
             // 
             lblNome.AutoSize = true;
             lblNome.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblNome.Location = new Point(32, 64);
+            lblNome.Location = new Point(21, 79);
             lblNome.Name = "lblNome";
             lblNome.Size = new Size(67, 25);
             lblNome.TabIndex = 36;
@@ -101,21 +143,23 @@
             // 
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Noto Sans", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitulo.ForeColor = SystemColors.ControlDarkDark;
-            lblTitulo.Location = new Point(32, 10);
+            lblTitulo.ForeColor = Color.Black;
+            lblTitulo.Location = new Point(37, 23);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(292, 29);
             lblTitulo.TabIndex = 35;
             lblTitulo.Text = "ADICIONAR NOVA CATEGORIA";
+            lblTitulo.Click += lblTitulo_Click_1;
             // 
             // txtNome
             // 
             txtNome.BackColor = Color.DarkGray;
             txtNome.Font = new Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNome.Location = new Point(32, 92);
+            txtNome.Location = new Point(21, 107);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(309, 46);
+            txtNome.Size = new Size(362, 46);
             txtNome.TabIndex = 1;
+            txtNome.TextChanged += txtNome_TextChanged;
             // 
             // Categorias
             // 
@@ -129,6 +173,7 @@
             Name = "Categorias";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Gerenciamento de categorias";
+            Load += Categorias_Load;
             pnlCategorias.ResumeLayout(false);
             pnlCategorias.PerformLayout();
             ResumeLayout(false);
@@ -143,5 +188,8 @@
         private ListBox lstCategorias;
         private Button btnCadastrar;
         private Label label1;
+        private Label lblAvisoCategoriaExistente;
+        private Label lblSucesso;
+        private Label lblAvisoNome;
     }
 }

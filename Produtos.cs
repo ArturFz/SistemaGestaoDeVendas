@@ -20,17 +20,6 @@ namespace Trabalho_TCD
         public Produtos()
         {
             InitializeComponent();
-            lstCategorias.DataSource = Categorias.GetInstance().GetCategoriasSalvas();
-            lstCategorias.DisplayMember = "Nome";
-
-            lstProdutos.DataSource = GetProdutosSalvos();
-            lstProdutos.DisplayMember = "Nome";
-
-            txtPreco.Text = "R$ 0,00";
-
-
-
-            numEstoqueMinimo.Minimum = 10;
         }
 
         #region DataSource Produto
@@ -48,6 +37,12 @@ namespace Trabalho_TCD
             {
                 ProdutosSalvos.Add(novoproduto);
             }
+            // Atualiza a fonte de dados do ListBox
+            lstProdutos.DataSource = ProdutosSalvos;
+            lstProdutos.DisplayMember = "Nome";
+
+            // Garante que nenhum item fique selecionado
+            lstProdutos.SelectedIndex = -1;
         }
 
         public BindingList<Produto>? GetProdutosSalvos()
@@ -80,7 +75,15 @@ namespace Trabalho_TCD
 
         private void Produtos_Load(object sender, EventArgs e)
         {
-
+            CarregarCategorias();
+            UpdateProdutosSalvos();    // chama aqui para preencher a lista ao abrir
+            if (ProdutosSalvos != null)
+            {
+                lstProdutos.DataSource = ProdutosSalvos;
+                lstProdutos.DisplayMember = "Nome";
+                lstProdutos.SelectedIndex = -1;
+            }
+            txtPreco.Text = "R$ 0,00";
         }
 
         private void chkAtivo_CheckedChanged(object sender, EventArgs e)
@@ -94,8 +97,15 @@ namespace Trabalho_TCD
         }
         #endregion
 
+        private void CarregarCategorias()
+        {
+            List<Categoria> categorias = CategoriaRepository.FindAll();
+            cboCategoria.DataSource = categorias;
+            cboCategoria.DisplayMember = "Nome";
+            cboCategoria.ValueMember = "Id";
+            cboCategoria.SelectedIndex = -1; // Nenhuma selecionada
+        }
 
-        
 
         private Boolean travar = false;
 
@@ -157,7 +167,7 @@ namespace Trabalho_TCD
             Produto novoProduto = new Produto()
             {
                 Nome = nomeTrim,
-                Categoria = (Categoria)lstCategorias.SelectedItem,
+                Categoria = (Categoria)cboCategoria.SelectedItem,
                 Estoque = (UInt32)numEstoque.Value,
                 EstoqueMinimo = (UInt32)numEstoqueMinimo.Value,
                 Preco = ParsePreco(txtPreco.Text.Trim()),
@@ -180,7 +190,6 @@ namespace Trabalho_TCD
             numEstoque.Value = numEstoque.Minimum;
             numEstoqueMinimo.Value = numEstoqueMinimo.Minimum;
             chkAtivo.Checked = true;
-            if (lstCategorias.Items.Count > 0) lstCategorias.SelectedIndex = 0;
         }
 
         private decimal ParsePreco(String input)
@@ -203,7 +212,23 @@ namespace Trabalho_TCD
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             Salvar();
+            txtNome.Clear();
+            txtPreco.Clear();
+            numEstoque.Value = numEstoque.Minimum;
+            numEstoqueMinimo.Value = numEstoqueMinimo.Minimum;
+            cboCategoria.SelectedIndex = -1;
+            chkAtivo.Checked = false;
             txtNome.Focus();
+        }
+
+        private void numEstoqueMinimo_ValueChanged(object sender, EventArgs e)
+        {
+            numEstoque.Minimum = numEstoqueMinimo.Value;
+        }
+
+        private void pnlProdutos_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

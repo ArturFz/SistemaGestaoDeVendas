@@ -129,5 +129,15 @@ namespace Trabalho1_ProgVis
         {
 
         }
+
+        private void pagamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Pagamentos pagamentos = Pagamentos.GetInstance();
+            pagamentos.MdiParent = this;
+            pagamentos.BringToFront();
+            pagamentos.WindowState = FormWindowState.Normal;
+
+            pagamentos.Show();
+        }
     }
 }
