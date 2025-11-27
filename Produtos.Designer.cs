@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             pnlProdutos = new Panel();
+            lblAvisoCategoria = new Label();
+            lblSucesso = new Label();
+            lblAvisoPreco = new Label();
+            lblAvisoNome = new Label();
+            lblAvisoProdutoExistente = new Label();
             cboCategoria = new ComboBox();
             numEstoque = new NumericUpDown();
             numEstoqueMinimo = new NumericUpDown();
@@ -52,6 +57,11 @@
             // pnlProdutos
             // 
             pnlProdutos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pnlProdutos.Controls.Add(lblAvisoCategoria);
+            pnlProdutos.Controls.Add(lblSucesso);
+            pnlProdutos.Controls.Add(lblAvisoPreco);
+            pnlProdutos.Controls.Add(lblAvisoNome);
+            pnlProdutos.Controls.Add(lblAvisoProdutoExistente);
             pnlProdutos.Controls.Add(cboCategoria);
             pnlProdutos.Controls.Add(numEstoque);
             pnlProdutos.Controls.Add(numEstoqueMinimo);
@@ -69,9 +79,69 @@
             pnlProdutos.Controls.Add(txtNome);
             pnlProdutos.Location = new Point(4, 3);
             pnlProdutos.Name = "pnlProdutos";
-            pnlProdutos.Size = new Size(708, 530);
+            pnlProdutos.Size = new Size(776, 631);
             pnlProdutos.TabIndex = 1;
             pnlProdutos.Paint += pnlProdutos_Paint;
+            // 
+            // lblAvisoCategoria
+            // 
+            lblAvisoCategoria.AutoSize = true;
+            lblAvisoCategoria.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAvisoCategoria.ForeColor = Color.Red;
+            lblAvisoCategoria.Location = new Point(17, 491);
+            lblAvisoCategoria.Name = "lblAvisoCategoria";
+            lblAvisoCategoria.Size = new Size(417, 21);
+            lblAvisoCategoria.TabIndex = 56;
+            lblAvisoCategoria.Text = "Você deve selecionar uma categoria para o produto!!!";
+            lblAvisoCategoria.Visible = false;
+            // 
+            // lblSucesso
+            // 
+            lblSucesso.AutoSize = true;
+            lblSucesso.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSucesso.ForeColor = Color.Green;
+            lblSucesso.Location = new Point(17, 533);
+            lblSucesso.Name = "lblSucesso";
+            lblSucesso.Size = new Size(274, 21);
+            lblSucesso.TabIndex = 55;
+            lblSucesso.Text = "Produto cadastrado com sucesso!!!";
+            lblSucesso.Visible = false;
+            // 
+            // lblAvisoPreco
+            // 
+            lblAvisoPreco.AutoSize = true;
+            lblAvisoPreco.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAvisoPreco.ForeColor = Color.Red;
+            lblAvisoPreco.Location = new Point(17, 470);
+            lblAvisoPreco.Name = "lblAvisoPreco";
+            lblAvisoPreco.Size = new Size(352, 21);
+            lblAvisoPreco.TabIndex = 54;
+            lblAvisoPreco.Text = "Você deve definir um preço para o produto!!!";
+            lblAvisoPreco.Visible = false;
+            // 
+            // lblAvisoNome
+            // 
+            lblAvisoNome.AutoSize = true;
+            lblAvisoNome.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAvisoNome.ForeColor = Color.Red;
+            lblAvisoNome.Location = new Point(17, 449);
+            lblAvisoNome.Name = "lblAvisoNome";
+            lblAvisoNome.Size = new Size(353, 21);
+            lblAvisoNome.TabIndex = 53;
+            lblAvisoNome.Text = "Você deve digitar um nome para o produto!!!";
+            lblAvisoNome.Visible = false;
+            // 
+            // lblAvisoProdutoExistente
+            // 
+            lblAvisoProdutoExistente.AutoSize = true;
+            lblAvisoProdutoExistente.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAvisoProdutoExistente.ForeColor = Color.Red;
+            lblAvisoProdutoExistente.Location = new Point(17, 512);
+            lblAvisoProdutoExistente.Name = "lblAvisoProdutoExistente";
+            lblAvisoProdutoExistente.Size = new Size(190, 21);
+            lblAvisoProdutoExistente.TabIndex = 52;
+            lblAvisoProdutoExistente.Text = "Esse produto já existe!!!";
+            lblAvisoProdutoExistente.Visible = false;
             // 
             // cboCategoria
             // 
@@ -83,6 +153,7 @@
             cboCategoria.Name = "cboCategoria";
             cboCategoria.Size = new Size(284, 40);
             cboCategoria.TabIndex = 51;
+            cboCategoria.SelectedIndexChanged += cboCategoria_SelectedIndexChanged_1;
             // 
             // numEstoque
             // 
@@ -108,7 +179,7 @@
             lblProdutosExistentes.AutoSize = true;
             lblProdutosExistentes.Font = new Font("Noto Sans", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblProdutosExistentes.ForeColor = SystemColors.ControlDarkDark;
-            lblProdutosExistentes.Location = new Point(418, 56);
+            lblProdutosExistentes.Location = new Point(484, 43);
             lblProdutosExistentes.Name = "lblProdutosExistentes";
             lblProdutosExistentes.Size = new Size(231, 29);
             lblProdutosExistentes.TabIndex = 48;
@@ -182,7 +253,7 @@
             btnCadastrar.BackColor = SystemColors.ControlDarkDark;
             btnCadastrar.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCadastrar.ForeColor = SystemColors.ButtonHighlight;
-            btnCadastrar.Location = new Point(20, 464);
+            btnCadastrar.Location = new Point(17, 557);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(284, 53);
             btnCadastrar.TabIndex = 38;
@@ -196,9 +267,9 @@
             lstProdutos.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lstProdutos.FormattingEnabled = true;
             lstProdutos.ItemHeight = 25;
-            lstProdutos.Location = new Point(370, 88);
+            lstProdutos.Location = new Point(440, 75);
             lstProdutos.Name = "lstProdutos";
-            lstProdutos.Size = new Size(324, 429);
+            lstProdutos.Size = new Size(324, 479);
             lstProdutos.TabIndex = 37;
             // 
             // lblNome
@@ -231,12 +302,13 @@
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(285, 43);
             txtNome.TabIndex = 1;
+            txtNome.TextChanged += txtNome_TextChanged;
             // 
             // Produtos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(716, 534);
+            ClientSize = new Size(784, 635);
             Controls.Add(pnlProdutos);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
@@ -270,5 +342,10 @@
         private NumericUpDown numEstoqueMinimo;
         private NumericUpDown numEstoque;
         private ComboBox cboCategoria;
+        private Label lblAvisoProdutoExistente;
+        private Label lblAvisoNome;
+        private Label lblAvisoPreco;
+        private Label lblSucesso;
+        private Label lblAvisoCategoria;
     }
 }
