@@ -11,21 +11,21 @@ using Trabalho1_ProgVis;
 
 namespace Trabalho_TCD
 {
-    public partial class Pagamentos : Form
+    public partial class IniciarPagamento : Form
     {
-        private static Pagamentos _instance;
+        private static IniciarPagamento _instance;
 
         #region SingleTon
-        public static Pagamentos GetInstance()
+        public static IniciarPagamento GetInstance()
         {
             if (_instance == null || _instance.IsDisposed)
             {
-                _instance = new Pagamentos();
+                _instance = new IniciarPagamento();
             }
             return _instance;
         }
         #endregion
-        public Pagamentos()
+        public IniciarPagamento()
         {
             InitializeComponent();
             Load += Pagamentos_Load;

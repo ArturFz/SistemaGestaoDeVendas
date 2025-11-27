@@ -40,12 +40,14 @@
             categoriasToolStripMenuItem = new ToolStripMenuItem();
             mnuRelatorio = new ToolStripMenuItem();
             mnuRelatorioFuncionarios = new ToolStripMenuItem();
+            mnuOrçamento = new ToolStripMenuItem();
+            compraToolStripMenuItem = new ToolStripMenuItem();
+            mnuCaixa = new ToolStripMenuItem();
+            mnuCaixaPagamento = new ToolStripMenuItem();
             mnuAjuda = new ToolStripMenuItem();
             mnuAjudaSobre = new ToolStripMenuItem();
             staBarraEstado = new StatusStrip();
             staBarraEstadoUltimoAcesso = new ToolStripStatusLabel();
-            mnuCompra = new ToolStripMenuItem();
-            mnuCompraPagamento = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             staBarraEstado.SuspendLayout();
             SuspendLayout();
@@ -53,10 +55,10 @@
             // menuStrip1
             // 
             menuStrip1.BackColor = SystemColors.ControlDarkDark;
-            menuStrip1.Items.AddRange(new ToolStripItem[] { mnuArquivo, mnuCadastro, catálogoToolStripMenuItem, mnuRelatorio, mnuCompra, mnuAjuda });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { mnuArquivo, mnuCadastro, catálogoToolStripMenuItem, mnuRelatorio, mnuOrçamento, mnuCaixa, mnuAjuda });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(960, 58);
+            menuStrip1.Size = new Size(1106, 58);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -162,6 +164,46 @@
             mnuRelatorioFuncionarios.Text = "Funcionários";
             mnuRelatorioFuncionarios.Click += mnuRelatorioUsuarios_Click;
             // 
+            // mnuOrçamento
+            // 
+            mnuOrçamento.DropDownItems.AddRange(new ToolStripItem[] { compraToolStripMenuItem });
+            mnuOrçamento.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            mnuOrçamento.Image = Trabalho_TCD.Properties.Resources.icons8_vendedor_50;
+            mnuOrçamento.ImageScaling = ToolStripItemImageScaling.None;
+            mnuOrçamento.Name = "mnuOrçamento";
+            mnuOrçamento.Size = new Size(168, 54);
+            mnuOrçamento.Text = "Orçamento";
+            // 
+            // compraToolStripMenuItem
+            // 
+            compraToolStripMenuItem.BackColor = SystemColors.ControlDarkDark;
+            compraToolStripMenuItem.Image = Trabalho_TCD.Properties.Resources.icons8_comprar_50;
+            compraToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
+            compraToolStripMenuItem.Name = "compraToolStripMenuItem";
+            compraToolStripMenuItem.Size = new Size(214, 56);
+            compraToolStripMenuItem.Text = "Compra";
+            compraToolStripMenuItem.Click += compraToolStripMenuItem_Click;
+            // 
+            // mnuCaixa
+            // 
+            mnuCaixa.DropDownItems.AddRange(new ToolStripItem[] { mnuCaixaPagamento });
+            mnuCaixa.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            mnuCaixa.Image = Trabalho_TCD.Properties.Resources.icons8_caixa_50;
+            mnuCaixa.ImageScaling = ToolStripItemImageScaling.None;
+            mnuCaixa.Name = "mnuCaixa";
+            mnuCaixa.Size = new Size(120, 54);
+            mnuCaixa.Text = "Caixa";
+            // 
+            // mnuCaixaPagamento
+            // 
+            mnuCaixaPagamento.BackColor = SystemColors.ControlDarkDark;
+            mnuCaixaPagamento.Image = Trabalho_TCD.Properties.Resources.icons8_card_payment_50;
+            mnuCaixaPagamento.ImageScaling = ToolStripItemImageScaling.None;
+            mnuCaixaPagamento.Name = "mnuCaixaPagamento";
+            mnuCaixaPagamento.Size = new Size(213, 56);
+            mnuCaixaPagamento.Text = "Pagamento";
+            mnuCaixaPagamento.Click += pagamentoToolStripMenuItem_Click;
+            // 
             // mnuAjuda
             // 
             mnuAjuda.DropDownItems.AddRange(new ToolStripItem[] { mnuAjudaSobre });
@@ -187,7 +229,7 @@
             staBarraEstado.Items.AddRange(new ToolStripItem[] { staBarraEstadoUltimoAcesso });
             staBarraEstado.Location = new Point(0, 523);
             staBarraEstado.Name = "staBarraEstado";
-            staBarraEstado.Size = new Size(960, 22);
+            staBarraEstado.Size = new Size(1106, 22);
             staBarraEstado.TabIndex = 1;
             staBarraEstado.Text = "statusStrip1";
             // 
@@ -197,33 +239,13 @@
             staBarraEstadoUltimoAcesso.Size = new Size(118, 17);
             staBarraEstadoUltimoAcesso.Text = "toolStripStatusLabel1";
             // 
-            // mnuCompra
-            // 
-            mnuCompra.DropDownItems.AddRange(new ToolStripItem[] { mnuCompraPagamento });
-            mnuCompra.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            mnuCompra.Image = Trabalho_TCD.Properties.Resources.icons8_comprar_50;
-            mnuCompra.ImageScaling = ToolStripItemImageScaling.None;
-            mnuCompra.Name = "mnuCompra";
-            mnuCompra.Size = new Size(141, 54);
-            mnuCompra.Text = "Compra";
-            // 
-            // mnuCompraPagamento
-            // 
-            mnuCompraPagamento.BackColor = SystemColors.ControlDarkDark;
-            mnuCompraPagamento.Image = Trabalho_TCD.Properties.Resources.icons8_card_payment_50;
-            mnuCompraPagamento.ImageScaling = ToolStripItemImageScaling.None;
-            mnuCompraPagamento.Name = "mnuCompraPagamento";
-            mnuCompraPagamento.Size = new Size(214, 56);
-            mnuCompraPagamento.Text = "Pagamento";
-            mnuCompraPagamento.Click += pagamentoToolStripMenuItem_Click;
-            // 
             // Sistema
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Trabalho_TCD.Properties.Resources.IMG_fundo;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(960, 545);
+            ClientSize = new Size(1106, 545);
             Controls.Add(staBarraEstado);
             Controls.Add(menuStrip1);
             DoubleBuffered = true;
@@ -261,7 +283,9 @@
         private ToolStripMenuItem catálogoToolStripMenuItem;
         private ToolStripMenuItem produtosToolStripMenuItem;
         private ToolStripMenuItem categoriasToolStripMenuItem;
-        private ToolStripMenuItem mnuCompra;
-        private ToolStripMenuItem mnuCompraPagamento;
+        private ToolStripMenuItem mnuCaixa;
+        private ToolStripMenuItem mnuCaixaPagamento;
+        private ToolStripMenuItem mnuOrçamento;
+        private ToolStripMenuItem compraToolStripMenuItem;
     }
 }

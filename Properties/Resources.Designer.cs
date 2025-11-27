@@ -193,6 +193,16 @@ namespace Trabalho_TCD.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_caixa_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-caixa-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_card_payment_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-card-payment-50", resourceCulture);
@@ -303,16 +313,6 @@ namespace Trabalho_TCD.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_maquina_de_cartão_50 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-maquina-de-cartão-50", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap icons8_person_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-person-100", resourceCulture);
@@ -332,16 +332,6 @@ namespace Trabalho_TCD.Properties {
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_products_501 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-products-501", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap icons8_test_account_100 {
             get {
@@ -376,6 +366,16 @@ namespace Trabalho_TCD.Properties {
         internal static System.Drawing.Bitmap icons8_users_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-users-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_vendedor_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-vendedor-50", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

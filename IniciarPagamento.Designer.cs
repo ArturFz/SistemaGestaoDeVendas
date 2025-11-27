@@ -1,6 +1,6 @@
 ﻿namespace Trabalho_TCD
 {
-    partial class Pagamentos
+    partial class IniciarPagamento
     {
         /// <summary>
         /// Required designer variable.
