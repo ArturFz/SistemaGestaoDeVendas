@@ -96,6 +96,10 @@ namespace Trabalho_TCD
         {
 
         }
+        private void cboCategoria_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
         #endregion
 
         private void CarregarCategorias()
@@ -146,7 +150,7 @@ namespace Trabalho_TCD
             // Validação básica do nome
             if (string.IsNullOrWhiteSpace(txtNome.Text))
             {
-                //MessageBox.Show("Nome é obrigatório.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                 txtNome.Focus();
                 return;
             }
@@ -158,13 +162,13 @@ namespace Trabalho_TCD
             bool existe = todos.Any(p => string.Equals(p.Nome?.Trim(), nomeTrim, StringComparison.OrdinalIgnoreCase));
             if (existe)
             {
-                //MessageBox.Show("Já existe um produto com esse nome.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                 txtNome.Clear();
                 txtNome.Focus();
                 return;
             }
 
-            // Cria e salva o produto apenas uma vez
+
             Produto novoProduto = new Produto()
             {
                 Nome = nomeTrim,
@@ -212,7 +216,42 @@ namespace Trabalho_TCD
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
+            // Esconde avisos anteriores
+            lblAvisoCategoria.Visible = false;
+            lblAvisoNome.Visible = false;
+            lblAvisoPreco.Visible = false;
+
+            // Valida campos obrigatórios usando ParsePreco para checar valor numérico
+            bool valido = true;
+
+            if (cboCategoria.SelectedIndex == -1)
+            {
+                lblAvisoCategoria.Visible = true;
+                valido = false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtNome.Text))
+            {
+                lblAvisoNome.Visible = true;
+                valido = false;
+            }
+
+            if (ParsePreco(txtPreco.Text) == 0m)
+            {
+                // preço igual a R$ 0,00 ou parsing falhou -> aviso
+                lblAvisoPreco.Visible = true;
+                valido = false;
+            }
+
+            if (!valido)
+            {
+                // Não prossegue se algo inválido
+                return;
+            }
+
+
             Salvar();
+            lblSucesso.Visible = true;
             txtNome.Clear();
             txtPreco.Clear();
             numEstoque.Value = numEstoque.Minimum;
@@ -220,6 +259,7 @@ namespace Trabalho_TCD
             cboCategoria.SelectedIndex = -1;
             chkAtivo.Checked = false;
             txtNome.Focus();
+
         }
 
         private void numEstoqueMinimo_ValueChanged(object sender, EventArgs e)
@@ -231,5 +271,21 @@ namespace Trabalho_TCD
         {
 
         }
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+            lblAvisoNome.Visible = false;
+        }
+
+        private void txtPreco_TextChanged_1(object sender, EventArgs e)
+        {
+            lblAvisoPreco.Visible = false;
+        }
+
+        private void cboCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblAvisoCategoria.Visible = false;
+        }
+
     }
 }
