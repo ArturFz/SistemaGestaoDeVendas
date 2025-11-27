@@ -17,6 +17,7 @@ namespace Trabalho_TCD
         public Compras()
         {
             InitializeComponent();
+            cboClientes.DropDown += cboClientes_DropDown;
         }
 
         #region SingleTon
@@ -40,7 +41,19 @@ namespace Trabalho_TCD
         {
             List<Cliente> clientes = ClienteRepository.FindAll();
             cboClientes.DataSource = clientes;
+            cboClientes.DisplayMember = "Nome";
+            cboClientes.ValueMember = "Id";
             cboClientes.SelectedIndex = -1;
+        }
+
+        private void Compras_Load(object sender, EventArgs e)
+        {
+            CarregarClientes();
+        }
+
+        private void cboClientes_DropDown(object sender, EventArgs e)
+        {
+
         }
     }
 }
