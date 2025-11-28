@@ -180,7 +180,7 @@
             compraToolStripMenuItem.Image = Trabalho_TCD.Properties.Resources.icons8_comprar_50;
             compraToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
             compraToolStripMenuItem.Name = "compraToolStripMenuItem";
-            compraToolStripMenuItem.Size = new Size(214, 56);
+            compraToolStripMenuItem.Size = new Size(185, 56);
             compraToolStripMenuItem.Text = "Compra";
             compraToolStripMenuItem.Click += compraToolStripMenuItem_Click;
             // 
@@ -243,7 +243,6 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Trabalho_TCD.Properties.Resources.IMG_fundo;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1106, 545);
             Controls.Add(staBarraEstado);

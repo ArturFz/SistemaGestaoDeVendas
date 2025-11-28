@@ -65,5 +65,14 @@ namespace Trabalho1_ProgVis
             var comissao = CalcularTotal() * 0.01m;
             return comissao;
         }
+        public void AdicionarItem(Item item)
+        {
+            Itens.Add(item); 
+        }
+        public void RemoverItem(Item item)
+        {
+            Itens.Remove(item);  
+        }
+
     }
 }

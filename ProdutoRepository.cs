@@ -106,5 +106,24 @@ namespace Trabalho_TCD
                 throw;
             }
         }
+        public static List<Produto> FindByCategoria(UInt64 categoriaId)
+        {
+            try
+            {
+                using (Repository dbContext = new Repository())
+                {
+
+                    return dbContext.Produtos
+                                    .Where(p => p.Categoria != null && p.Categoria.Id == categoriaId)
+                                    .Include(p => p.Categoria)
+                                    .ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
     }
 }

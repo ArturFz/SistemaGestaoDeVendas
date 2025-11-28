@@ -149,7 +149,7 @@
             cboCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
             cboCategoria.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cboCategoria.FormattingEnabled = true;
-            cboCategoria.Location = new Point(20, 376);
+            cboCategoria.Location = new Point(20, 406);
             cboCategoria.Name = "cboCategoria";
             cboCategoria.Size = new Size(284, 40);
             cboCategoria.TabIndex = 51;
@@ -159,7 +159,7 @@
             // 
             numEstoque.BackColor = Color.DarkGray;
             numEstoque.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            numEstoque.Location = new Point(19, 236);
+            numEstoque.Location = new Point(20, 269);
             numEstoque.Name = "numEstoque";
             numEstoque.Size = new Size(284, 39);
             numEstoque.TabIndex = 50;
@@ -168,7 +168,7 @@
             // 
             numEstoqueMinimo.BackColor = Color.DarkGray;
             numEstoqueMinimo.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            numEstoqueMinimo.Location = new Point(20, 306);
+            numEstoqueMinimo.Location = new Point(21, 339);
             numEstoqueMinimo.Name = "numEstoqueMinimo";
             numEstoqueMinimo.Size = new Size(284, 39);
             numEstoqueMinimo.TabIndex = 49;
@@ -189,7 +189,7 @@
             // 
             lblCategoria.AutoSize = true;
             lblCategoria.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCategoria.Location = new Point(20, 348);
+            lblCategoria.Location = new Point(20, 378);
             lblCategoria.Name = "lblCategoria";
             lblCategoria.Size = new Size(98, 25);
             lblCategoria.TabIndex = 47;
@@ -200,7 +200,7 @@
             // 
             chkAtivo.AutoSize = true;
             chkAtivo.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            chkAtivo.Location = new Point(20, 422);
+            chkAtivo.Location = new Point(20, 211);
             chkAtivo.Name = "chkAtivo";
             chkAtivo.Size = new Size(74, 29);
             chkAtivo.TabIndex = 45;
@@ -212,7 +212,7 @@
             // 
             lblEstoqueMinimo.AutoSize = true;
             lblEstoqueMinimo.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblEstoqueMinimo.Location = new Point(19, 278);
+            lblEstoqueMinimo.Location = new Point(20, 311);
             lblEstoqueMinimo.Name = "lblEstoqueMinimo";
             lblEstoqueMinimo.Size = new Size(152, 25);
             lblEstoqueMinimo.TabIndex = 44;
@@ -222,7 +222,7 @@
             // 
             lblEstoque.AutoSize = true;
             lblEstoque.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblEstoque.Location = new Point(19, 208);
+            lblEstoque.Location = new Point(20, 241);
             lblEstoque.Name = "lblEstoque";
             lblEstoque.Size = new Size(83, 25);
             lblEstoque.TabIndex = 42;

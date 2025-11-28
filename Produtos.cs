@@ -264,7 +264,10 @@ namespace Trabalho_TCD
 
         private void numEstoqueMinimo_ValueChanged(object sender, EventArgs e)
         {
-            numEstoque.Minimum = numEstoqueMinimo.Value;
+            if (chkAtivo.Checked)
+            {
+                numEstoque.Minimum = numEstoqueMinimo.Value;
+            }
         }
 
         private void pnlProdutos_Paint(object sender, PaintEventArgs e)
