@@ -106,5 +106,21 @@ namespace Trabalho1_ProgVis
                 throw;
             }
         }
+        public static Usuario? FindByNome(string nome)
+        {
+            try
+            {
+                using (Repository dbContext = new Repository())
+                {
+                    return dbContext.Usuarios
+                                    .Include(u => u.Credencial) // se quiser trazer também a credencial
+                                    .FirstOrDefault(u => u.Nome == nome);
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

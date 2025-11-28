@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -22,7 +22,7 @@ namespace Trabalho1_ProgVis
               
         
         // Relacionamentos
-        public Vendedor Vendedor { get; set; }
+        public Vendedor? Vendedor { get; set; }
         public List<Pagamento> Pagamentos { get; set; }
         public List<Item> Itens { get; set; }
         public Cliente Cliente { get; set; }

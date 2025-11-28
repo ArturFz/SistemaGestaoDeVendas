@@ -1,13 +1,14 @@
-﻿using System;
+﻿using MySqlX.XDevAPI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySqlX.XDevAPI;
 using Trabalho1_ProgVis;
 
 namespace Trabalho_TCD
@@ -20,7 +21,7 @@ namespace Trabalho_TCD
         {
             InitializeComponent();
             ConfigurarGrade();
-            cboClientes.DropDown += cboClientes_DropDown;
+            numQuantidadeParcelas.Minimum = 1;
         }
 
         #region SingleTon
@@ -35,9 +36,10 @@ namespace Trabalho_TCD
         }
         #endregion
 
+ 
         private void cboClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            compra.Cliente = cboClientes.SelectedItem as Cliente;
         }
 
         private void CarregarClientes()
@@ -58,11 +60,7 @@ namespace Trabalho_TCD
             {
                 CarregarProdutosPorCategoriaSelecionada();
             }
-        }
-
-        private void cboClientes_DropDown(object sender, EventArgs e)
-        {
-
+            txtValorParcela.Text = "R$ 0,00";
         }
         private void CarregarProdutosPorCategoriaSelecionada()
         {
@@ -111,31 +109,28 @@ namespace Trabalho_TCD
         {
             lsvItens.Items.Clear();
 
-            foreach (Produto p in ProdutoRepository.FindAllWithCategoria())
+            foreach (var item in compra.Itens)
             {
+                ListViewItem linha = new ListViewItem(new string[]
+                {
+            item.Produto.Id.ToString(),
+            item.Produto.Nome,
+            item.Produto.Categoria?.Nome ?? "Sem Categoria",
+            item.Quantidade.ToString(),
+            item.PrecoUnitario.ToString("C2"),
+            item.CalcularTotal().ToString("C2")
+                });
 
-                decimal subtotal = p.Preco * p.Estoque;
-
-                ListViewItem item = new ListViewItem(new string[] {
-            p.Id.ToString(),
-            p.Nome,
-            p.Categoria != null ? p.Categoria.Nome : "Sem Categoria",
-            p.Estoque.ToString(),
-            p.Preco.ToString("C2"),
-            subtotal.ToString("C2")
-        });
-
-                item.Tag = p;
-
-                lsvItens.Items.Add(item);
-                lblValorTotal.Text = compra.CalcularTotal().ToString("C2");
+                linha.Tag = item;
+                lsvItens.Items.Add(linha);
             }
         }
         private void AtualizarTotalCompra()
         {
             Decimal totalCompra = compra.CalcularTotal();
-
             Decimal comissaoVendedor = compra.CalcularComissao();
+            lblValorTotal.Text = compra.CalcularTotal().ToString("C2");
+            lblComissaoTotal.Text = comissaoVendedor.ToString("C2");
         }
         private void cboCategorias_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -162,17 +157,17 @@ namespace Trabalho_TCD
                 ListViewItem itemListView = new ListViewItem(new string[]
                 {
             novoItem.Produto.Id.ToString(),
-            novoItem.Produto.Nome,  
+            novoItem.Produto.Nome,
             novoItem.Produto.Categoria != null ? novoItem.Produto.Categoria.Nome : "Sem Categoria", // Categoria
-            novoItem.Quantidade.ToString(), 
+            novoItem.Quantidade.ToString(),
             novoItem.Produto.Preco.ToString("C2"),
             novoItem.CalcularTotal().ToString("C2")
                 });
 
                 itemListView.Tag = novoItem;
                 lsvItens.Items.Add(itemListView);
-                lblValorTotal.Text = compra.CalcularTotal().ToString("C2");
-
+                AtualizarValorParcela();
+                AtualizarGrade();
                 AtualizarTotalCompra();
             }
             else
@@ -193,6 +188,8 @@ namespace Trabalho_TCD
 
                     lsvItens.Items.Remove(lsvItens.SelectedItems[0]);
 
+                    AtualizarValorParcela();
+                    AtualizarGrade();
                     AtualizarTotalCompra();
                 }
             }
@@ -205,15 +202,98 @@ namespace Trabalho_TCD
         private void numQuantidade_ValueChanged(object sender, EventArgs e)
         {
             AtualizarTotalCompra();
+            AtualizarGrade();
         }
 
         private void numDesconto_ValueChanged(object sender, EventArgs e)
         {
+            AtualizarValorParcela();
             AtualizarTotalCompra();
+            AtualizarGrade();
         }
-        private void Compras_Resize(object sender, EventArgs e)
+
+        private void btnFinalizarVenda_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAutorizar_Click(object sender, EventArgs e)
+        {
+            string usuario = txtNomeUsuario.Text;
+            string senha = txtSenha.Text;
+
+            var gerente = UsuarioRepository.FindByNome(usuario);
+            if (gerente != null && gerente.Credencial.Senha == Credencial.ComputeSHA256(senha, Credencial.SALT))
+            {
+                // Usuário autorizado
+                pnlAutorizacaoGerente.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("Usuário ou senha inválidos!");
+            }
+        }
+
+        private Boolean travar = false;
+        private const int digitoMax = 8;
+        private void txtValorParcela_TextChanged(object sender, EventArgs e)
+        {
+            if (travar) return;
+
+            travar = true;
+
+            TextBox t = (TextBox)sender;
+
+            String numeros = System.Text.RegularExpressions.Regex.Replace(t.Text, @"[^\d]", "");
+
+            if (numeros.Length > digitoMax)
+            {
+                numeros = numeros.Substring(0, digitoMax);
+            }
+
+            if (numeros.Length == 0)
+            {
+                numeros = "0";
+            }
+
+            Decimal valor = Decimal.Parse(numeros) / 100m;
+
+            t.Text = valor.ToString("C2", new System.Globalization.CultureInfo("pt-BR"));
+
+            t.SelectionStart = t.Text.Length;
+
+            travar = false;
+        }
+        private void AtualizarValorParcela()
+        {
+            if (compra == null)
+                return; // evita NullReferenceException
+
+            if (compra.Itens == null || compra.Itens.Count == 0)
+            {
+                txtValorParcela.Text = "R$ 0,00";
+                return;
+            }
+
+            int parcelas = (int)numQuantidadeParcelas.Value;
+            if (parcelas == 0) parcelas = 1;
+
+            decimal totalCompra = compra.CalcularTotal();
+            decimal valorParcela = totalCompra / parcelas;
+
+            if (valorParcela < 50m)
+            {
+                MessageBox.Show("O valor de cada parcela não pode ser menor que R$ 50,00!");
+                txtValorParcela.Text = "R$ 0,00";
+                return;
+            }
+
+            txtValorParcela.Text = valorParcela.ToString("C2", new CultureInfo("pt-BR"));
+        }
+
+        private void numQuantidadeParcelas_ValueChanged(object sender, EventArgs e)
+        {
+            AtualizarValorParcela();   
         }
     }
 }

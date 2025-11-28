@@ -28,8 +28,8 @@ namespace Trabalho1_ProgVis
         public Decimal CalcularTotal()
         {
             var subtotal = PrecoUnitario * Quantidade;
-            var desconto = Desconto/100* subtotal;
-            var total = subtotal - Desconto;
+            var valorDesconto = (Desconto/100m) * subtotal;
+            var total = subtotal - valorDesconto;
             return total;
         }
     }
