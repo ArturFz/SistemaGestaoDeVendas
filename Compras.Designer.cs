@@ -31,6 +31,9 @@
             pnlVenda = new Panel();
             txtValorParcela = new TextBox();
             lblValorParcela = new Label();
+            pnlComissao = new Panel();
+            lblComissaoTotal = new Label();
+            lblValorComissao = new Label();
             lblQuantidadeParcelas = new Label();
             numQuantidadeParcelas = new NumericUpDown();
             pnlAutorizacaoGerente = new Panel();
@@ -41,9 +44,6 @@
             lblNomeUsuario = new Label();
             txtNomeUsuario = new TextBox();
             txtSenha = new TextBox();
-            pnlComissao = new Panel();
-            lblComissaoTotal = new Label();
-            lblValorComissao = new Label();
             pnlTotalCompra = new Panel();
             lblValorTotal = new Label();
             lblTotalCompra = new Label();
@@ -59,14 +59,14 @@
             btnFinalizarVenda = new Button();
             lblProdutos = new Label();
             cboProdutos = new ComboBox();
-            label1 = new Label();
+            lblVenda = new Label();
             lblClientes = new Label();
             lsvItens = new ListView();
             cboClientes = new ComboBox();
             pnlVenda.SuspendLayout();
+            pnlComissao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numQuantidadeParcelas).BeginInit();
             pnlAutorizacaoGerente.SuspendLayout();
-            pnlComissao.SuspendLayout();
             pnlTotalCompra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numDesconto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numQuantidade).BeginInit();
@@ -95,7 +95,7 @@
             pnlVenda.Controls.Add(btnFinalizarVenda);
             pnlVenda.Controls.Add(lblProdutos);
             pnlVenda.Controls.Add(cboProdutos);
-            pnlVenda.Controls.Add(label1);
+            pnlVenda.Controls.Add(lblVenda);
             pnlVenda.Controls.Add(lblClientes);
             pnlVenda.Controls.Add(lsvItens);
             pnlVenda.Controls.Add(cboClientes);
@@ -109,7 +109,7 @@
             txtValorParcela.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtValorParcela.Location = new Point(21, 430);
             txtValorParcela.Name = "txtValorParcela";
-            txtValorParcela.Size = new Size(212, 35);
+            txtValorParcela.Size = new Size(324, 35);
             txtValorParcela.TabIndex = 25;
             // 
             // lblValorParcela
@@ -120,120 +120,6 @@
             lblValorParcela.Size = new Size(93, 15);
             lblValorParcela.TabIndex = 24;
             lblValorParcela.Text = "Valor da parcela:";
-            // 
-            // lblQuantidadeParcelas
-            // 
-            lblQuantidadeParcelas.AutoSize = true;
-            lblQuantidadeParcelas.Location = new Point(21, 356);
-            lblQuantidadeParcelas.Name = "lblQuantidadeParcelas";
-            lblQuantidadeParcelas.Size = new Size(134, 15);
-            lblQuantidadeParcelas.TabIndex = 23;
-            lblQuantidadeParcelas.Text = "Quantidade de parcelas:";
-            // 
-            // numQuantidadeParcelas
-            // 
-            numQuantidadeParcelas.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            numQuantidadeParcelas.Location = new Point(21, 374);
-            numQuantidadeParcelas.Name = "numQuantidadeParcelas";
-            numQuantidadeParcelas.Size = new Size(212, 35);
-            numQuantidadeParcelas.TabIndex = 22;
-            numQuantidadeParcelas.ValueChanged += numQuantidadeParcelas_ValueChanged;
-            // 
-            // pnlAutorizacaoGerente
-            // 
-            pnlAutorizacaoGerente.Controls.Add(lblTitulo);
-            pnlAutorizacaoGerente.Controls.Add(btnCancelar);
-            pnlAutorizacaoGerente.Controls.Add(btnAutorizar);
-            pnlAutorizacaoGerente.Controls.Add(lblSenha);
-            pnlAutorizacaoGerente.Controls.Add(lblNomeUsuario);
-            pnlAutorizacaoGerente.Controls.Add(txtNomeUsuario);
-            pnlAutorizacaoGerente.Controls.Add(txtSenha);
-            pnlAutorizacaoGerente.Location = new Point(21, 625);
-            pnlAutorizacaoGerente.Name = "pnlAutorizacaoGerente";
-            pnlAutorizacaoGerente.Size = new Size(310, 247);
-            pnlAutorizacaoGerente.TabIndex = 21;
-            pnlAutorizacaoGerente.Visible = false;
-            // 
-            // lblTitulo
-            // 
-            lblTitulo.Anchor = AnchorStyles.None;
-            lblTitulo.AutoSize = true;
-            lblTitulo.Font = new Font("Noto Sans", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitulo.ForeColor = Color.Black;
-            lblTitulo.Location = new Point(41, 6);
-            lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(231, 24);
-            lblTitulo.TabIndex = 28;
-            lblTitulo.Text = "AUTORIZAÇÃO DO GERENTE";
-            // 
-            // btnCancelar
-            // 
-            btnCancelar.Anchor = AnchorStyles.None;
-            btnCancelar.BackColor = Color.Red;
-            btnCancelar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCancelar.ForeColor = Color.Transparent;
-            btnCancelar.Location = new Point(13, 191);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(140, 48);
-            btnCancelar.TabIndex = 27;
-            btnCancelar.Text = "CANCELAR";
-            btnCancelar.UseVisualStyleBackColor = false;
-            // 
-            // btnAutorizar
-            // 
-            btnAutorizar.Anchor = AnchorStyles.None;
-            btnAutorizar.BackColor = Color.Green;
-            btnAutorizar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAutorizar.Location = new Point(159, 191);
-            btnAutorizar.Name = "btnAutorizar";
-            btnAutorizar.Size = new Size(137, 48);
-            btnAutorizar.TabIndex = 26;
-            btnAutorizar.Text = "AUTORIZAR";
-            btnAutorizar.UseVisualStyleBackColor = false;
-            btnAutorizar.Click += btnAutorizar_Click;
-            // 
-            // lblSenha
-            // 
-            lblSenha.Anchor = AnchorStyles.None;
-            lblSenha.AutoSize = true;
-            lblSenha.Font = new Font("Noto Sans", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblSenha.Location = new Point(17, 118);
-            lblSenha.Name = "lblSenha";
-            lblSenha.Size = new Size(61, 24);
-            lblSenha.TabIndex = 25;
-            lblSenha.Text = "Senha:";
-            // 
-            // lblNomeUsuario
-            // 
-            lblNomeUsuario.Anchor = AnchorStyles.None;
-            lblNomeUsuario.AutoSize = true;
-            lblNomeUsuario.Font = new Font("Noto Sans", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblNomeUsuario.Location = new Point(13, 45);
-            lblNomeUsuario.Name = "lblNomeUsuario";
-            lblNomeUsuario.Size = new Size(147, 24);
-            lblNomeUsuario.TabIndex = 24;
-            lblNomeUsuario.Text = "Nome de Usuário:";
-            // 
-            // txtNomeUsuario
-            // 
-            txtNomeUsuario.Anchor = AnchorStyles.None;
-            txtNomeUsuario.BackColor = Color.DarkGray;
-            txtNomeUsuario.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNomeUsuario.Location = new Point(13, 72);
-            txtNomeUsuario.Name = "txtNomeUsuario";
-            txtNomeUsuario.Size = new Size(283, 43);
-            txtNomeUsuario.TabIndex = 22;
-            // 
-            // txtSenha
-            // 
-            txtSenha.Anchor = AnchorStyles.None;
-            txtSenha.BackColor = Color.DarkGray;
-            txtSenha.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtSenha.Location = new Point(17, 142);
-            txtSenha.Name = "txtSenha";
-            txtSenha.PasswordChar = '●';
-            txtSenha.Size = new Size(279, 43);
-            txtSenha.TabIndex = 23;
             // 
             // pnlComissao
             // 
@@ -265,6 +151,120 @@
             lblValorComissao.Size = new Size(202, 27);
             lblValorComissao.TabIndex = 18;
             lblValorComissao.Text = "Valor da Comissão:";
+            // 
+            // lblQuantidadeParcelas
+            // 
+            lblQuantidadeParcelas.AutoSize = true;
+            lblQuantidadeParcelas.Location = new Point(21, 356);
+            lblQuantidadeParcelas.Name = "lblQuantidadeParcelas";
+            lblQuantidadeParcelas.Size = new Size(134, 15);
+            lblQuantidadeParcelas.TabIndex = 23;
+            lblQuantidadeParcelas.Text = "Quantidade de parcelas:";
+            // 
+            // numQuantidadeParcelas
+            // 
+            numQuantidadeParcelas.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            numQuantidadeParcelas.Location = new Point(21, 374);
+            numQuantidadeParcelas.Name = "numQuantidadeParcelas";
+            numQuantidadeParcelas.Size = new Size(324, 35);
+            numQuantidadeParcelas.TabIndex = 22;
+            numQuantidadeParcelas.ValueChanged += numQuantidadeParcelas_ValueChanged;
+            // 
+            // pnlAutorizacaoGerente
+            // 
+            pnlAutorizacaoGerente.Controls.Add(lblTitulo);
+            pnlAutorizacaoGerente.Controls.Add(btnCancelar);
+            pnlAutorizacaoGerente.Controls.Add(btnAutorizar);
+            pnlAutorizacaoGerente.Controls.Add(lblSenha);
+            pnlAutorizacaoGerente.Controls.Add(lblNomeUsuario);
+            pnlAutorizacaoGerente.Controls.Add(txtNomeUsuario);
+            pnlAutorizacaoGerente.Controls.Add(txtSenha);
+            pnlAutorizacaoGerente.Location = new Point(21, 625);
+            pnlAutorizacaoGerente.Name = "pnlAutorizacaoGerente";
+            pnlAutorizacaoGerente.Size = new Size(324, 247);
+            pnlAutorizacaoGerente.TabIndex = 21;
+            pnlAutorizacaoGerente.Visible = false;
+            // 
+            // lblTitulo
+            // 
+            lblTitulo.Anchor = AnchorStyles.None;
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Noto Sans", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitulo.ForeColor = Color.Black;
+            lblTitulo.Location = new Point(48, 6);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(231, 24);
+            lblTitulo.TabIndex = 28;
+            lblTitulo.Text = "AUTORIZAÇÃO DO GERENTE";
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.Anchor = AnchorStyles.None;
+            btnCancelar.BackColor = Color.Red;
+            btnCancelar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCancelar.ForeColor = Color.Transparent;
+            btnCancelar.Location = new Point(20, 191);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(140, 48);
+            btnCancelar.TabIndex = 27;
+            btnCancelar.Text = "CANCELAR";
+            btnCancelar.UseVisualStyleBackColor = false;
+            // 
+            // btnAutorizar
+            // 
+            btnAutorizar.Anchor = AnchorStyles.None;
+            btnAutorizar.BackColor = Color.Green;
+            btnAutorizar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAutorizar.Location = new Point(166, 191);
+            btnAutorizar.Name = "btnAutorizar";
+            btnAutorizar.Size = new Size(137, 48);
+            btnAutorizar.TabIndex = 26;
+            btnAutorizar.Text = "AUTORIZAR";
+            btnAutorizar.UseVisualStyleBackColor = false;
+            btnAutorizar.Click += btnAutorizar_Click;
+            // 
+            // lblSenha
+            // 
+            lblSenha.Anchor = AnchorStyles.None;
+            lblSenha.AutoSize = true;
+            lblSenha.Font = new Font("Noto Sans", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSenha.Location = new Point(24, 118);
+            lblSenha.Name = "lblSenha";
+            lblSenha.Size = new Size(61, 24);
+            lblSenha.TabIndex = 25;
+            lblSenha.Text = "Senha:";
+            // 
+            // lblNomeUsuario
+            // 
+            lblNomeUsuario.Anchor = AnchorStyles.None;
+            lblNomeUsuario.AutoSize = true;
+            lblNomeUsuario.Font = new Font("Noto Sans", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblNomeUsuario.Location = new Point(20, 45);
+            lblNomeUsuario.Name = "lblNomeUsuario";
+            lblNomeUsuario.Size = new Size(147, 24);
+            lblNomeUsuario.TabIndex = 24;
+            lblNomeUsuario.Text = "Nome de Usuário:";
+            // 
+            // txtNomeUsuario
+            // 
+            txtNomeUsuario.Anchor = AnchorStyles.None;
+            txtNomeUsuario.BackColor = Color.DarkGray;
+            txtNomeUsuario.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtNomeUsuario.Location = new Point(20, 72);
+            txtNomeUsuario.Name = "txtNomeUsuario";
+            txtNomeUsuario.Size = new Size(283, 43);
+            txtNomeUsuario.TabIndex = 22;
+            // 
+            // txtSenha
+            // 
+            txtSenha.Anchor = AnchorStyles.None;
+            txtSenha.BackColor = Color.DarkGray;
+            txtSenha.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtSenha.Location = new Point(24, 142);
+            txtSenha.Name = "txtSenha";
+            txtSenha.PasswordChar = '●';
+            txtSenha.Size = new Size(279, 43);
+            txtSenha.TabIndex = 23;
             // 
             // pnlTotalCompra
             // 
@@ -314,7 +314,7 @@
             cboCategorias.FormattingEnabled = true;
             cboCategorias.Location = new Point(21, 144);
             cboCategorias.Name = "cboCategorias";
-            cboCategorias.Size = new Size(212, 38);
+            cboCategorias.Size = new Size(324, 38);
             cboCategorias.TabIndex = 14;
             cboCategorias.SelectedIndexChanged += cboCategorias_SelectedIndexChanged;
             // 
@@ -323,9 +323,9 @@
             btnRemoverProduto.BackColor = Color.Red;
             btnRemoverProduto.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnRemoverProduto.ForeColor = Color.Transparent;
-            btnRemoverProduto.Location = new Point(21, 536);
+            btnRemoverProduto.Location = new Point(21, 549);
             btnRemoverProduto.Name = "btnRemoverProduto";
-            btnRemoverProduto.Size = new Size(212, 42);
+            btnRemoverProduto.Size = new Size(324, 42);
             btnRemoverProduto.TabIndex = 13;
             btnRemoverProduto.Text = "REMOVER ITEM";
             btnRemoverProduto.UseVisualStyleBackColor = false;
@@ -354,7 +354,7 @@
             numDesconto.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             numDesconto.Location = new Point(21, 318);
             numDesconto.Name = "numDesconto";
-            numDesconto.Size = new Size(212, 35);
+            numDesconto.Size = new Size(324, 35);
             numDesconto.TabIndex = 10;
             numDesconto.ValueChanged += numDesconto_ValueChanged;
             // 
@@ -363,7 +363,7 @@
             numQuantidade.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             numQuantidade.Location = new Point(21, 262);
             numQuantidade.Name = "numQuantidade";
-            numQuantidade.Size = new Size(212, 35);
+            numQuantidade.Size = new Size(324, 35);
             numQuantidade.TabIndex = 9;
             numQuantidade.ValueChanged += numQuantidade_ValueChanged;
             // 
@@ -371,9 +371,9 @@
             // 
             btnAdicionarProduto.BackColor = Color.Green;
             btnAdicionarProduto.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAdicionarProduto.Location = new Point(21, 486);
+            btnAdicionarProduto.Location = new Point(21, 488);
             btnAdicionarProduto.Name = "btnAdicionarProduto";
-            btnAdicionarProduto.Size = new Size(212, 42);
+            btnAdicionarProduto.Size = new Size(324, 42);
             btnAdicionarProduto.TabIndex = 8;
             btnAdicionarProduto.Text = "ADICIONAR ITEM";
             btnAdicionarProduto.UseVisualStyleBackColor = false;
@@ -420,20 +420,19 @@
             cboProdutos.FormattingEnabled = true;
             cboProdutos.Location = new Point(21, 203);
             cboProdutos.Name = "cboProdutos";
-            cboProdutos.Size = new Size(212, 38);
+            cboProdutos.Size = new Size(324, 38);
             cboProdutos.TabIndex = 4;
             // 
-            // label1
+            // lblVenda
             // 
-            label1.BackColor = SystemColors.ControlDarkDark;
-            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(3, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(1092, 45);
-            label1.TabIndex = 3;
-            label1.Text = "VENDA";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
-            label1.Click += label1_Click;
+            lblVenda.BackColor = SystemColors.ControlDarkDark;
+            lblVenda.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblVenda.Location = new Point(3, 0);
+            lblVenda.Name = "lblVenda";
+            lblVenda.Size = new Size(1092, 45);
+            lblVenda.TabIndex = 3;
+            lblVenda.Text = "VENDA";
+            lblVenda.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblClientes
             // 
@@ -461,7 +460,7 @@
             cboClientes.FormattingEnabled = true;
             cboClientes.Location = new Point(21, 85);
             cboClientes.Name = "cboClientes";
-            cboClientes.Size = new Size(212, 38);
+            cboClientes.Size = new Size(324, 38);
             cboClientes.TabIndex = 0;
             cboClientes.SelectedIndexChanged += cboClientes_SelectedIndexChanged;
             // 
@@ -479,10 +478,10 @@
             Load += Compras_Load;
             pnlVenda.ResumeLayout(false);
             pnlVenda.PerformLayout();
+            pnlComissao.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)numQuantidadeParcelas).EndInit();
             pnlAutorizacaoGerente.ResumeLayout(false);
             pnlAutorizacaoGerente.PerformLayout();
-            pnlComissao.ResumeLayout(false);
             pnlTotalCompra.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)numDesconto).EndInit();
             ((System.ComponentModel.ISupportInitialize)numQuantidade).EndInit();
@@ -495,7 +494,7 @@
         private ListView lsvItens;
         private ComboBox cboClientes;
         private Label lblClientes;
-        private Label label1;
+        private Label lblVenda;
         private ComboBox cboProdutos;
         private Label lblProdutos;
         private Button btnAdicionarProduto;

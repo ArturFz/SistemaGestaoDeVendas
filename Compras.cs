@@ -214,7 +214,42 @@ namespace Trabalho_TCD
 
         private void btnFinalizarVenda_Click(object sender, EventArgs e)
         {
+            try
+            {
+                // Validações básicas
+                if (compra.Itens.Count == 0)
+                {
+                    MessageBox.Show("Adicione produtos antes de finalizar a venda.");
+                    return;
+                }
 
+                if (compra.Cliente == null)
+                {
+                    MessageBox.Show("Selecione um cliente.");
+                    return;
+                }
+
+                // Define dados finais da compra
+                compra.Efetivacao = DateTime.Now;
+                compra.Comissao = compra.CalcularComissao();
+                compra.Estado = Estado.CONCLUIDA; // Ou PENDENTE se for para pagamento posterior
+
+                // Tenta obter o vendedor logado (opcional, dependendo de como você passa o usuário)
+                // Se o sistema tiver o usuário logado em uma variável global ou estática, atribua aqui:
+                // compra.Vendedor = Sessao.UsuarioLogado as Vendedor; 
+
+                // Salva no banco
+                CompraRepository.SaveOrUpdate(compra);
+
+                MessageBox.Show($"Venda finalizada com sucesso! Total: {compra.CalcularTotal():C2}");
+
+                // Limpa a tela para nova venda
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao finalizar venda: " + ex.Message);
+            }
         }
 
         private void btnAutorizar_Click(object sender, EventArgs e)
@@ -294,11 +329,6 @@ namespace Trabalho_TCD
         private void numQuantidadeParcelas_ValueChanged(object sender, EventArgs e)
         {
             AtualizarValorParcela();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

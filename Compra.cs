@@ -16,7 +16,7 @@ namespace Trabalho1_ProgVis
         public UInt64 Id { get; set; }
         public UInt64 Numero { get; set; }
         public DateTime Inicio { get; set; }
-        public DateTime Efetivacao { get; set; }
+        public DateTime? Efetivacao { get; set; }
         public Decimal Comissao { get; set; }
         public Estado Estado { get; set; } = Estado.PENDENTE;
               

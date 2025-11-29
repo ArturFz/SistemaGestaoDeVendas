@@ -48,6 +48,7 @@
             mnuAjudaSobre = new ToolStripMenuItem();
             staBarraEstado = new StatusStrip();
             staBarraEstadoUltimoAcesso = new ToolStripStatusLabel();
+            mnuRelatorioVendas = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             staBarraEstado.SuspendLayout();
             SuspendLayout();
@@ -145,7 +146,7 @@
             // 
             // mnuRelatorio
             // 
-            mnuRelatorio.DropDownItems.AddRange(new ToolStripItem[] { mnuRelatorioFuncionarios });
+            mnuRelatorio.DropDownItems.AddRange(new ToolStripItem[] { mnuRelatorioFuncionarios, mnuRelatorioVendas });
             mnuRelatorio.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             mnuRelatorio.Image = Trabalho_TCD.Properties.Resources.Document;
             mnuRelatorio.ImageScaling = ToolStripItemImageScaling.None;
@@ -239,6 +240,16 @@
             staBarraEstadoUltimoAcesso.Size = new Size(118, 17);
             staBarraEstadoUltimoAcesso.Text = "toolStripStatusLabel1";
             // 
+            // mnuRelatorioVendas
+            // 
+            mnuRelatorioVendas.BackColor = SystemColors.ControlDarkDark;
+            mnuRelatorioVendas.Image = Trabalho_TCD.Properties.Resources.icons8_sales_50;
+            mnuRelatorioVendas.ImageScaling = ToolStripItemImageScaling.None;
+            mnuRelatorioVendas.Name = "mnuRelatorioVendas";
+            mnuRelatorioVendas.Size = new Size(226, 56);
+            mnuRelatorioVendas.Text = "Vendas";
+            mnuRelatorioVendas.Click += vendasToolStripMenuItem_Click;
+            // 
             // Sistema
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -286,5 +297,6 @@
         private ToolStripMenuItem mnuCaixaPagamento;
         private ToolStripMenuItem mnuOrçamento;
         private ToolStripMenuItem compraToolStripMenuItem;
+        private ToolStripMenuItem mnuRelatorioVendas;
     }
 }

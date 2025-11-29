@@ -149,5 +149,15 @@ namespace Trabalho1_ProgVis
 
             compras.Show();
         }
+
+        private void vendasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RelatorioVendas relatorioVendas = RelatorioVendas.GetInstance();
+            relatorioVendas.MdiParent = this;
+            relatorioVendas.BringToFront();
+            relatorioVendas.WindowState = FormWindowState.Normal;
+
+            relatorioVendas.Show();
+        }
     }
 }
