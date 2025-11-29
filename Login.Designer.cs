@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             panel1 = new Panel();
+            lblTitulo = new Label();
             pictureBox1 = new PictureBox();
             lblAviso = new Label();
             lblSenha = new Label();
@@ -44,23 +45,36 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = SystemColors.ControlLight;
+            panel1.Controls.Add(lblTitulo);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(lblAviso);
             panel1.Controls.Add(lblSenha);
             panel1.Controls.Add(lblNomeUsuario);
             panel1.Controls.Add(txtSenha);
             panel1.Controls.Add(txtNomeUsuario);
-            panel1.Location = new Point(3, 2);
+            panel1.Location = new Point(-3, -1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(356, 376);
+            panel1.Size = new Size(368, 379);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
+            // 
+            // lblTitulo
+            // 
+            lblTitulo.BackColor = SystemColors.ControlDarkDark;
+            lblTitulo.Font = new Font("Noto Sans", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitulo.ForeColor = Color.Black;
+            lblTitulo.Location = new Point(0, 0);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(368, 43);
+            lblTitulo.TabIndex = 7;
+            lblTitulo.Text = "FAÇA SEU LOGIN";
+            lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Trabalho_TCD.Properties.Resources._8788070391647100444_128;
             pictureBox1.InitialImage = null;
-            pictureBox1.Location = new Point(101, 22);
+            pictureBox1.Location = new Point(104, 46);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(149, 146);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -153,5 +167,6 @@
         private Label lblNomeUsuario;
         private Label lblAviso;
         private PictureBox pictureBox1;
+        private Label lblTitulo;
     }
 }
