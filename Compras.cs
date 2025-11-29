@@ -36,7 +36,7 @@ namespace Trabalho_TCD
         }
         #endregion
 
- 
+
         private void cboClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
             compra.Cliente = cboClientes.SelectedItem as Cliente;
@@ -293,7 +293,12 @@ namespace Trabalho_TCD
 
         private void numQuantidadeParcelas_ValueChanged(object sender, EventArgs e)
         {
-            AtualizarValorParcela();   
+            AtualizarValorParcela();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -73,9 +73,9 @@
             pnlCadastroFuncionario.Controls.Add(txtNome);
             pnlCadastroFuncionario.Controls.Add(txtEmail);
             pnlCadastroFuncionario.Controls.Add(btnCadastrar);
-            pnlCadastroFuncionario.Location = new Point(4, 3);
+            pnlCadastroFuncionario.Location = new Point(0, -1);
             pnlCadastroFuncionario.Name = "pnlCadastroFuncionario";
-            pnlCadastroFuncionario.Size = new Size(517, 730);
+            pnlCadastroFuncionario.Size = new Size(526, 734);
             pnlCadastroFuncionario.TabIndex = 0;
             // 
             // lblPerfil
@@ -104,7 +104,7 @@
             // 
             picLogo.Image = Trabalho_TCD.Properties.Resources.icons8_add_user_male_100;
             picLogo.InitialImage = null;
-            picLogo.Location = new Point(168, 0);
+            picLogo.Location = new Point(169, 53);
             picLogo.Name = "picLogo";
             picLogo.Size = new Size(187, 179);
             picLogo.SizeMode = PictureBoxSizeMode.Zoom;
@@ -113,14 +113,16 @@
             // 
             // lblTitulo
             // 
-            lblTitulo.AutoSize = true;
+            lblTitulo.BackColor = SystemColors.ControlDarkDark;
             lblTitulo.Font = new Font("Noto Sans", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitulo.ForeColor = SystemColors.ControlDarkDark;
-            lblTitulo.Location = new Point(8, 182);
+            lblTitulo.ForeColor = Color.Black;
+            lblTitulo.Location = new Point(0, 0);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(501, 41);
+            lblTitulo.Size = new Size(526, 50);
             lblTitulo.TabIndex = 16;
             lblTitulo.Text = "CADASTRE UM NOVO FUNCIONÁRIO";
+            lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
+            lblTitulo.Click += lblTitulo_Click;
             // 
             // lblAvisoSucesso
             // 

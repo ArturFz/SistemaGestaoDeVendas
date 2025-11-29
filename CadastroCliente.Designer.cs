@@ -62,19 +62,20 @@
             pnlCadastroCliente.Controls.Add(mskTelefone);
             pnlCadastroCliente.Location = new Point(0, 0);
             pnlCadastroCliente.Name = "pnlCadastroCliente";
-            pnlCadastroCliente.Size = new Size(483, 550);
+            pnlCadastroCliente.Size = new Size(485, 550);
             pnlCadastroCliente.TabIndex = 0;
             // 
             // lblTitulo
             // 
-            lblTitulo.AutoSize = true;
+            lblTitulo.BackColor = SystemColors.ControlDarkDark;
             lblTitulo.Font = new Font("Noto Sans", 21.7499962F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitulo.ForeColor = SystemColors.ControlDarkDark;
-            lblTitulo.Location = new Point(20, 186);
+            lblTitulo.ForeColor = Color.Black;
+            lblTitulo.Location = new Point(0, 0);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(447, 44);
+            lblTitulo.Size = new Size(485, 44);
             lblTitulo.TabIndex = 36;
             lblTitulo.Text = "CADASTRE UM NOVO CLIENTE";
+            lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // txtNome
             // 
@@ -101,7 +102,7 @@
             // 
             picLogo.Image = Properties.Resources.icons8_add_user_male_100;
             picLogo.InitialImage = null;
-            picLogo.Location = new Point(123, 12);
+            picLogo.Location = new Point(121, 56);
             picLogo.Name = "picLogo";
             picLogo.Size = new Size(237, 171);
             picLogo.SizeMode = PictureBoxSizeMode.Zoom;

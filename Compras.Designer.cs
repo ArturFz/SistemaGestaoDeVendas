@@ -78,10 +78,10 @@
             pnlVenda.BackColor = Color.LightGray;
             pnlVenda.Controls.Add(txtValorParcela);
             pnlVenda.Controls.Add(lblValorParcela);
+            pnlVenda.Controls.Add(pnlComissao);
             pnlVenda.Controls.Add(lblQuantidadeParcelas);
             pnlVenda.Controls.Add(numQuantidadeParcelas);
             pnlVenda.Controls.Add(pnlAutorizacaoGerente);
-            pnlVenda.Controls.Add(pnlComissao);
             pnlVenda.Controls.Add(pnlTotalCompra);
             pnlVenda.Controls.Add(lblCategorias);
             pnlVenda.Controls.Add(cboCategorias);
@@ -107,7 +107,7 @@
             // txtValorParcela
             // 
             txtValorParcela.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtValorParcela.Location = new Point(21, 405);
+            txtValorParcela.Location = new Point(21, 430);
             txtValorParcela.Name = "txtValorParcela";
             txtValorParcela.Size = new Size(212, 35);
             txtValorParcela.TabIndex = 25;
@@ -115,7 +115,7 @@
             // lblValorParcela
             // 
             lblValorParcela.AutoSize = true;
-            lblValorParcela.Location = new Point(21, 387);
+            lblValorParcela.Location = new Point(21, 412);
             lblValorParcela.Name = "lblValorParcela";
             lblValorParcela.Size = new Size(93, 15);
             lblValorParcela.TabIndex = 24;
@@ -124,7 +124,7 @@
             // lblQuantidadeParcelas
             // 
             lblQuantidadeParcelas.AutoSize = true;
-            lblQuantidadeParcelas.Location = new Point(21, 331);
+            lblQuantidadeParcelas.Location = new Point(21, 356);
             lblQuantidadeParcelas.Name = "lblQuantidadeParcelas";
             lblQuantidadeParcelas.Size = new Size(134, 15);
             lblQuantidadeParcelas.TabIndex = 23;
@@ -133,7 +133,7 @@
             // numQuantidadeParcelas
             // 
             numQuantidadeParcelas.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            numQuantidadeParcelas.Location = new Point(21, 349);
+            numQuantidadeParcelas.Location = new Point(21, 374);
             numQuantidadeParcelas.Name = "numQuantidadeParcelas";
             numQuantidadeParcelas.Size = new Size(212, 35);
             numQuantidadeParcelas.TabIndex = 22;
@@ -240,7 +240,7 @@
             pnlComissao.BackColor = SystemColors.ActiveCaptionText;
             pnlComissao.Controls.Add(lblComissaoTotal);
             pnlComissao.Controls.Add(lblValorComissao);
-            pnlComissao.Location = new Point(371, 593);
+            pnlComissao.Location = new Point(371, 753);
             pnlComissao.Name = "pnlComissao";
             pnlComissao.Size = new Size(715, 57);
             pnlComissao.TabIndex = 20;
@@ -271,7 +271,7 @@
             pnlTotalCompra.BackColor = SystemColors.ControlDarkDark;
             pnlTotalCompra.Controls.Add(lblValorTotal);
             pnlTotalCompra.Controls.Add(lblTotalCompra);
-            pnlTotalCompra.Location = new Point(371, 539);
+            pnlTotalCompra.Location = new Point(371, 697);
             pnlTotalCompra.Name = "pnlTotalCompra";
             pnlTotalCompra.Size = new Size(715, 57);
             pnlTotalCompra.TabIndex = 19;
@@ -300,7 +300,7 @@
             // lblCategorias
             // 
             lblCategorias.AutoSize = true;
-            lblCategorias.Location = new Point(21, 101);
+            lblCategorias.Location = new Point(21, 126);
             lblCategorias.Name = "lblCategorias";
             lblCategorias.Size = new Size(66, 15);
             lblCategorias.TabIndex = 15;
@@ -312,7 +312,7 @@
             cboCategorias.DropDownStyle = ComboBoxStyle.DropDownList;
             cboCategorias.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cboCategorias.FormattingEnabled = true;
-            cboCategorias.Location = new Point(21, 119);
+            cboCategorias.Location = new Point(21, 144);
             cboCategorias.Name = "cboCategorias";
             cboCategorias.Size = new Size(212, 38);
             cboCategorias.TabIndex = 14;
@@ -323,7 +323,7 @@
             btnRemoverProduto.BackColor = Color.Red;
             btnRemoverProduto.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnRemoverProduto.ForeColor = Color.Transparent;
-            btnRemoverProduto.Location = new Point(21, 550);
+            btnRemoverProduto.Location = new Point(21, 536);
             btnRemoverProduto.Name = "btnRemoverProduto";
             btnRemoverProduto.Size = new Size(212, 42);
             btnRemoverProduto.TabIndex = 13;
@@ -334,7 +334,7 @@
             // lblDesconto
             // 
             lblDesconto.AutoSize = true;
-            lblDesconto.Location = new Point(21, 275);
+            lblDesconto.Location = new Point(21, 300);
             lblDesconto.Name = "lblDesconto";
             lblDesconto.Size = new Size(60, 15);
             lblDesconto.TabIndex = 12;
@@ -343,7 +343,7 @@
             // lblQuantidade
             // 
             lblQuantidade.AutoSize = true;
-            lblQuantidade.Location = new Point(21, 219);
+            lblQuantidade.Location = new Point(21, 244);
             lblQuantidade.Name = "lblQuantidade";
             lblQuantidade.Size = new Size(72, 15);
             lblQuantidade.TabIndex = 11;
@@ -352,7 +352,7 @@
             // numDesconto
             // 
             numDesconto.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            numDesconto.Location = new Point(21, 293);
+            numDesconto.Location = new Point(21, 318);
             numDesconto.Name = "numDesconto";
             numDesconto.Size = new Size(212, 35);
             numDesconto.TabIndex = 10;
@@ -361,7 +361,7 @@
             // numQuantidade
             // 
             numQuantidade.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            numQuantidade.Location = new Point(21, 237);
+            numQuantidade.Location = new Point(21, 262);
             numQuantidade.Name = "numQuantidade";
             numQuantidade.Size = new Size(212, 35);
             numQuantidade.TabIndex = 9;
@@ -371,7 +371,7 @@
             // 
             btnAdicionarProduto.BackColor = Color.Green;
             btnAdicionarProduto.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAdicionarProduto.Location = new Point(21, 500);
+            btnAdicionarProduto.Location = new Point(21, 486);
             btnAdicionarProduto.Name = "btnAdicionarProduto";
             btnAdicionarProduto.Size = new Size(212, 42);
             btnAdicionarProduto.TabIndex = 8;
@@ -384,7 +384,7 @@
             btnCancelarVenda.BackColor = Color.Red;
             btnCancelarVenda.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCancelarVenda.ForeColor = Color.Transparent;
-            btnCancelarVenda.Location = new Point(521, 686);
+            btnCancelarVenda.Location = new Point(605, 828);
             btnCancelarVenda.Name = "btnCancelarVenda";
             btnCancelarVenda.Size = new Size(212, 44);
             btnCancelarVenda.TabIndex = 7;
@@ -395,7 +395,7 @@
             // 
             btnFinalizarVenda.BackColor = Color.Green;
             btnFinalizarVenda.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnFinalizarVenda.Location = new Point(769, 686);
+            btnFinalizarVenda.Location = new Point(874, 828);
             btnFinalizarVenda.Name = "btnFinalizarVenda";
             btnFinalizarVenda.Size = new Size(212, 44);
             btnFinalizarVenda.TabIndex = 6;
@@ -406,7 +406,7 @@
             // lblProdutos
             // 
             lblProdutos.AutoSize = true;
-            lblProdutos.Location = new Point(21, 160);
+            lblProdutos.Location = new Point(21, 185);
             lblProdutos.Name = "lblProdutos";
             lblProdutos.Size = new Size(58, 15);
             lblProdutos.TabIndex = 5;
@@ -418,25 +418,27 @@
             cboProdutos.DropDownStyle = ComboBoxStyle.DropDownList;
             cboProdutos.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cboProdutos.FormattingEnabled = true;
-            cboProdutos.Location = new Point(21, 178);
+            cboProdutos.Location = new Point(21, 203);
             cboProdutos.Name = "cboProdutos";
             cboProdutos.Size = new Size(212, 38);
             cboProdutos.TabIndex = 4;
             // 
             // label1
             // 
-            label1.AutoSize = true;
+            label1.BackColor = SystemColors.ControlDarkDark;
             label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(445, 9);
+            label1.Location = new Point(3, 0);
             label1.Name = "label1";
-            label1.Size = new Size(85, 30);
+            label1.Size = new Size(1092, 45);
             label1.TabIndex = 3;
             label1.Text = "VENDA";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            label1.Click += label1_Click;
             // 
             // lblClientes
             // 
             lblClientes.AutoSize = true;
-            lblClientes.Location = new Point(21, 42);
+            lblClientes.Location = new Point(21, 67);
             lblClientes.Name = "lblClientes";
             lblClientes.Size = new Size(52, 15);
             lblClientes.TabIndex = 2;
@@ -445,9 +447,9 @@
             // lsvItens
             // 
             lsvItens.BackColor = Color.DarkGray;
-            lsvItens.Location = new Point(371, 42);
+            lsvItens.Location = new Point(371, 60);
             lsvItens.Name = "lsvItens";
-            lsvItens.Size = new Size(715, 500);
+            lsvItens.Size = new Size(715, 634);
             lsvItens.TabIndex = 1;
             lsvItens.UseCompatibleStateImageBehavior = false;
             // 
@@ -457,7 +459,7 @@
             cboClientes.DropDownStyle = ComboBoxStyle.DropDownList;
             cboClientes.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cboClientes.FormattingEnabled = true;
-            cboClientes.Location = new Point(21, 60);
+            cboClientes.Location = new Point(21, 85);
             cboClientes.Name = "cboClientes";
             cboClientes.Size = new Size(212, 38);
             cboClientes.TabIndex = 0;

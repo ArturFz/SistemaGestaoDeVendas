@@ -130,5 +130,10 @@ namespace Trabalho_TCD
             lblAvisoCategoriaExistente.Visible = false;
             lblSucesso.Visible = false;
         }
+
+        private void pnlCategorias_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -45,9 +45,9 @@
             pnlPrincipal.Controls.Add(lblSelecionarCliente);
             pnlPrincipal.Controls.Add(cboClientes);
             pnlPrincipal.Controls.Add(btnIniciarPagamento);
-            pnlPrincipal.Location = new Point(1, 2);
+            pnlPrincipal.Location = new Point(1, -1);
             pnlPrincipal.Name = "pnlPrincipal";
-            pnlPrincipal.Size = new Size(483, 307);
+            pnlPrincipal.Size = new Size(483, 313);
             pnlPrincipal.TabIndex = 0;
             // 
             // lblAviso
@@ -63,14 +63,15 @@
             // 
             // lblTitulo
             // 
-            lblTitulo.AutoSize = true;
+            lblTitulo.BackColor = SystemColors.ControlDarkDark;
             lblTitulo.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitulo.ForeColor = Color.Black;
-            lblTitulo.Location = new Point(96, 7);
+            lblTitulo.Location = new Point(0, 0);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(294, 37);
+            lblTitulo.Size = new Size(480, 50);
             lblTitulo.TabIndex = 3;
             lblTitulo.Text = "INICIAR PAGAMENTO";
+            lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblSelecionarCliente
             // 
@@ -108,7 +109,7 @@
             btnIniciarPagamento.UseVisualStyleBackColor = false;
             btnIniciarPagamento.Click += btnIniciarPagamento_Click;
             // 
-            // Pagamentos
+            // IniciarPagamento
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -116,7 +117,7 @@
             Controls.Add(pnlPrincipal);
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "Pagamentos";
+            Name = "IniciarPagamento";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Iniciar Pagamento";
             pnlPrincipal.ResumeLayout(false);

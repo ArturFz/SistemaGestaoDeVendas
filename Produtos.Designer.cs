@@ -77,9 +77,9 @@
             pnlProdutos.Controls.Add(lblNome);
             pnlProdutos.Controls.Add(lblTitulo);
             pnlProdutos.Controls.Add(txtNome);
-            pnlProdutos.Location = new Point(4, 3);
+            pnlProdutos.Location = new Point(1, 0);
             pnlProdutos.Name = "pnlProdutos";
-            pnlProdutos.Size = new Size(776, 631);
+            pnlProdutos.Size = new Size(783, 652);
             pnlProdutos.TabIndex = 1;
             pnlProdutos.Paint += pnlProdutos_Paint;
             // 
@@ -88,7 +88,7 @@
             lblAvisoCategoria.AutoSize = true;
             lblAvisoCategoria.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblAvisoCategoria.ForeColor = Color.Red;
-            lblAvisoCategoria.Location = new Point(17, 491);
+            lblAvisoCategoria.Location = new Point(18, 484);
             lblAvisoCategoria.Name = "lblAvisoCategoria";
             lblAvisoCategoria.Size = new Size(417, 21);
             lblAvisoCategoria.TabIndex = 56;
@@ -100,7 +100,7 @@
             lblSucesso.AutoSize = true;
             lblSucesso.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblSucesso.ForeColor = Color.Green;
-            lblSucesso.Location = new Point(17, 533);
+            lblSucesso.Location = new Point(18, 484);
             lblSucesso.Name = "lblSucesso";
             lblSucesso.Size = new Size(274, 21);
             lblSucesso.TabIndex = 55;
@@ -112,7 +112,7 @@
             lblAvisoPreco.AutoSize = true;
             lblAvisoPreco.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblAvisoPreco.ForeColor = Color.Red;
-            lblAvisoPreco.Location = new Point(17, 470);
+            lblAvisoPreco.Location = new Point(18, 484);
             lblAvisoPreco.Name = "lblAvisoPreco";
             lblAvisoPreco.Size = new Size(352, 21);
             lblAvisoPreco.TabIndex = 54;
@@ -124,7 +124,7 @@
             lblAvisoNome.AutoSize = true;
             lblAvisoNome.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblAvisoNome.ForeColor = Color.Red;
-            lblAvisoNome.Location = new Point(17, 449);
+            lblAvisoNome.Location = new Point(18, 484);
             lblAvisoNome.Name = "lblAvisoNome";
             lblAvisoNome.Size = new Size(353, 21);
             lblAvisoNome.TabIndex = 53;
@@ -136,7 +136,7 @@
             lblAvisoProdutoExistente.AutoSize = true;
             lblAvisoProdutoExistente.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblAvisoProdutoExistente.ForeColor = Color.Red;
-            lblAvisoProdutoExistente.Location = new Point(17, 512);
+            lblAvisoProdutoExistente.Location = new Point(27, 484);
             lblAvisoProdutoExistente.Name = "lblAvisoProdutoExistente";
             lblAvisoProdutoExistente.Size = new Size(190, 21);
             lblAvisoProdutoExistente.TabIndex = 52;
@@ -179,7 +179,7 @@
             lblProdutosExistentes.AutoSize = true;
             lblProdutosExistentes.Font = new Font("Noto Sans", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblProdutosExistentes.ForeColor = SystemColors.ControlDarkDark;
-            lblProdutosExistentes.Location = new Point(484, 43);
+            lblProdutosExistentes.Location = new Point(490, 74);
             lblProdutosExistentes.Name = "lblProdutosExistentes";
             lblProdutosExistentes.Size = new Size(231, 29);
             lblProdutosExistentes.TabIndex = 48;
@@ -253,7 +253,7 @@
             btnCadastrar.BackColor = SystemColors.ControlDarkDark;
             btnCadastrar.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCadastrar.ForeColor = SystemColors.ButtonHighlight;
-            btnCadastrar.Location = new Point(17, 557);
+            btnCadastrar.Location = new Point(17, 582);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(284, 53);
             btnCadastrar.TabIndex = 38;
@@ -267,9 +267,9 @@
             lstProdutos.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lstProdutos.FormattingEnabled = true;
             lstProdutos.ItemHeight = 25;
-            lstProdutos.Location = new Point(440, 75);
+            lstProdutos.Location = new Point(444, 106);
             lstProdutos.Name = "lstProdutos";
-            lstProdutos.Size = new Size(324, 479);
+            lstProdutos.Size = new Size(324, 529);
             lstProdutos.TabIndex = 37;
             // 
             // lblNome
@@ -284,14 +284,15 @@
             // 
             // lblTitulo
             // 
-            lblTitulo.AutoSize = true;
+            lblTitulo.BackColor = SystemColors.ControlDarkDark;
             lblTitulo.Font = new Font("Noto Sans", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitulo.ForeColor = Color.Black;
-            lblTitulo.Location = new Point(131, 6);
+            lblTitulo.Location = new Point(0, 0);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(436, 41);
+            lblTitulo.Size = new Size(783, 48);
             lblTitulo.TabIndex = 35;
             lblTitulo.Text = "CADASTRE UM NOVO PRODUTO";
+            lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
             lblTitulo.Click += lblTitulo_Click;
             // 
             // txtNome
@@ -308,7 +309,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(784, 635);
+            ClientSize = new Size(784, 653);
             Controls.Add(pnlProdutos);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;

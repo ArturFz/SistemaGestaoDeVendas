@@ -64,21 +64,22 @@
             pnlListaUsuarios.Controls.Add(lblNomeUsuarioDefault);
             pnlListaUsuarios.Controls.Add(lblEmail);
             pnlListaUsuarios.Controls.Add(lblTelefone);
-            pnlListaUsuarios.Location = new Point(12, 12);
+            pnlListaUsuarios.Location = new Point(0, 0);
             pnlListaUsuarios.Name = "pnlListaUsuarios";
-            pnlListaUsuarios.Size = new Size(563, 483);
+            pnlListaUsuarios.Size = new Size(588, 490);
             pnlListaUsuarios.TabIndex = 0;
             // 
             // lblTitulo
             // 
-            lblTitulo.AutoSize = true;
+            lblTitulo.BackColor = SystemColors.ControlDarkDark;
             lblTitulo.Font = new Font("Noto Sans", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitulo.ForeColor = Color.Black;
-            lblTitulo.Location = new Point(50, 0);
+            lblTitulo.Location = new Point(0, 0);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(455, 53);
+            lblTitulo.Size = new Size(588, 53);
             lblTitulo.TabIndex = 33;
             lblTitulo.Text = "LISTA DE FUNCIONÁRIOS";
+            lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblUltimoAcessoDefault
             // 
@@ -230,7 +231,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(587, 507);
+            ClientSize = new Size(587, 491);
             Controls.Add(pnlListaUsuarios);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Icon = (Icon)resources.GetObject("$this.Icon");

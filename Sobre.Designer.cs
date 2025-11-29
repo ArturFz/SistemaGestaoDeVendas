@@ -40,15 +40,15 @@
             // 
             // lblTitulo
             // 
-            lblTitulo.AutoSize = true;
-            lblTitulo.BackColor = Color.Transparent;
+            lblTitulo.BackColor = SystemColors.ControlDarkDark;
             lblTitulo.Font = new Font("Noto Sans", 21.7499962F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitulo.ForeColor = SystemColors.ControlDarkDark;
-            lblTitulo.Location = new Point(15, 10);
+            lblTitulo.ForeColor = Color.Black;
+            lblTitulo.Location = new Point(0, 0);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(620, 44);
+            lblTitulo.Size = new Size(847, 44);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "Sistema de Gestão de Vendas – Versão 1.0\r\n";
+            lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
             lblTitulo.Click += lblIdentificacao_Click;
             // 
             // pnlSobre
@@ -59,9 +59,9 @@
             pnlSobre.Controls.Add(lblInstituicao);
             pnlSobre.Controls.Add(lblDesenvolvedores);
             pnlSobre.Controls.Add(lblTitulo);
-            pnlSobre.Location = new Point(12, 12);
+            pnlSobre.Location = new Point(1, -1);
             pnlSobre.Name = "pnlSobre";
-            pnlSobre.Size = new Size(822, 403);
+            pnlSobre.Size = new Size(847, 429);
             pnlSobre.TabIndex = 1;
             pnlSobre.Paint += pnlSobre_Paint;
             // 

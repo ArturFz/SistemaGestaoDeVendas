@@ -179,7 +179,7 @@ namespace Trabalho1_ProgVis
 
             lblAvisoSucesso.Visible = true;
         }
-        
+
 
         private void CadastroFuncionario_Load(object sender, EventArgs e)
         {
@@ -192,6 +192,11 @@ namespace Trabalho1_ProgVis
         }
 
         private void lblAvisoUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTitulo_Click(object sender, EventArgs e)
         {
 
         }
