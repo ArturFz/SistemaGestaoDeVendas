@@ -101,7 +101,7 @@
             pnlVenda.Controls.Add(cboClientes);
             pnlVenda.Location = new Point(0, 0);
             pnlVenda.Name = "pnlVenda";
-            pnlVenda.Size = new Size(1098, 749);
+            pnlVenda.Size = new Size(1098, 888);
             pnlVenda.TabIndex = 0;
             // 
             // txtValorParcela
@@ -464,14 +464,14 @@
             cboClientes.TabIndex = 0;
             cboClientes.SelectedIndexChanged += cboClientes_SelectedIndexChanged;
             // 
-            // Compras
+            // Vendas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1098, 749);
+            ClientSize = new Size(1098, 888);
             Controls.Add(pnlVenda);
             MinimizeBox = false;
-            Name = "Compras";
+            Name = "Vendas";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Compras";
             WindowState = FormWindowState.Maximized;
