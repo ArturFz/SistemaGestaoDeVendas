@@ -13,11 +13,11 @@ using Trabalho1_ProgVis;
 
 namespace Trabalho_TCD
 {
-    public partial class Compras : Form
+    public partial class Vendas : Form
     {
         private Compra compra;
-        private static Compras _instance;
-        public Compras()
+        private static Vendas _instance;
+        public Vendas()
         {
             InitializeComponent();
             ConfigurarGrade();
@@ -26,11 +26,11 @@ namespace Trabalho_TCD
 
         #region SingleTon
 
-        public static Compras GetInstance()
+        public static Vendas GetInstance()
         {
             if (_instance == null || _instance.IsDisposed)
             {
-                _instance = new Compras();
+                _instance = new Vendas();
             }
             return _instance;
         }
@@ -228,6 +228,10 @@ namespace Trabalho_TCD
 
         private void btnFinalizarVenda_Click(object sender, EventArgs e)
         {
+
+
+
+
         }
 
         private void btnAutorizar_Click(object sender, EventArgs e)

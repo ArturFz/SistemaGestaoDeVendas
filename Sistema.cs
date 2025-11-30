@@ -142,7 +142,7 @@ namespace Trabalho1_ProgVis
 
         private void compraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Compras compras = Compras.GetInstance();
+            Vendas compras = Vendas.GetInstance();
             compras.MdiParent = this;
             compras.BringToFront();
             compras.WindowState = FormWindowState.Normal;

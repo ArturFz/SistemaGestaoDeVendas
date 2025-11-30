@@ -1,6 +1,6 @@
 ﻿namespace Trabalho_TCD
 {
-    partial class Compras
+    partial class Vendas
     {
         /// <summary>
         /// Required designer variable.
