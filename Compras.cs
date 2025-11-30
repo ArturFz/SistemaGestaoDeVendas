@@ -145,6 +145,20 @@ namespace Trabalho_TCD
 
             if (produtoSelecionado != null && quantidade > 0)
             {
+                // Validações do desconto
+                if (desconto < 0 || desconto > 100)
+                {
+                    MessageBox.Show("Desconto deve estar entre 0 e 100 (percentual).", "Desconto inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (desconto > 5m)
+                {
+                    // Aqui você pode abrir um diálogo de autorização do gerente.
+                    MessageBox.Show("Desconto superior a 5% requer autorização do gerente.", "Autorização necessária", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 Item novoItem = new Item
                 {
                     Produto = produtoSelecionado,
@@ -158,9 +172,9 @@ namespace Trabalho_TCD
                 {
             novoItem.Produto.Id.ToString(),
             novoItem.Produto.Nome,
-            novoItem.Produto.Categoria != null ? novoItem.Produto.Categoria.Nome : "Sem Categoria", // Categoria
+            novoItem.Produto.Categoria != null ? novoItem.Produto.Categoria.Nome : "Sem Categoria",
             novoItem.Quantidade.ToString(),
-            novoItem.Produto.Preco.ToString("C2"),
+            novoItem.PrecoUnitario.ToString("C2"),
             novoItem.CalcularTotal().ToString("C2")
                 });
 

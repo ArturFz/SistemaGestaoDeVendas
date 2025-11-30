@@ -124,33 +124,6 @@ namespace Trabalho_TCD
                 throw;
             }
         }
-        public static List<Produto> FindByEstoqueMinimo()
-        {
-            try
-            {
-                using (Repository dbContext = new Repository())
-                {
-                    return dbContext.Produtos
-                        .Include(p => p.Categoria)
-                        .Where(p => p.Estoque <= p.EstoqueMinimo)
-                        .ToList();
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-        public static List<Produto> FindByEstoqueMinimoWithCategoria()
-        {
-            using (var db = new Repository())
-            {
-                return db.Produtos
-                         .Include(p => p.Categoria) // força o carregamento da categoria
-                         .Where(p => p.Estoque <= p.EstoqueMinimo)
-                         .ToList();
-            }
-        }
 
     }
 }

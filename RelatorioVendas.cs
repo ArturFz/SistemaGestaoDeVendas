@@ -50,7 +50,9 @@ namespace Trabalho_TCD
                 return;
             }
 
-            List<Compra> compras = CompraRepository.GetPerPeriod(dataInicio, dataFim).Where(c => c.Estado == Estado.CONCLUIDA).ToList();
+            
+            List<Compra> compras = CompraRepository.GetConcludedPerPeriod(dataInicio, dataFim);
+
 
             lsvVendas.BeginUpdate();
             lsvVendas.Items.Clear();
