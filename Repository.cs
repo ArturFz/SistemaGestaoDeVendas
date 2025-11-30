@@ -32,8 +32,8 @@ namespace Trabalho1_ProgVis
             {
                 Credencial adminCredencial = new Credencial()
                 {
-                    NomeUsuario = "Patrao",
-                    Senha = "Senha",
+                    NomeUsuario = "admin",
+                    Senha = "1234",
                     Perfil = Perfil.GERENTE
                 };
                 Usuario usuarioAdmin = new Usuario()

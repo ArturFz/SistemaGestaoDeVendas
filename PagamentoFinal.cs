@@ -33,7 +33,6 @@ namespace Trabalho_TCD
             Load += PagamentoFinal_Load;
             cboClientes.SelectedIndexChanged += CboClientes_SelectedIndexChanged;
             lstCompras.SelectedIndexChanged += LstCompras_SelectedIndexChanged;
-            lstParcelas.SelectedIndexChanged += LstParcelas_SelectedIndexChanged;
             btnFinalizarPagamento.Click += BtnFinalizarPagamento_Click;
         }
 
@@ -52,16 +51,163 @@ namespace Trabalho_TCD
 
             // limpa UI
             lstCompras.Items.Clear();
-            lstParcelas.Items.Clear();
-            txtValorParcelas.Clear(); // valor parcela
-            txtValorTotal.Clear(); // valor total
-            txtEstado.Clear(); // estado (estado de pagamento)
+
+
+            // controles do designer: txtValorParcelas = valor parcela, txtValorTotal = valor total, txtEstado = estado
+            txtValorParcelas.Clear();
+            txtValorTotal.Clear();
+            txtEstado.Clear();
+        }
+
+        // Método público para receber parcelas calculadas em Vendas
+        // Exemplo de uso em Vendas:
+        //   var janela = PagamentoFinal.GetInstance();
+        //   janela.PreencherParcelas(compra.Pagamentos, compra);
+        //   janela.ShowDialog(this);
+        public void PreencherParcelas(IEnumerable<Pagamento> parcelas, Compra? compra = null)
+        {
+            _parcelaSelecionada = null;
+            _compraSelecionada = compra;
+
+            var lista = (parcelas ?? Enumerable.Empty<Pagamento>()).ToList();
+
+            decimal valorPadraoPorParcela = 0m;
+            if (compra != null && lista.Count > 0)
+            {
+                valorPadraoPorParcela = Math.Round(compra.CalcularTotal() / lista.Count, 2, MidpointRounding.AwayFromZero);
+            }
+            else if (lista.Count > 0)
+            {
+                valorPadraoPorParcela = lista.Sum(p =>
+                {
+                    try
+                    {
+                        dynamic d = p;
+                        return (decimal)d.Valor;
+                    }
+                    catch
+                    {
+                        return 0m;
+                    }
+                }) / lista.Count;
+            }
+
+            foreach (var p in lista)
+            {
+                decimal valorParcela;
+                try
+                {
+                    dynamic d = p;
+                    valorParcela = (decimal)d.Valor;
+                }
+                catch
+                {
+                    valorParcela = valorPadraoPorParcela;
+                }
+
+                bool pago = false;
+                try
+                {
+                    dynamic d = p;
+                    if (d.DataPagamento is DateTime?)
+                        pago = ((DateTime?)d.DataPagamento).HasValue;
+                    else
+                        pago = ((DateTime)d.DataPagamento) != default(DateTime);
+                }
+                catch
+                {
+                    pago = false;
+                }
+
+                string status = pago ? GetPagamentoStatusString(p) : "Em aberto";
+                string display = $"{p.Vencimento:dd/MM/yyyy} - {valorParcela.ToString("C2")} - {status}";
+            }
+
+            decimal total = 0m;
+            if (compra != null)
+            {
+                total = compra.CalcularTotal();
+                txtValorTotal.Text = total.ToString("C2");
+                txtEstado.Text = ObterEstadoPagamento(compra);
+            }
+            else
+            {
+                total = lista.Sum(p =>
+                {
+                    try
+                    {
+                        dynamic d = p;
+                        return (decimal)d.Valor;
+                    }
+                    catch
+                    {
+                        return valorPadraoPorParcela;
+                    }
+                });
+                txtValorTotal.Text = total.ToString("C2");
+
+                int totalP = lista.Count;
+                int pagos = lista.Count(p =>
+                {
+                    try
+                    {
+                        dynamic d = p;
+                        if (d.DataPagamento is DateTime?)
+                            return ((DateTime?)d.DataPagamento).HasValue;
+                        else
+                            return ((DateTime)d.DataPagamento) != default(DateTime);
+                    }
+                    catch { return false; }
+                });
+                txtEstado.Text = totalP == 0 ? "Sem parcelas" : (pagos == 0 ? "Em aberto" : (pagos == totalP ? "Quitado" : "Parcial"));
+            }
+
+            if (lista.Count > 0)
+            {
+                var primeiro = lista.First();
+                decimal primeiroValor;
+                try
+                {
+                    dynamic d = primeiro;
+                    primeiroValor = (decimal)d.Valor;
+                }
+                catch
+                {
+                    primeiroValor = valorPadraoPorParcela;
+                }
+                txtValorParcelas.Text = primeiroValor.ToString("C2");
+            }
+            else
+            {
+                txtValorParcelas.Text = 0m.ToString("C2");
+            }
+        }
+
+        private string GetPagamentoStatusString(Pagamento p)
+        {
+            try
+            {
+                dynamic d = p;
+                if (d.DataPagamento is DateTime?)
+                {
+                    var dt = (DateTime?)d.DataPagamento;
+                    return dt.HasValue ? $"Pago {dt.Value:dd/MM/yyyy}" : "Em aberto";
+                }
+                else
+                {
+                    var dt = (DateTime)d.DataPagamento;
+                    return dt != default(DateTime) ? $"Pago {dt:dd/MM/yyyy}" : "Em aberto";
+                }
+            }
+            catch
+            {
+                return "Em aberto";
+            }
         }
 
         private void CboClientes_SelectedIndexChanged(object? sender, EventArgs e)
         {
             lstCompras.Items.Clear();
-            lstParcelas.Items.Clear();
             txtValorParcelas.Clear();
             txtValorTotal.Clear();
             txtEstado.Clear();
@@ -71,14 +217,16 @@ namespace Trabalho_TCD
             var cliente = cboClientes.SelectedItem as Cliente;
             if (cliente == null) return;
 
-            // busca compras do cliente incluindo pagamentos e itens (com produto) para calcular corretamente o total
             using (Repository db = new Repository())
             {
-                var compras = db.Compras
+                var comprasTodos = db.Compras
                     .Include(c => c.Cliente)
                     .Include(c => c.Pagamentos)
                     .Include(c => c.Itens)
                         .ThenInclude(i => i.Produto)
+                    .ToList();
+
+                var compras = comprasTodos
                     .Where(c => c.Cliente != null && c.Cliente.Id == cliente.Id)
                     .ToList();
 
@@ -93,7 +241,6 @@ namespace Trabalho_TCD
 
         private void LstCompras_SelectedIndexChanged(object? sender, EventArgs e)
         {
-            lstParcelas.Items.Clear();
             txtValorParcelas.Clear();
             txtValorTotal.Clear();
             txtEstado.Clear();
@@ -102,7 +249,16 @@ namespace Trabalho_TCD
 
             if (lstCompras.SelectedItem is ListBoxItem<Compra> item)
             {
-                // recarrega compra do DB para garantir navegação de pagamentos e itens atualizada
+                // primeiro tenta usar o objeto Compra que já está no ListBox (ele já vem com Pagamentos se foi carregado via CboClientes)
+                var compraDoItem = item.Value;
+                if (compraDoItem != null && compraDoItem.Pagamentos != null && compraDoItem.Pagamentos.Count > 0)
+                {
+                    _compraSelecionada = compraDoItem;
+                    PreencherParcelas(compraDoItem.Pagamentos, compraDoItem);
+                    return;
+                }
+
+                // fallback: consulta o banco incluindo Pagamentos
                 using (Repository db = new Repository())
                 {
                     var compra = db.Compras
@@ -114,77 +270,37 @@ namespace Trabalho_TCD
                     if (compra == null) return;
 
                     _compraSelecionada = compra;
-
-                    // popula parcelas
-                    if (compra.Pagamentos != null && compra.Pagamentos.Count > 0)
-                    {
-                        foreach (var p in compra.Pagamentos)
-                        {
-                            string status = (p.DataPagamento == default(DateTime) || p.DataPagamento == DateTime.MinValue) ? "Em aberto" : $"Pago em {p.DataPagamento:dd/MM/yyyy}";
-                            string display = $"{p.Vencimento:dd/MM/yyyy} - {status}";
-                            lstParcelas.Items.Add(new ListBoxItem<Pagamento>(p, display));
-                        }
-
-                        // valor por parcela: cálculo pelo total / quantidade de parcelas (quando não há valor explícito na parcela)
-                        decimal valorParcela;
-                        if (compra.Pagamentos.All(p => p.MultaAtraso == default)) // heuristic, mantém cálculo simples
-                        {
-                            valorParcela = compra.CalcularTotal() / compra.Pagamentos.Count;
-                        }
-                        else
-                        {
-                            // fallback: divide igualmente
-                            valorParcela = compra.CalcularTotal() / compra.Pagamentos.Count;
-                        }
-
-                        txtValorParcelas.Text = valorParcela.ToString("C2");
-                    }
-
-                    txtValorTotal.Text = compra.CalcularTotal().ToString("C2");
-
-                    // exibe o estado de pagamento da compra (não o estado da compra)
-                    txtEstado.Text = ObterEstadoPagamento(compra);
+                    PreencherParcelas(compra.Pagamentos ?? Enumerable.Empty<Pagamento>(), compra);
                 }
             }
         }
 
         private void LstParcelas_SelectedIndexChanged(object? sender, EventArgs e)
         {
-            _parcelaSelecionada = null;
-            if (lstParcelas.SelectedItem is ListBoxItem<Pagamento> item)
-            {
-                _parcelaSelecionada = item.Value;
-            }
+
         }
 
         private void BtnFinalizarPagamento_Click(object? sender, EventArgs e)
         {
+            // precisa ter uma compra selecionada na lista
             if (_compraSelecionada == null)
             {
-                MessageBox.Show("Selecione uma compra.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            if (_parcelaSelecionada == null)
-            {
-                MessageBox.Show("Selecione uma parcela para pagar.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            // verifica se já está quitada
-            if (!(_parcelaSelecionada.DataPagamento == default(DateTime) || _parcelaSelecionada.DataPagamento == DateTime.MinValue))
-            {
-                MessageBox.Show("Parcela já quitada.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Selecione uma compra para pagar.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             try
             {
+                UInt64 compraId = _compraSelecionada.Id;
+
                 using (Repository db = new Repository())
                 {
-                    // carrega compra com pagamentos
+                    // carrega a compra com pagamentos
                     var compraDb = db.Compras
                         .Include(c => c.Pagamentos)
-                        .FirstOrDefault(c => c.Id == _compraSelecionada.Id);
+                        .Include(c => c.Itens)
+                            .ThenInclude(i => i.Produto)
+                        .FirstOrDefault(c => c.Id == compraId);
 
                     if (compraDb == null)
                     {
@@ -192,25 +308,83 @@ namespace Trabalho_TCD
                         return;
                     }
 
-                    // localiza a parcela dentro da compra carregada
-                    var parcelaDb = compraDb.Pagamentos.FirstOrDefault(p => p.Id == _parcelaSelecionada.Id);
+                    bool marcouAlguma = false;
 
-                    if (parcelaDb == null)
+                    // Se houver parcelas, marca as não pagas como pagas
+                    if (compraDb.Pagamentos != null && compraDb.Pagamentos.Count > 0)
                     {
-                        MessageBox.Show("Parcela não encontrada.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
+                        foreach (var p in compraDb.Pagamentos)
+                        {
+                            // compatível com DataPagamento nullable ou não
+                            var prop = p.GetType().GetProperty("DataPagamento");
+                            if (prop != null)
+                            {
+                                var val = prop.GetValue(p);
+                                if (val == null)
+                                {
+                                    prop.SetValue(p, DateTime.Now);
+                                    marcouAlguma = true;
+                                }
+                                else if (val is DateTime dt && dt == default(DateTime))
+                                {
+                                    prop.SetValue(p, DateTime.Now);
+                                    marcouAlguma = true;
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        // Não há parcelas: cria uma parcela representando o pagamento à vista e já marca como paga
+                        var novaParcela = new Pagamento()
+                        {
+                            Vencimento = DateTime.Now,
+                            DataPagamento = DateTime.Now,
+                            MultaAtraso = 0m
+                        };
+
+                        if (compraDb.Pagamentos == null)
+                            compraDb.Pagamentos = new List<Pagamento>();
+
+                        compraDb.Pagamentos.Add(novaParcela);
+                        marcouAlguma = true;
                     }
 
-                    // marca pagamento
-                    parcelaDb.DataPagamento = DateTime.Now;
+                    if (!marcouAlguma)
+                    {
+                        MessageBox.Show("Todos os pagamentos já estão quitados.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
 
                     db.SaveChanges();
                 }
 
                 MessageBox.Show("Pagamento registrado com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // refresca UI: recarrega compras do cliente selecionado
-                CboClientes_SelectedIndexChanged(this, EventArgs.Empty);
+                // Recarrega a compra e atualiza a UI (parcelas / status / valor)
+                using (Repository db = new Repository())
+                {
+                    var compraAtualizada = db.Compras
+                        .Include(c => c.Pagamentos)
+                        .Include(c => c.Itens)
+                            .ThenInclude(i => i.Produto)
+                        .FirstOrDefault(c => c.Id == _compraSelecionada.Id);
+
+                    if (compraAtualizada != null)
+                    {
+                        _compraSelecionada = compraAtualizada;
+                        PreencherParcelas(compraAtualizada.Pagamentos ?? Enumerable.Empty<Pagamento>(), compraAtualizada);
+                    }
+                    else
+                    {
+                        // limpa UI se compra não encontrada
+                        txtValorParcelas.Text = "R$ 0,00";
+                        txtValorTotal.Text = "R$ 0,00";
+                        txtEstado.Text = "Sem parcelas";
+                    }
+                }
+
+                _parcelaSelecionada = null;
             }
             catch (Exception ex)
             {
@@ -225,7 +399,18 @@ namespace Trabalho_TCD
                 return "Sem parcelas";
 
             int total = compra.Pagamentos.Count;
-            int pagos = compra.Pagamentos.Count(p => !(p.DataPagamento == default(DateTime) || p.DataPagamento == DateTime.MinValue));
+            int pagos = compra.Pagamentos.Count(p =>
+            {
+                try
+                {
+                    dynamic d = p;
+                    if (d.DataPagamento is DateTime?)
+                        return ((DateTime?)d.DataPagamento).HasValue;
+                    else
+                        return ((DateTime)d.DataPagamento) != default(DateTime);
+                }
+                catch { return false; }
+            });
 
             if (pagos == 0) return "Em aberto";
             if (pagos == total) return "Quitado";

@@ -29,12 +29,10 @@
         private void InitializeComponent()
         {
             pnlPagamentoFinal = new Panel();
-            lstParcelas = new ListBox();
             lstCompras = new ListBox();
             btnFinalizarPagamento = new Button();
             lblEstado = new Label();
             lblValorParcelas = new Label();
-            lblParcelas = new Label();
             lblValorTotal = new Label();
             txtEstado = new TextBox();
             txtValorParcelas = new TextBox();
@@ -49,12 +47,10 @@
             // pnlPagamentoFinal
             // 
             pnlPagamentoFinal.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pnlPagamentoFinal.Controls.Add(lstParcelas);
             pnlPagamentoFinal.Controls.Add(lstCompras);
             pnlPagamentoFinal.Controls.Add(btnFinalizarPagamento);
             pnlPagamentoFinal.Controls.Add(lblEstado);
             pnlPagamentoFinal.Controls.Add(lblValorParcelas);
-            pnlPagamentoFinal.Controls.Add(lblParcelas);
             pnlPagamentoFinal.Controls.Add(lblValorTotal);
             pnlPagamentoFinal.Controls.Add(txtEstado);
             pnlPagamentoFinal.Controls.Add(txtValorParcelas);
@@ -67,15 +63,6 @@
             pnlPagamentoFinal.Name = "pnlPagamentoFinal";
             pnlPagamentoFinal.Size = new Size(805, 506);
             pnlPagamentoFinal.TabIndex = 0;
-            // 
-            // lstParcelas
-            // 
-            lstParcelas.FormattingEnabled = true;
-            lstParcelas.ItemHeight = 15;
-            lstParcelas.Location = new Point(16, 330);
-            lstParcelas.Name = "lstParcelas";
-            lstParcelas.Size = new Size(176, 154);
-            lstParcelas.TabIndex = 15;
             // 
             // lstCompras
             // 
@@ -90,9 +77,9 @@
             // 
             btnFinalizarPagamento.BackColor = SystemColors.ControlDarkDark;
             btnFinalizarPagamento.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnFinalizarPagamento.Location = new Point(571, 425);
+            btnFinalizarPagamento.Location = new Point(582, 433);
             btnFinalizarPagamento.Name = "btnFinalizarPagamento";
-            btnFinalizarPagamento.Size = new Size(221, 59);
+            btnFinalizarPagamento.Size = new Size(210, 51);
             btnFinalizarPagamento.TabIndex = 13;
             btnFinalizarPagamento.Text = "PAGAR PARCELA";
             btnFinalizarPagamento.UseVisualStyleBackColor = false;
@@ -116,16 +103,6 @@
             lblValorParcelas.Size = new Size(137, 21);
             lblValorParcelas.TabIndex = 11;
             lblValorParcelas.Text = "Valor das Parcelas:";
-            // 
-            // lblParcelas
-            // 
-            lblParcelas.AutoSize = true;
-            lblParcelas.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblParcelas.Location = new Point(16, 301);
-            lblParcelas.Name = "lblParcelas";
-            lblParcelas.Size = new Size(69, 21);
-            lblParcelas.TabIndex = 10;
-            lblParcelas.Text = "Parcelas:";
             // 
             // lblValorTotal
             // 
@@ -227,12 +204,10 @@
         private Label lblClientes;
         private ComboBox cboClientes;
         private Label lblTitulo;
-        private Label lblParcelas;
         private Label lblValorTotal;
         private Button btnFinalizarPagamento;
         private Label lblEstado;
         private Label lblValorParcelas;
         private ListBox lstCompras;
-        private ListBox lstParcelas;
     }
 }

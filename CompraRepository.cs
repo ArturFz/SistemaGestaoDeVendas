@@ -16,6 +16,7 @@ namespace Trabalho_TCD
             {
                 using (Repository dbContext = new Repository())
                 {
+                    // Anexa referências estáticas (Cliente, Vendedor, Produtos dos itens)
                     if (compra.Cliente != null && compra.Cliente.Id > 0)
                     {
                         dbContext.Clientes.Attach(compra.Cliente);
@@ -36,13 +37,32 @@ namespace Trabalho_TCD
                         }
                     }
 
+                    // Se for nova compra, adiciona a compra (EF vai inserir também a coleção de Pagamentos se houver)
                     if (compra.Id == 0)
                     {
                         dbContext.Compras.Add(compra);
                     }
                     else
                     {
+                        // Compra existente: marca como modificada e trate parcelas individualmente
                         dbContext.Entry(compra).State = EntityState.Modified;
+
+                        if (compra.Pagamentos != null)
+                        {
+                            foreach (var pagamento in compra.Pagamentos)
+                            {
+                                if (pagamento.Id == 0)
+                                {
+                                    // nova parcela — adicione explicitamente
+                                    dbContext.Pagamentos.Add(pagamento);
+                                }
+                                else
+                                {
+                                    // parcela existente — marque como modificada para que alterações (ex.: DataPagamento) sejam salvas
+                                    dbContext.Entry(pagamento).State = EntityState.Modified;
+                                }
+                            }
+                        }
                     }
 
                     dbContext.SaveChanges();
@@ -162,4 +182,3 @@ namespace Trabalho_TCD
         }
     }
 }
-    
