@@ -71,17 +71,19 @@
             // cboCategoria
             // 
             cboCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboCategoria.Enabled = false;
             cboCategoria.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cboCategoria.FormattingEnabled = true;
-            cboCategoria.Location = new Point(375, 319);
+            cboCategoria.Location = new Point(362, 325);
             cboCategoria.Name = "cboCategoria";
             cboCategoria.Size = new Size(278, 40);
             cboCategoria.TabIndex = 15;
             // 
             // numEstoque
             // 
+            numEstoque.Enabled = false;
             numEstoque.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            numEstoque.Location = new Point(375, 253);
+            numEstoque.Location = new Point(362, 259);
             numEstoque.Name = "numEstoque";
             numEstoque.ReadOnly = true;
             numEstoque.Size = new Size(278, 39);
@@ -89,8 +91,9 @@
             // 
             // numPreco
             // 
+            numPreco.Enabled = false;
             numPreco.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            numPreco.Location = new Point(375, 187);
+            numPreco.Location = new Point(362, 193);
             numPreco.Name = "numPreco";
             numPreco.ReadOnly = true;
             numPreco.Size = new Size(278, 39);
@@ -99,8 +102,9 @@
             // chkAtivo
             // 
             chkAtivo.AutoSize = true;
+            chkAtivo.Enabled = false;
             chkAtivo.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            chkAtivo.Location = new Point(375, 364);
+            chkAtivo.Location = new Point(362, 370);
             chkAtivo.Name = "chkAtivo";
             chkAtivo.Size = new Size(65, 25);
             chkAtivo.TabIndex = 12;
@@ -111,7 +115,7 @@
             // 
             lblCategoria.AutoSize = true;
             lblCategoria.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCategoria.Location = new Point(375, 295);
+            lblCategoria.Location = new Point(362, 301);
             lblCategoria.Name = "lblCategoria";
             lblCategoria.Size = new Size(80, 21);
             lblCategoria.TabIndex = 10;
@@ -121,7 +125,7 @@
             // 
             lblEstoque.AutoSize = true;
             lblEstoque.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblEstoque.Location = new Point(375, 229);
+            lblEstoque.Location = new Point(362, 235);
             lblEstoque.Name = "lblEstoque";
             lblEstoque.Size = new Size(68, 21);
             lblEstoque.TabIndex = 8;
@@ -131,7 +135,7 @@
             // 
             lblPreco.AutoSize = true;
             lblPreco.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPreco.Location = new Point(375, 163);
+            lblPreco.Location = new Point(362, 169);
             lblPreco.Name = "lblPreco";
             lblPreco.Size = new Size(52, 21);
             lblPreco.TabIndex = 6;
@@ -140,8 +144,9 @@
             // txtNome
             // 
             txtNome.BackColor = Color.DarkGray;
+            txtNome.Enabled = false;
             txtNome.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNome.Location = new Point(375, 118);
+            txtNome.Location = new Point(362, 124);
             txtNome.Name = "txtNome";
             txtNome.ReadOnly = true;
             txtNome.Size = new Size(278, 39);
@@ -151,7 +156,7 @@
             // 
             lblNome.AutoSize = true;
             lblNome.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblNome.Location = new Point(375, 95);
+            lblNome.Location = new Point(362, 101);
             lblNome.Name = "lblNome";
             lblNome.Size = new Size(56, 21);
             lblNome.TabIndex = 4;

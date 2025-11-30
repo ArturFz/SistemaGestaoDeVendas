@@ -38,6 +38,8 @@ namespace Trabalho_TCD
             lstRelatorioProdutos.ClearSelected();
 
             CarregarProdutos();
+
+
         }
         public static RelatorioProdutos GetInstance()
         {
@@ -49,7 +51,7 @@ namespace Trabalho_TCD
         }
         private void CarregarProdutos()
         {
-            _produtos = ProdutoRepository.FindAll();
+            _produtos = ProdutoRepository.FindAllWithCategoria();
             lstRelatorioProdutos.DataSource = _produtos;
             lstRelatorioProdutos.DisplayMember = "Nome";
             lstRelatorioProdutos.ClearSelected();
@@ -76,15 +78,23 @@ namespace Trabalho_TCD
 
             if (produto != null)
             {
-                Categoria? categoria = new Categoria();
-                categoria = cboCategoria.SelectedItem as Categoria;
-
+                // Preenche campos do produto
                 txtNome.Text = produto.Nome;
-                numPreco.Value = produto.Preco;
-                numEstoque.Value = produto.Estoque;
+                numPreco.Value = Math.Min(produto.Preco, numPreco.Maximum);
+                numEstoque.Value = Math.Min(produto.Estoque, numEstoque.Maximum);
                 chkAtivo.Checked = produto.Ativo;
-                if (categoria != null)
-                    cboCategoria.SelectedValue = produto.Categoria.Id;
+
+                // Seleciona categoria automaticamente no ComboBox
+                cboCategoria.SelectedValue = produto.Categoria.Id;
+            }
+            else
+            {
+                // Nenhum produto selecionado → limpa campos
+                txtNome.Clear();
+                numPreco.Value = numPreco.Minimum;
+                numEstoque.Value = numEstoque.Minimum;
+                chkAtivo.Checked = false;
+                cboCategoria.SelectedIndex = -1;
             }
         }
     }
