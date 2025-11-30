@@ -228,10 +228,6 @@ namespace Trabalho_TCD
 
         private void btnFinalizarVenda_Click(object sender, EventArgs e)
         {
-
-
-
-
         }
 
         private void btnAutorizar_Click(object sender, EventArgs e)
