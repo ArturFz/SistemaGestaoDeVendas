@@ -228,6 +228,18 @@ namespace Trabalho_TCD
 
         private void btnFinalizarVenda_Click(object sender, EventArgs e)
         {
+
+        }
+
+        public void FinalizarVenda()
+        {
+            _novaCompra!.Efetivacao = DateTime.Now;
+            _novaCompra!.Estado = Estado.CONCLUIDA;
+            foreach (Item i in _novaCompra!.Itens!) ItemRepository.SaveOrUpdate(i);
+            CompraRepository.SaveOrUpdate(_novaCompra!);
+
+            pnlPrincipal.Visible = false;
+            pnlFinalizada.Visible = true;
         }
 
         private void btnAutorizar_Click(object sender, EventArgs e)

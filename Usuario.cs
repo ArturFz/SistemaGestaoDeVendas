@@ -26,8 +26,19 @@ namespace Trabalho1_ProgVis
         [StringLength(35)]
         public String? Email { get; set; }
 
+        private Credencial _credencial;
+
         [ForeignKey("credencial_id")]
-        public Credencial Credencial { get; set; }
+        public Credencial Credencial
+        {
+            get => _credencial;
+
+            set
+            {
+                value.Usuario = this;
+                _credencial = value;
+            }
+        }
 
         public Perfil Perfil { get; set; }
 

@@ -101,7 +101,7 @@
             pnlVenda.Controls.Add(cboClientes);
             pnlVenda.Location = new Point(0, 0);
             pnlVenda.Name = "pnlVenda";
-            pnlVenda.Size = new Size(1098, 884);
+            pnlVenda.Size = new Size(1098, 749);
             pnlVenda.TabIndex = 0;
             // 
             // txtValorParcela
@@ -468,7 +468,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1098, 884);
+            ClientSize = new Size(1098, 749);
             Controls.Add(pnlVenda);
             MinimizeBox = false;
             Name = "Compras";
