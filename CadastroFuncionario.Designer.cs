@@ -122,7 +122,6 @@
             lblTitulo.TabIndex = 16;
             lblTitulo.Text = "CADASTRE UM NOVO FUNCIONÁRIO";
             lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
-            lblTitulo.Click += lblTitulo_Click;
             // 
             // lblAvisoSucesso
             // 
@@ -136,7 +135,6 @@
             lblAvisoSucesso.TabIndex = 15;
             lblAvisoSucesso.Text = "Usuário criado com sucesso!!!";
             lblAvisoSucesso.Visible = false;
-            lblAvisoSucesso.Click += lblAvisoSucesso_Click;
             // 
             // lblAvisoUsuario
             // 
@@ -150,7 +148,6 @@
             lblAvisoUsuario.TabIndex = 14;
             lblAvisoUsuario.Text = "Nome de Usuário já existente!!!";
             lblAvisoUsuario.Visible = false;
-            lblAvisoUsuario.Click += lblAvisoUsuario_Click;
             // 
             // lblAvisoVazio
             // 
@@ -297,7 +294,6 @@
             Name = "CadastroFuncionario";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro de funcionário";
-            Load += CadastroFuncionario_Load;
             pnlCadastroFuncionario.ResumeLayout(false);
             pnlCadastroFuncionario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picLogo).EndInit();

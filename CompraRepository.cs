@@ -100,6 +100,24 @@ namespace Trabalho_TCD
                 throw;
             }
         }
+        public static List<Compra> GetPerPeriodAndVendedor(DateTime dataInicio, DateTime dataFim, UInt64 vendedorId)
+        {
+            try
+            {
+                using (Repository dbContext = new Repository())
+                {
+                    return dbContext.Compras
+                        .Include(c => c.Vendedor)
+                        .Include(c => c.Cliente)
+                        .Where(c => c.VendedorId == vendedorId && c.Inicio >= dataInicio && c.Inicio <= dataFim)
+                        .ToList();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         public static void Remove(Compra compra)
         {
             try

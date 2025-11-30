@@ -268,11 +268,10 @@ namespace Trabalho_TCD
             {
                 numEstoque.Minimum = numEstoqueMinimo.Value;
             }
-        }
-
-        private void pnlProdutos_Paint(object sender, PaintEventArgs e)
-        {
-
+            else
+            {
+                numEstoque.Minimum = 0;
+            }
         }
 
         private void txtNome_TextChanged(object sender, EventArgs e)
@@ -290,5 +289,16 @@ namespace Trabalho_TCD
             lblAvisoCategoria.Visible = false;
         }
 
+        private void chkAtivo_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (chkAtivo.Checked)
+            {
+                numEstoque.Minimum = numEstoqueMinimo.Value;
+            }
+            else
+            {
+                numEstoque.Minimum = 0;
+            }
+        }
     }
 }

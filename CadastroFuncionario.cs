@@ -1,3 +1,5 @@
+using Trabalho_TCD;
+
 namespace Trabalho1_ProgVis
 {
     public partial class CadastroFuncionario : Form
@@ -21,6 +23,10 @@ namespace Trabalho1_ProgVis
         }
         #endregion
 
+        private uint GerarMatricula()
+        {
+            return VendedorRepository.GetLastMatricula() + 1;
+        }
 
 
         private void txtNome_KeyUp(object sender, KeyEventArgs e)
@@ -123,19 +129,16 @@ namespace Trabalho1_ProgVis
             lblAvisoVazio.Visible = false;
             lblAvisoUsuario.Visible = false;
 
-            if
-                (
-                    txtNome.Text.Trim() == ""
-                    || txtNomeUsuario.Text.Trim() == ""
-                    || txtEmail.Text.Trim() == ""
-                    || mskTelefone.Text.Trim() == "()-"
-                    || txtSenha.Text.Trim() == ""
-                )
+            if (
+                txtNome.Text.Trim() == "" ||
+                txtNomeUsuario.Text.Trim() == "" ||
+                txtEmail.Text.Trim() == "" ||
+                mskTelefone.Text.Trim() == "()-" ||
+                txtSenha.Text.Trim() == ""
+            )
             {
                 lblAvisoVazio.Visible = true;
                 return;
-
-
             }
 
             foreach (Credencial c in CredencialRepository.FindAll())
@@ -145,11 +148,12 @@ namespace Trabalho1_ProgVis
                     lblAvisoUsuario.Visible = true;
                     txtNomeUsuario.Focus();
                     txtNomeUsuario.SelectAll();
-
                     return;
                 }
             }
+
             Perfil perfilSelecionado = GetSelectedPerfilFromCombo();
+
             Credencial novaCredencial = new Credencial()
             {
                 NomeUsuario = txtNomeUsuario.Text,
@@ -157,14 +161,34 @@ namespace Trabalho1_ProgVis
                 Perfil = perfilSelecionado
             };
 
-            Usuario novoUsuario = new Usuario()
+            Usuario novoUsuario;
+
+            if (perfilSelecionado == Perfil.VENDEDOR)
             {
-                Nome = txtNome.Text,
-                Email = txtEmail.Text,
-                Telefone = mskTelefone.Text,
-                Credencial = novaCredencial,
-                Perfil = perfilSelecionado
-            };
+                uint novaMatricula = GerarMatricula(); 
+
+                novoUsuario = new Vendedor()
+                {
+                    Matricula = novaMatricula,
+                    Nome = txtNome.Text,
+                    Email = txtEmail.Text,
+                    Telefone = mskTelefone.Text,
+                    Credencial = novaCredencial,
+                    Perfil = perfilSelecionado,
+                    Compras = new List<Compra>()
+                };
+            }
+            else
+            {
+                novoUsuario = new Usuario()
+                {
+                    Nome = txtNome.Text,
+                    Email = txtEmail.Text,
+                    Telefone = mskTelefone.Text,
+                    Credencial = novaCredencial,
+                    Perfil = perfilSelecionado
+                };
+            }
 
             UsuarioRepository.SaveOrUpdate(novoUsuario);
 
@@ -176,29 +200,7 @@ namespace Trabalho1_ProgVis
 
             txtNome.Focus();
 
-
             lblAvisoSucesso.Visible = true;
-        }
-
-
-        private void CadastroFuncionario_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblAvisoSucesso_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblAvisoUsuario_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblTitulo_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

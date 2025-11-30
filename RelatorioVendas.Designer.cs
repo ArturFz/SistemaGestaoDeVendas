@@ -124,6 +124,7 @@
             // dtpDataFinal
             // 
             dtpDataFinal.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtpDataFinal.Format = DateTimePickerFormat.Short;
             dtpDataFinal.Location = new Point(15, 142);
             dtpDataFinal.Name = "dtpDataFinal";
             dtpDataFinal.Size = new Size(200, 39);
@@ -133,6 +134,7 @@
             // 
             dtpDataInicial.CalendarFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dtpDataInicial.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtpDataInicial.Format = DateTimePickerFormat.Short;
             dtpDataInicial.Location = new Point(15, 76);
             dtpDataInicial.Name = "dtpDataInicial";
             dtpDataInicial.Size = new Size(200, 39);

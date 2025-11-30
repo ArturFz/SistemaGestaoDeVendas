@@ -81,7 +81,6 @@
             pnlProdutos.Name = "pnlProdutos";
             pnlProdutos.Size = new Size(783, 652);
             pnlProdutos.TabIndex = 1;
-            pnlProdutos.Paint += pnlProdutos_Paint;
             // 
             // lblAvisoCategoria
             // 
@@ -149,7 +148,7 @@
             cboCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
             cboCategoria.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cboCategoria.FormattingEnabled = true;
-            cboCategoria.Location = new Point(20, 406);
+            cboCategoria.Location = new Point(18, 373);
             cboCategoria.Name = "cboCategoria";
             cboCategoria.Size = new Size(284, 40);
             cboCategoria.TabIndex = 51;
@@ -159,7 +158,7 @@
             // 
             numEstoque.BackColor = Color.DarkGray;
             numEstoque.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            numEstoque.Location = new Point(20, 269);
+            numEstoque.Location = new Point(18, 236);
             numEstoque.Name = "numEstoque";
             numEstoque.Size = new Size(284, 39);
             numEstoque.TabIndex = 50;
@@ -168,7 +167,7 @@
             // 
             numEstoqueMinimo.BackColor = Color.DarkGray;
             numEstoqueMinimo.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            numEstoqueMinimo.Location = new Point(21, 339);
+            numEstoqueMinimo.Location = new Point(19, 306);
             numEstoqueMinimo.Name = "numEstoqueMinimo";
             numEstoqueMinimo.Size = new Size(284, 39);
             numEstoqueMinimo.TabIndex = 49;
@@ -189,7 +188,7 @@
             // 
             lblCategoria.AutoSize = true;
             lblCategoria.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCategoria.Location = new Point(20, 378);
+            lblCategoria.Location = new Point(18, 345);
             lblCategoria.Name = "lblCategoria";
             lblCategoria.Size = new Size(98, 25);
             lblCategoria.TabIndex = 47;
@@ -200,19 +199,19 @@
             // 
             chkAtivo.AutoSize = true;
             chkAtivo.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            chkAtivo.Location = new Point(20, 211);
+            chkAtivo.Location = new Point(19, 419);
             chkAtivo.Name = "chkAtivo";
             chkAtivo.Size = new Size(74, 29);
             chkAtivo.TabIndex = 45;
             chkAtivo.Text = "Ativo";
             chkAtivo.UseVisualStyleBackColor = true;
-            chkAtivo.CheckedChanged += chkAtivo_CheckedChanged;
+            chkAtivo.CheckedChanged += chkAtivo_CheckedChanged_1;
             // 
             // lblEstoqueMinimo
             // 
             lblEstoqueMinimo.AutoSize = true;
             lblEstoqueMinimo.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblEstoqueMinimo.Location = new Point(20, 311);
+            lblEstoqueMinimo.Location = new Point(18, 278);
             lblEstoqueMinimo.Name = "lblEstoqueMinimo";
             lblEstoqueMinimo.Size = new Size(152, 25);
             lblEstoqueMinimo.TabIndex = 44;
@@ -222,7 +221,7 @@
             // 
             lblEstoque.AutoSize = true;
             lblEstoque.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblEstoque.Location = new Point(20, 241);
+            lblEstoque.Location = new Point(18, 208);
             lblEstoque.Name = "lblEstoque";
             lblEstoque.Size = new Size(83, 25);
             lblEstoque.TabIndex = 42;
@@ -276,7 +275,7 @@
             // 
             lblNome.AutoSize = true;
             lblNome.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblNome.Location = new Point(18, 60);
+            lblNome.Location = new Point(17, 60);
             lblNome.Name = "lblNome";
             lblNome.Size = new Size(67, 25);
             lblNome.TabIndex = 36;
@@ -299,7 +298,7 @@
             // 
             txtNome.BackColor = Color.DarkGray;
             txtNome.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNome.Location = new Point(18, 88);
+            txtNome.Location = new Point(16, 88);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(285, 43);
             txtNome.TabIndex = 1;

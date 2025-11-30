@@ -62,6 +62,16 @@ namespace Trabalho_TCD
                 throw;
             }
         }
+        public static uint GetLastMatricula()
+        {
+            using (Repository db = new Repository())
+            {
+                if (!db.Usuarios.OfType<Vendedor>().Any())
+                    return 0;
+
+                return db.Usuarios.OfType<Vendedor>().Max(v => v.Matricula);
+            }
+        }
         public static void Remove(Vendedor vendedor)
         {
             try

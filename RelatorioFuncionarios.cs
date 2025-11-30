@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Trabalho1_ProgVis
 {
-    public partial class ListaFuncionarios : Form
+    public partial class RelatorioFuncionarios : Form
     {
-        private static ListaFuncionarios? _instance;
+        private static RelatorioFuncionarios? _instance;
 
-        public ListaFuncionarios()
+        public RelatorioFuncionarios()
         {
             InitializeComponent();
 
@@ -25,11 +25,11 @@ namespace Trabalho1_ProgVis
         }
 
         #region SingleTon
-        public static ListaFuncionarios GetInstance()
+        public static RelatorioFuncionarios GetInstance()
         {
             if (_instance == null || _instance.IsDisposed)
             {
-                _instance = new ListaFuncionarios();
+                _instance = new RelatorioFuncionarios();
             }
 
             return _instance;

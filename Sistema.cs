@@ -83,7 +83,7 @@ namespace Trabalho1_ProgVis
 
         private void mnuRelatorioUsuarios_Click(object sender, EventArgs e)
         {
-            ListaFuncionarios listaUsuarios = ListaFuncionarios.GetInstance();
+            RelatorioFuncionarios listaUsuarios = RelatorioFuncionarios.GetInstance();
             listaUsuarios.MdiParent = this;
             listaUsuarios.BringToFront();
             listaUsuarios.WindowState = FormWindowState.Normal;
@@ -158,6 +158,26 @@ namespace Trabalho1_ProgVis
             relatorioVendas.WindowState = FormWindowState.Normal;
 
             relatorioVendas.Show();
+        }
+
+        private void comToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RelatorioComissao relatorioComissao = RelatorioComissao.GetInstance();
+            relatorioComissao.MdiParent = this;
+            relatorioComissao.BringToFront();
+            relatorioComissao.WindowState = FormWindowState.Normal;
+
+            relatorioComissao.Show();
+        }
+
+        private void mnuRelatorioProdutos_Click(object sender, EventArgs e)
+        {
+            RelatorioProdutos relatorioProdutos = RelatorioProdutos.GetInstance();
+            relatorioProdutos.MdiParent = this;
+            relatorioProdutos.BringToFront();
+            relatorioProdutos.WindowState = FormWindowState.Normal;
+
+            relatorioProdutos.Show();
         }
     }
 }

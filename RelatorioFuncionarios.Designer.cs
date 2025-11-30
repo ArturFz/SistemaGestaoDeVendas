@@ -1,6 +1,6 @@
 ﻿namespace Trabalho1_ProgVis
 {
-    partial class ListaFuncionarios
+    partial class RelatorioFuncionarios
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListaFuncionarios));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RelatorioFuncionarios));
             pnlListaUsuarios = new Panel();
             lblTitulo = new Label();
             lblUltimoAcessoDefault = new Label();
@@ -72,13 +72,13 @@
             // lblTitulo
             // 
             lblTitulo.BackColor = SystemColors.ControlDarkDark;
-            lblTitulo.Font = new Font("Noto Sans", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitulo.Font = new Font("Noto Sans", 21.7499962F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitulo.ForeColor = Color.Black;
             lblTitulo.Location = new Point(0, 0);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(588, 53);
             lblTitulo.TabIndex = 33;
-            lblTitulo.Text = "LISTA DE FUNCIONÁRIOS";
+            lblTitulo.Text = "RELATÓRIO DE FUNCIONÁRIOS";
             lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblUltimoAcessoDefault
@@ -239,7 +239,7 @@
             MinimizeBox = false;
             Name = "ListaFuncionarios";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Lista de Funcionários";
+            Text = "Relátorio de Funcionários";
             pnlListaUsuarios.ResumeLayout(false);
             pnlListaUsuarios.PerformLayout();
             ResumeLayout(false);
