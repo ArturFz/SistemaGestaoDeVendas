@@ -117,6 +117,31 @@ namespace Trabalho_TCD
                 throw;
             }
         }
+
+        public static List<Compra> GetConcludedPerPeriod(DateTime dataInicio, DateTime dataFim)
+        {
+            try
+            {
+                using (Repository dbContext = new Repository())
+                {
+                    DateTime inicio = dataInicio.Date;
+                    DateTime fim = dataFim.Date.AddDays(1).AddTicks(-1);
+
+                    return dbContext.Compras
+                        .Include(c => c.Vendedor)
+                        .Include(c => c.Cliente)
+                        .Where(c => c.Estado == Estado.CONCLUIDA
+                                    && c.Efetivacao.HasValue
+                                    && c.Efetivacao.Value >= inicio
+                                    && c.Efetivacao.Value <= fim)
+                        .ToList();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }
     

@@ -1,4 +1,4 @@
-﻿    using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 namespace Trabalho1_ProgVis
 {
     [Table("Compra")]
-
     public class Compra
     {
         [Key]
@@ -20,12 +19,12 @@ namespace Trabalho1_ProgVis
         public Decimal Comissao { get; set; }
         public Estado Estado { get; set; } = Estado.PENDENTE;
               
-        
         // Relacionamentos
         public Vendedor? Vendedor { get; set; }
         public List<Pagamento> Pagamentos { get; set; }
         public List<Item> Itens { get; set; }
         public Cliente Cliente { get; set; }
+
         public Compra()
         {
             Pagamentos = new List<Pagamento>();
@@ -45,33 +44,30 @@ namespace Trabalho1_ProgVis
             foreach (var item in Itens)
             {
                 if (item == null) continue;
-                try
-                {
-                    total += item.CalcularTotal();
-                }
-                catch
-                {
-                    Decimal precoUnitario = item.PrecoUnitario;
-                    Decimal quantidade = item.Quantidade;
-                    Decimal desconto = item.Desconto;
-                    total += item.CalcularTotal();
-                }
+                total += item.CalcularTotal();
             }
-        return total;
+            // Arredonda total da compra para 2 casas também
+            return Math.Round(total, 2, MidpointRounding.AwayFromZero);
         }
 
         public Decimal CalcularComissao()
         {
             var comissao = CalcularTotal() * 0.01m;
-            return comissao;
+            return Math.Round(comissao, 2, MidpointRounding.AwayFromZero);
         }
+
         public void AdicionarItem(Item item)
         {
+            if (item == null) return;
+            // garante vínculo bidirecional
+            item.Compra = this;
             Itens.Add(item); 
         }
         public void RemoverItem(Item item)
         {
-            Itens.Remove(item);  
+            if (item == null) return;
+            Itens.Remove(item);
+            item.Compra = null;
         }
 
     }
