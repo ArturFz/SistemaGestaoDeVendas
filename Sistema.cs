@@ -18,10 +18,16 @@ namespace Trabalho1_ProgVis
 
         private Credencial? _credencial;
 
+        // Exponho o usuário logado para telas que precisam persistir relacionamentos (ex.: Vendas)
+        public static Usuario? LoggedUser { get; private set; }
+
 
         private Sistema(Usuario usuario)
         {
             InitializeComponent();
+
+            // guarda referência do usuário logado
+            LoggedUser = usuario;
 
             Text = "Sistema /" + usuario.Nome;
             //mnuCadastro.Enabled = usuario.Credencial.Perfil;
@@ -132,7 +138,7 @@ namespace Trabalho1_ProgVis
 
         private void pagamentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            IniciarPagamento pagamentos = IniciarPagamento.GetInstance();
+            PagamentoFinal pagamentos = PagamentoFinal.GetInstance();
             pagamentos.MdiParent = this;
             pagamentos.BringToFront();
             pagamentos.WindowState = FormWindowState.Normal;

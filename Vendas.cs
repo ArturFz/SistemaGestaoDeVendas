@@ -17,11 +17,17 @@ namespace Trabalho_TCD
     {
         private Compra compra;
         private static Vendas _instance;
+
+        // flag para autorizar parcelamento > 5
+        private bool gerenteAutorizado = false;
+
         public Vendas()
         {
             InitializeComponent();
             ConfigurarGrade();
             numQuantidadeParcelas.Minimum = 1;
+            // garante painel escondido ao iniciar
+            pnlAutorizacaoGerente.Visible = false;
         }
 
         #region SingleTon
@@ -61,6 +67,8 @@ namespace Trabalho_TCD
                 CarregarProdutosPorCategoriaSelecionada();
             }
             txtValorParcela.Text = "R$ 0,00";
+            gerenteAutorizado = false;
+            pnlAutorizacaoGerente.Visible = false;
         }
         private void CarregarProdutosPorCategoriaSelecionada()
         {
@@ -228,22 +236,155 @@ namespace Trabalho_TCD
 
         private void btnFinalizarVenda_Click(object sender, EventArgs e)
         {
+            // Verifica autorização para parcelamento > 5
+            int parcelasAntes = (int)numQuantidadeParcelas.Value;
+            if (parcelasAntes > 5 && !gerenteAutorizado)
+            {
+                // exibe painel para autorização do gerente e aborta finalização
+                pnlAutorizacaoGerente.Visible = true;
+                MessageBox.Show("Parcelamento acima de 5 parcelas requer autorização do gerente. Informe usuário e senha.", "Autorização necessária", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Validações básicas antes de persistir
+            if (compra == null || compra.Itens == null || compra.Itens.Count == 0)
+            {
+                MessageBox.Show("Adicione ao menos um item à venda antes de finalizar.", "Venda inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // garante que Cliente está vinculado
+            if (compra.Cliente == null)
+            {
+                compra.Cliente = cboClientes.SelectedItem as Cliente;
+            }
+
+            if (compra.Cliente == null || compra.Cliente.Id == 0)
+            {
+                MessageBox.Show("Selecione um cliente antes de finalizar a venda.", "Cliente não selecionado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // garante que Vendedor está vinculado e grava o id para persistência
+            if ((compra.Vendedor == null || compra.Vendedor.Id == 0) && Sistema.LoggedUser != null && Sistema.LoggedUser is Vendedor vendedorLogado)
+            {
+                compra.Vendedor = vendedorLogado;
+                compra.VendedorId = vendedorLogado.Id;
+            }
+
+            if (compra.Vendedor == null || compra.Vendedor.Id == 0)
+            {
+                MessageBox.Show("Não foi possível identificar o vendedor (usuário logado). Verifique o login.", "Vendedor não identificado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Verifica se o valor da parcela foi calculado e respeita a regra já aplicada na UI
+            decimal total = compra.CalcularTotal();
+            if (total <= 0)
+            {
+                MessageBox.Show("Total da compra inválido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                // Preenche campos da compra antes de salvar
+                compra.Comissao = compra.CalcularComissao();
+                compra.Efetivacao = DateTime.Now;
+                compra.Estado = Estado.CONCLUIDA;
+
+                // Gera um número sequencial simples (busca maior número existente e soma 1)
+                using (Repository db = new Repository())
+                {
+                    UInt64 last = 0;
+                    if (db.Compras.Any())
+                    {
+                        last = db.Compras.Max(c => c.Numero);
+                    }
+                    compra.Numero = last + 1;
+                }
+
+                // Persiste a compra (anexa cliente/produto/vendedor conforme repository)
+                CompraRepository.SaveOrUpdate(compra);
+
+                MessageBox.Show($"Venda finalizada e salva com sucesso! Nº {compra.Numero}", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Limpa a tela para nova venda
+                compra = new Compra();
+                // reaplica vendedor logado à nova compra para conveniência
+                if (Sistema.LoggedUser != null && Sistema.LoggedUser is Vendedor vendedorNow)
+                {
+                    compra.Vendedor = vendedorNow;
+                    compra.VendedorId = vendedorNow.Id;
+                }
+
+                // reset autorização após salvar
+                gerenteAutorizado = false;
+                pnlAutorizacaoGerente.Visible = false;
+
+                lsvItens.Items.Clear();
+                lblValorTotal.Text = "R$ 0,00";
+                lblComissaoTotal.Text = "R$ 0,00";
+                txtValorParcela.Text = "R$ 0,00";
+                cboClientes.SelectedIndex = -1;
+                AtualizarGrade();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao salvar a venda: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnAutorizar_Click(object sender, EventArgs e)
         {
-            string usuario = txtNomeUsuario.Text;
-            string senha = txtSenha.Text;
+            string nomeUsuarioCredencial = txtNomeUsuario.Text?.Trim();
+            string senha = txtSenha.Text ?? "";
 
-            var gerente = UsuarioRepository.FindByNome(usuario);
-            if (gerente != null && gerente.Credencial.Senha == Credencial.ComputeSHA256(senha, Credencial.SALT))
+            if (string.IsNullOrEmpty(nomeUsuarioCredencial) || string.IsNullOrEmpty(senha))
             {
-                // Usuário autorizado
-                pnlAutorizacaoGerente.Visible = false;
+                MessageBox.Show("Informe usuário e senha do gerente.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                gerenteAutorizado = false;
+                return;
             }
-            else
+
+            try
             {
-                MessageBox.Show("Usuário ou senha inválidos!");
+                // Procura pela credencial (que contém o NomeUsuario usado no login) e traz o usuário associado
+                var credenciais = CredencialRepository.FindAllWithUsuario();
+                var credencial = credenciais.FirstOrDefault(c => c.NomeUsuario == nomeUsuarioCredencial);
+
+                if (credencial == null || credencial.Usuario == null)
+                {
+                    MessageBox.Show("Usuário ou senha inválidos!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    gerenteAutorizado = false;
+                    return;
+                }
+
+                // Verifica se é gerente
+                if (credencial.Perfil != Perfil.GERENTE)
+                {
+                    MessageBox.Show("Apenas usuário com perfil Gerente pode autorizar.", "Acesso negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    gerenteAutorizado = false;
+                    return;
+                }
+
+                // Valida senha (hash)
+                if (credencial.Senha == Credencial.ComputeSHA256(senha, Credencial.SALT))
+                {
+                    gerenteAutorizado = true;
+                    pnlAutorizacaoGerente.Visible = false;
+                    MessageBox.Show("Autorização concedida. Clique em Finalizar Venda novamente.", "Autorizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Usuário ou senha inválidos!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    gerenteAutorizado = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao validar credencial: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                gerenteAutorizado = false;
             }
         }
 
@@ -306,6 +447,10 @@ namespace Trabalho_TCD
 
         private void numQuantidadeParcelas_ValueChanged(object sender, EventArgs e)
         {
+            // qualquer alteração no número de parcelas cancela autorização anterior
+            gerenteAutorizado = false;
+            pnlAutorizacaoGerente.Visible = false;
+
             AtualizarValorParcela();
         }
     }
