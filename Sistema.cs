@@ -179,10 +179,5 @@ namespace Trabalho1_ProgVis
 
             relatorioProdutos.Show();
         }
-
-        public static Usuario? GetUsuarioLogado()
-        {
-            return _usuario;
-        }
     }
 }
