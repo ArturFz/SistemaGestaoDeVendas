@@ -13,7 +13,6 @@ namespace Trabalho1_ProgVis
 {
     public partial class Sistema : Form
     {
-
         private static Sistema? _instance;
 
         private Credencial? _credencial;
@@ -39,6 +38,8 @@ namespace Trabalho1_ProgVis
 
             staBarraEstadoUltimoAcesso.Text = $"Último Acesso: {_credencial.UltimoAcesso}";
 
+            // configura acesso aos menus conforme perfil do usuário logado
+            ConfigureMenuAccess();
         }
 
         #region SingleTon
@@ -129,7 +130,8 @@ namespace Trabalho1_ProgVis
 
         private void Sistema_Load(object sender, EventArgs e)
         {
-
+            // garante que menus respeitam o perfil também quando o formulário carrega
+            ConfigureMenuAccess();
         }
         private void mnuRelatorio_Click(object sender, EventArgs e)
         {
@@ -184,6 +186,141 @@ namespace Trabalho1_ProgVis
             relatorioProdutos.WindowState = FormWindowState.Normal;
 
             relatorioProdutos.Show();
+        }
+
+        // --- Novo método: configura acesso aos menus conforme Perfil ---
+        private void ConfigureMenuAccess()
+        {
+            // Se não houver usuário logado, desabilita tudo exceto Sair e Ajuda
+            if (LoggedUser == null || LoggedUser.Credencial == null)
+            {
+                mnuArquivo.Enabled = true;
+                mnuArquivoSair.Enabled = true;
+
+                mnuCadastro.Enabled = false;
+                mnuCadastroUsuario.Enabled = false;
+                mnuCadastroCliente.Enabled = false;
+
+                catálogoToolStripMenuItem.Enabled = false;
+                produtosToolStripMenuItem.Enabled = false;
+                categoriasToolStripMenuItem.Enabled = false;
+
+                mnuRelatorio.Enabled = false;
+                mnuOrçamento.Enabled = false;
+                compraToolStripMenuItem.Enabled = false;
+
+                mnuCaixa.Enabled = false;
+                mnuCaixaPagamento.Enabled = false;
+
+                mnuAjuda.Enabled = true;
+                mnuAjudaSobre.Enabled = true;
+
+                return;
+            }
+
+            var perfil = LoggedUser.Credencial.Perfil;
+
+            // Primeiro desabilita tudo por padrão
+            mnuArquivo.Enabled = true;
+            mnuArquivoSair.Enabled = true;
+
+            mnuCadastro.Enabled = false;
+            mnuCadastroUsuario.Enabled = false;
+            mnuCadastroCliente.Enabled = false;
+
+            catálogoToolStripMenuItem.Enabled = false;
+            produtosToolStripMenuItem.Enabled = false;
+            categoriasToolStripMenuItem.Enabled = false;
+
+            mnuRelatorio.Enabled = false;
+            mnuRelatorioFuncionarios.Enabled = false;
+            mnuRelatorioVendas.Enabled = false;
+            mnuRelatorioComissao.Enabled = false;
+            mnuRelatorioProdutos.Enabled = false;
+
+            mnuOrçamento.Enabled = false;
+            compraToolStripMenuItem.Enabled = false;
+
+            mnuCaixa.Enabled = false;
+            mnuCaixaPagamento.Enabled = false;
+
+            mnuAjuda.Enabled = true;
+            mnuAjudaSobre.Enabled = true;
+
+            // Concede permissões conforme perfil
+            switch (perfil)
+            {
+                case Perfil.GERENTE:
+                    // acesso total
+                    mnuCadastro.Enabled = true;
+                    mnuCadastroUsuario.Enabled = true;
+                    mnuCadastroCliente.Enabled = true;
+
+                    catálogoToolStripMenuItem.Enabled = true;
+                    produtosToolStripMenuItem.Enabled = true;
+                    categoriasToolStripMenuItem.Enabled = true;
+
+                    mnuRelatorio.Enabled = true;
+                    mnuRelatorioFuncionarios.Enabled = true;
+                    mnuRelatorioVendas.Enabled = true;
+                    mnuRelatorioComissao.Enabled = true;
+                    mnuRelatorioProdutos.Enabled = true;
+
+                    mnuOrçamento.Enabled = true;
+                    compraToolStripMenuItem.Enabled = true;
+
+                    mnuCaixa.Enabled = true;
+                    mnuCaixaPagamento.Enabled = true;
+                    break;
+
+                case Perfil.VENDEDOR:
+                    // arquivo -> sair (sempre)
+                    // cadastro: só cliente
+                    mnuCadastro.Enabled = true;
+                    mnuCadastroUsuario.Enabled = false;
+                    mnuCadastroCliente.Enabled = true;
+
+                    // catálogo: não
+                    catálogoToolStripMenuItem.Enabled = false;
+
+                    // relatórios: não
+                    mnuRelatorio.Enabled = false;
+
+                    // orçamento (compra): sim
+                    mnuOrçamento.Enabled = true;
+                    compraToolStripMenuItem.Enabled = true;
+
+                    // caixa pagamento: não
+                    mnuCaixa.Enabled = false;
+
+                    // ajuda: sim (já habilitado)
+                    break;
+
+                case Perfil.OPERADOR_CAIXA:
+                    // arquivo -> sair
+                    // cadastro: não
+                    mnuCadastro.Enabled = false;
+
+                    // catálogo: não
+                    catálogoToolStripMenuItem.Enabled = false;
+
+                    // relatórios: não
+                    mnuRelatorio.Enabled = false;
+
+                    // orçamento: não
+                    mnuOrçamento.Enabled = false;
+
+                    // caixa: sim
+                    mnuCaixa.Enabled = true;
+                    mnuCaixaPagamento.Enabled = true;
+
+                    // ajuda: sim (já habilitado)
+                    break;
+
+                default:
+                    // comportamento por omissão: perfil com menos privilégios
+                    break;
+            }
         }
     }
 }
